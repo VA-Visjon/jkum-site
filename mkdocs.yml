@@ -126,5 +126,13 @@ nav:
   - Home: index.md
   - Getting started:
       - Installation: getting-started.md
+      - File structure: file-structure.md
+  - Schema:
+      - Current version: schemas/jkum-schema-1.0.md
 
+plugins:
+  - search
+  - schema_reader:
+      include:
+        - "schemas/"
 

@@ -1,0 +1,25 @@
+.home-bg {
+  background-image: url("../assets/images/two-inspectors.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: 50% 65%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-hero {
+    min-height: 80vh;
+    padding: 150px 50px;
+}
+
+.home-hero-content {
+  color: white;
+}
+
+.home-hero-content h1 {
+  color: white;
+}

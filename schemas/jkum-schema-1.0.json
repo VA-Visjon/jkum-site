@@ -9,21 +9,29 @@
   "definitions": {
     "head": {
       "type": "object",
+      "examples": [
+        {
+          "epsg": 28532,
+          "date": "2024-01-17",
+          "author": "Hans Martin Eikerol"
+        }
+      ],
       "title": "The head of the JKUM file, containing relevant information about the file",
       "required": [
         "epsg"
       ],
       "properties": {
         "epsg": {
-          "type": "string",
+          "type": "integer",
           "default": "",
           "examples": [
-            "25832"
+            25832, 25833, 5110, 5111
           ],
           "pattern": "^[0-9]{4,}$"
         },
         "date": {
           "type": "string",
+          "description": "A valid date on the ISO 8601-format: YYYY-MM-DD",
           "default": "",
           "examples": [
             "2020-01-22"
@@ -32,7 +40,7 @@
         },
         "author": {
           "type": "string",
-          "title": "The Author Schema",
+          "description": "The name of the company or author of the file",
           "default": "",
           "examples": [
             "Hans Martin Eikerol"

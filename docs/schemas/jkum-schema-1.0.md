@@ -22,29 +22,51 @@
 | **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
 | **Defined in**            | #/definitions/head                                                        |
 
-| Property                  | Pattern | Type   | Deprecated | Definition | Title/Description |
-| ------------------------- | ------- | ------ | ---------- | ---------- | ----------------- |
-| + [epsg](#head_epsg )     | No      | string | No         | -          | -                 |
-| - [date](#head_date )     | No      | string | No         | -          | -                 |
-| - [author](#head_author ) | No      | string | No         | -          | The Author Schema |
-
-### <a name="head_epsg"></a>1.1. Property `JKUM 1.0 > head > epsg`
-
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | Yes      |
-| **Default**  | `""`     |
-
 **Example:** 
 
 ```json
-"25832"
+{
+    "epsg": 28532,
+    "date": "2024-01-17",
+    "author": "Hans Martin Eikerol"
+}
 ```
 
-| Restrictions                      |                                                                                                        |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| **Must match regular expression** | ```^[0-9]{4,}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%2C%7D%24&testString=%2225832%22) |
+| Property                  | Pattern | Type    | Deprecated | Definition | Title/Description                               |
+| ------------------------- | ------- | ------- | ---------- | ---------- | ----------------------------------------------- |
+| + [epsg](#head_epsg )     | No      | integer | No         | -          | -                                               |
+| - [date](#head_date )     | No      | string  | No         | -          | A valid date on the ISO 8601-format: YYYY-MM-DD |
+| - [author](#head_author ) | No      | string  | No         | -          | The name of the company or author of the file   |
+
+### <a name="head_epsg"></a>1.1. Property `JKUM 1.0 > head > epsg`
+
+|              |           |
+| ------------ | --------- |
+| **Type**     | `integer` |
+| **Required** | Yes       |
+| **Default**  | `""`      |
+
+**Examples:** 
+
+```json
+25832
+```
+
+```json
+25833
+```
+
+```json
+5110
+```
+
+```json
+5111
+```
+
+| Restrictions                      |                                                                                                  |
+| --------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **Must match regular expression** | ```^[0-9]{4,}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%2C%7D%24&testString=25832) |
 
 ### <a name="head_date"></a>1.2. Property `JKUM 1.0 > head > date`
 
@@ -53,6 +75,8 @@
 | **Type**     | `string` |
 | **Required** | No       |
 | **Default**  | `""`     |
+
+**Description:** A valid date on the ISO 8601-format: YYYY-MM-DD
 
 **Example:** 
 
@@ -66,13 +90,13 @@
 
 ### <a name="head_author"></a>1.3. Property `JKUM 1.0 > head > author`
 
-**Title:** The Author Schema
-
 |              |          |
 | ------------ | -------- |
 | **Type**     | `string` |
 | **Required** | No       |
 | **Default**  | `""`     |
+
+**Description:** The name of the company or author of the file
 
 **Example:** 
 
@@ -723,4 +747,4 @@ false
 | **Required** | Yes      |
 
 ----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2024-01-17 at 23:38:38 +0100
+Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2024-01-17 at 23:55:40 +0100

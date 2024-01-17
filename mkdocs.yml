@@ -127,6 +127,7 @@ nav:
   - Getting started:
       - Installation: getting-started.md
       - File structure: file-structure.md
+      - Third-party code: third-party-code.md
   - Schema:
       - Current version: schemas/jkum-schema-1.0.md
 

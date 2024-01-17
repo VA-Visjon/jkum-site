@@ -8,3 +8,30 @@ follow all syntax regulations as described there.
   
 The file should consist of two primary attributes: the `head` and the `manholes`. 
 The structure should be similar to this:
+
+``` json
+{
+  "head": {
+    "epsg": 25832
+  }
+  "manholes": [...]
+}
+```
+
+## Minumum file sample
+In order to generate a minimal and valid file, the JKUM-contents should be like this:
+
+
+``` json
+{
+  "head": {
+    "epsg": 25832
+  }
+  "manholes": [
+  {
+    
+  },
+  ...
+  ]
+}
+```

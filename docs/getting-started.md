@@ -5,12 +5,7 @@ information that can be found when inspecting manholes. Since not all data
 is accessible at the time after pipes has been laid, the information in
 general file formats does not take into consideration that only one end of
 the intersecting pipes can be seen. Thus: the need for detailed specification
-of what can be seen inside a manhole when opening it.
-
-for MkDocs is a powerful documentation framework on top of [MkDocs],
-a static site generator for project documentation.[^1] If you're familiar with
-Python, you can install Material for MkDocs with [`pip`][pip], the Python
-package manager. If not, we recommend using [`docker`][docker].
+of what can be seen inside a manhole when opening it. [^1] 
 
   [^1]:
     In 2016, Material for MkDocs started out as a simple theme for MkDocs, but
@@ -19,9 +14,25 @@ package manager. If not, we recommend using [`docker`][docker].
     Material for MkDocs is now one of the simplest and most powerful frameworks
     for creating documentation for your project.
 
-  [MkDocs]: https://www.mkdocs.org
-  [pip]: #with-pip
-  [docker]: #with-docker
+## Uses of this file format
+The JKUM file format can be used for:
+- Registering data seen when opening manholes, and allowing easy transport of all data
+  the surveyor finds, without any losses.
+- Interaction of concepts for pipe systems between applications and APIs.
+
+## Why do we need a new file format?
+Current practice of registrating the contents of the insides of manholes 
+involves people going out into the field, and either:
+- Writing down the measurements and a sketch on a piece of paper.
+- Entering the registrations into an app or similar system.
+
+After that, the surveyor would go back into the office, and start managing the registrations,
+and producing whatever might be of value to the client that ordered the survey in the first place.
+Often, such end results would be a PDF per manhole, or in best cases: an Excel spreadsheet.
+
+However, the registration is not standardized anywhere, and thus there are as many ways to
+register this as there are surveyors. The need of a unified and supported mechanism for transporting
+this kind of data is dire!
 
 ## Installation
 

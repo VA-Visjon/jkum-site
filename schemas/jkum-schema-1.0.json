@@ -5,7 +5,9 @@
     "head"
   ],
   "title": "JKUM 1.0",
+  "description": "A file standard for transporting information about manhole data",
   "type": "object",
+  "additionalProperties": false,
   "definitions": {
     "head": {
       "type": "object",
@@ -20,14 +22,16 @@
       "required": [
         "epsg"
       ],
+      "additionalProperties": false,
       "properties": {
         "epsg": {
           "type": "integer",
+          "description": "A valid EPSG code, see www.epsg.io for reference.",
           "default": "",
           "examples": [
             25832, 25833, 5110, 5111
           ],
-          "pattern": "^[0-9]{4,}$"
+          "pattern": "^[0-9]{4,5}$"
         },
         "date": {
           "type": "string",

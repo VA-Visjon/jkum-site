@@ -133,7 +133,7 @@ nav:
 
 plugins:
   - search
-  - schema_reader:
-      include:
-        - "schemas/"
+  #- schema_reader:
+  #    include:
+  #      - "schemas/"
 

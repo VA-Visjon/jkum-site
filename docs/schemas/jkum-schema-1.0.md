@@ -2,25 +2,27 @@
 
 **Title:** JKUM 1.0
 
-|                           |                                                                           |
-| ------------------------- | ------------------------------------------------------------------------- |
-| **Type**                  | `object`                                                                  |
-| **Required**              | No                                                                        |
-| **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
+|                           |                                                         |
+| ------------------------- | ------------------------------------------------------- |
+| **Type**                  | `object`                                                |
+| **Required**              | No                                                      |
+| **Additional properties** | [[Not allowed]](# "Additional Properties not allowed.") |
+
+**Description:** A file standard for transporting information about manhole data
 
 | Property                 | Pattern | Type          | Deprecated | Definition            | Title/Description |
 | ------------------------ | ------- | ------------- | ---------- | --------------------- | ----------------- |
 | + [head](#head )         | No      | object        | No         | In #/definitions/head | -                 |
 | - [manholes](#manholes ) | No      | array or null | No         | -                     | -                 |
 
-## <a name="head"></a>1. Property `JKUM 1.0 > head`
+## <a name="head"></a>1. Property `head`
 
-|                           |                                                                           |
-| ------------------------- | ------------------------------------------------------------------------- |
-| **Type**                  | `object`                                                                  |
-| **Required**              | Yes                                                                       |
-| **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
-| **Defined in**            | #/definitions/head                                                        |
+|                           |                                                         |
+| ------------------------- | ------------------------------------------------------- |
+| **Type**                  | `object`                                                |
+| **Required**              | Yes                                                     |
+| **Additional properties** | [[Not allowed]](# "Additional Properties not allowed.") |
+| **Defined in**            | #/definitions/head                                      |
 
 **Example:** 
 
@@ -34,17 +36,21 @@
 
 | Property                  | Pattern | Type    | Deprecated | Definition | Title/Description                               |
 | ------------------------- | ------- | ------- | ---------- | ---------- | ----------------------------------------------- |
-| + [epsg](#head_epsg )     | No      | integer | No         | -          | -                                               |
+| + [epsg](#head_epsg )     | No      | integer | No         | -          | EPSG                                            |
 | - [date](#head_date )     | No      | string  | No         | -          | A valid date on the ISO 8601-format: YYYY-MM-DD |
 | - [author](#head_author ) | No      | string  | No         | -          | The name of the company or author of the file   |
 
-### <a name="head_epsg"></a>1.1. Property `JKUM 1.0 > head > epsg`
+### <a name="head_epsg"></a>1.1. Property `epsg`
+
+**Title:** EPSG
 
 |              |           |
 | ------------ | --------- |
 | **Type**     | `integer` |
 | **Required** | Yes       |
 | **Default**  | `""`      |
+
+**Description:** A valid EPSG code, see www.epsg.io for reference.
 
 **Examples:** 
 
@@ -64,11 +70,11 @@
 5111
 ```
 
-| Restrictions                      |                                                                                                  |
-| --------------------------------- | ------------------------------------------------------------------------------------------------ |
-| **Must match regular expression** | ```^[0-9]{4,}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%2C%7D%24&testString=25832) |
+| Restrictions                      |                                                                                                    |
+| --------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Must match regular expression** | ```^[0-9]{4,5}$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%2C5%7D%24&testString=25832) |
 
-### <a name="head_date"></a>1.2. Property `JKUM 1.0 > head > date`
+### <a name="head_date"></a>1.2. Property `date`
 
 |              |          |
 | ------------ | -------- |
@@ -88,7 +94,7 @@
 | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9]{4}-(0[1-9]\|1[0-2])-(0[1-9]\|[1-2][0-9]\|3[0-1])$``` [Test](https://regex101.com/?regex=%5E%5B0-9%5D%7B4%7D-%280%5B1-9%5D%7C1%5B0-2%5D%29-%280%5B1-9%5D%7C%5B1-2%5D%5B0-9%5D%7C3%5B0-1%5D%29%24&testString=%222020-01-22%22) |
 
-### <a name="head_author"></a>1.3. Property `JKUM 1.0 > head > author`
+### <a name="head_author"></a>1.3. Property `author`
 
 |              |          |
 | ------------ | -------- |
@@ -104,7 +110,7 @@
 "Hans Martin Eikerol"
 ```
 
-## <a name="manholes"></a>2. Property `JKUM 1.0 > manholes`
+## <a name="manholes"></a>2. Property `manholes`
 
 |              |                 |
 | ------------ | --------------- |
@@ -123,7 +129,7 @@
 | ------------------------------- | ----------- |
 | [manhole](#manholes_items)      | -           |
 
-### <a name="autogenerated_heading_2"></a>2.1. JKUM 1.0 > manholes > manhole
+### <a name="autogenerated_heading_2"></a>2.1. manhole
 
 |                           |                                                                           |
 | ------------------------- | ------------------------------------------------------------------------- |
@@ -147,7 +153,7 @@
 | - [links](#manholes_items_links )                 | No      | array            | No         | -                         | -                                              |
 | - [circumference](#manholes_items_circumference ) | No      | array            | No         | -                         | -                                              |
 
-#### <a name="manholes_items_guid"></a>2.1.1. Property `JKUM 1.0 > manholes > manholes items > guid`
+#### <a name="manholes_items_guid"></a>2.1.1. Property `guid`
 
 |                |                    |
 | -------------- | ------------------ |
@@ -165,7 +171,7 @@
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9a-fA-F]{8}[-]{1}[0-9a-fA-F]{4}[-]{1}[0-9a-fA-F]{4}[-]{1}[0-9a-fA-F]{4}[-]{1}[0-9a-fA-F]{12}$``` [Test](https://regex101.com/?regex=%5E%5B0-9a-fA-F%5D%7B8%7D%5B-%5D%7B1%7D%5B0-9a-fA-F%5D%7B4%7D%5B-%5D%7B1%7D%5B0-9a-fA-F%5D%7B4%7D%5B-%5D%7B1%7D%5B0-9a-fA-F%5D%7B4%7D%5B-%5D%7B1%7D%5B0-9a-fA-F%5D%7B12%7D%24&testString=%22cc984777-f7fc-475b-9f32-7cafd70a09cb%22) |
 
-#### <a name="manholes_items_elementId"></a>2.1.2. Property `JKUM 1.0 > manholes > manholes items > elementId`
+#### <a name="manholes_items_elementId"></a>2.1.2. Property `elementId`
 
 |              |          |
 | ------------ | -------- |
@@ -179,7 +185,7 @@
 "556001"
 ```
 
-#### <a name="manholes_items_bottomCenter"></a>2.1.3. Property `JKUM 1.0 > manholes > manholes items > bottomCenter`
+#### <a name="manholes_items_bottomCenter"></a>2.1.3. Property `bottomCenter`
 
 |                           |                                                                           |
 | ------------------------- | ------------------------------------------------------------------------- |
@@ -194,28 +200,28 @@
 | + [north](#manholes_items_bottomCenter_north )         | No      | number | No         | -          | -                 |
 | + [elevation](#manholes_items_bottomCenter_elevation ) | No      | number | No         | -          | -                 |
 
-##### <a name="manholes_items_bottomCenter_east"></a>2.1.3.1. Property `JKUM 1.0 > manholes > manholes items > bottomCenter > east`
+##### <a name="manholes_items_bottomCenter_east"></a>2.1.3.1. Property `east`
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `number` |
 | **Required** | Yes      |
 
-##### <a name="manholes_items_bottomCenter_north"></a>2.1.3.2. Property `JKUM 1.0 > manholes > manholes items > bottomCenter > north`
+##### <a name="manholes_items_bottomCenter_north"></a>2.1.3.2. Property `north`
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `number` |
 | **Required** | Yes      |
 
-##### <a name="manholes_items_bottomCenter_elevation"></a>2.1.3.3. Property `JKUM 1.0 > manholes > manholes items > bottomCenter > elevation`
+##### <a name="manholes_items_bottomCenter_elevation"></a>2.1.3.3. Property `elevation`
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `number` |
 | **Required** | Yes      |
 
-#### <a name="manholes_items_shape"></a>2.1.4. Property `JKUM 1.0 > manholes > manholes items > shape`
+#### <a name="manholes_items_shape"></a>2.1.4. Property `shape`
 
 |              |                    |
 | ------------ | ------------------ |
@@ -234,7 +240,7 @@ Must be one of:
 * "Rectangular"
 * "Polygon"
 
-#### <a name="manholes_items_material"></a>2.1.5. Property `JKUM 1.0 > manholes > manholes items > material`
+#### <a name="manholes_items_material"></a>2.1.5. Property `material`
 
 |              |                    |
 | ------------ | ------------------ |
@@ -255,7 +261,7 @@ Must be one of:
 * "Rehabilitated"
 * "Other"
 
-#### <a name="manholes_items_diameter"></a>2.1.6. Property `JKUM 1.0 > manholes > manholes items > diameter`
+#### <a name="manholes_items_diameter"></a>2.1.6. Property `diameter`
 
 |              |           |
 | ------------ | --------- |
@@ -268,7 +274,7 @@ Must be one of:
 1600
 ```
 
-#### <a name="manholes_items_width"></a>2.1.7. Property `JKUM 1.0 > manholes > manholes items > width`
+#### <a name="manholes_items_width"></a>2.1.7. Property `width`
 
 |              |           |
 | ------------ | --------- |
@@ -281,7 +287,7 @@ Must be one of:
 1200
 ```
 
-#### <a name="manholes_items_length"></a>2.1.8. Property `JKUM 1.0 > manholes > manholes items > length`
+#### <a name="manholes_items_length"></a>2.1.8. Property `length`
 
 |              |           |
 | ------------ | --------- |
@@ -294,7 +300,7 @@ Must be one of:
 1600
 ```
 
-#### <a name="manholes_items_rotation"></a>2.1.9. Property `JKUM 1.0 > manholes > manholes items > rotation`
+#### <a name="manholes_items_rotation"></a>2.1.9. Property `rotation`
 
 **Title:** Clockwise cone or rectangular manhole rotation
 
@@ -312,7 +318,7 @@ Must be one of:
 120
 ```
 
-#### <a name="manholes_items_lids"></a>2.1.10. Property `JKUM 1.0 > manholes > manholes items > lids`
+#### <a name="manholes_items_lids"></a>2.1.10. Property `lids`
 
 |              |         |
 | ------------ | ------- |
@@ -331,7 +337,7 @@ Must be one of:
 | --------------------------------- | ----------- |
 | [lid](#manholes_items_lids_items) | -           |
 
-##### <a name="autogenerated_heading_3"></a>2.1.10.1. JKUM 1.0 > manholes > manholes items > lids > lid
+##### <a name="autogenerated_heading_3"></a>2.1.10.1. lid
 
 |                           |                                                                           |
 | ------------------------- | ------------------------------------------------------------------------- |
@@ -348,14 +354,14 @@ Must be one of:
 | - [ladder](#manholes_items_lids_items_ladder )                 | No      | enum (of string) | No         | -                         | -                 |
 | - [classification](#manholes_items_lids_items_classification ) | No      | enum (of string) | No         | -                         | -                 |
 
-##### <a name="manholes_items_lids_items_guid"></a>2.1.10.1.1. Property `JKUM 1.0 > manholes > manholes items > lids > lids items > guid`
+##### <a name="manholes_items_lids_items_guid"></a>2.1.10.1.1. Property `guid`
 
 |              |                  |
 | ------------ | ---------------- |
 | **Type**     | `string or null` |
 | **Required** | No               |
 
-##### <a name="manholes_items_lids_items_position"></a>2.1.10.1.2. Property `JKUM 1.0 > manholes > manholes items > lids > lids items > position`
+##### <a name="manholes_items_lids_items_position"></a>2.1.10.1.2. Property `position`
 
 |                           |                                                                           |
 | ------------------------- | ------------------------------------------------------------------------- |
@@ -370,28 +376,28 @@ Must be one of:
 | + [north](#manholes_items_lids_items_position_north )         | No      | number | No         | -          | -                 |
 | + [elevation](#manholes_items_lids_items_position_elevation ) | No      | number | No         | -          | -                 |
 
-##### <a name="manholes_items_lids_items_position_east"></a>2.1.10.1.2.1. Property `JKUM 1.0 > manholes > manholes items > lids > lids items > position > east`
+##### <a name="manholes_items_lids_items_position_east"></a>2.1.10.1.2.1. Property `east`
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `number` |
 | **Required** | Yes      |
 
-##### <a name="manholes_items_lids_items_position_north"></a>2.1.10.1.2.2. Property `JKUM 1.0 > manholes > manholes items > lids > lids items > position > north`
+##### <a name="manholes_items_lids_items_position_north"></a>2.1.10.1.2.2. Property `north`
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `number` |
 | **Required** | Yes      |
 
-##### <a name="manholes_items_lids_items_position_elevation"></a>2.1.10.1.2.3. Property `JKUM 1.0 > manholes > manholes items > lids > lids items > position > elevation`
+##### <a name="manholes_items_lids_items_position_elevation"></a>2.1.10.1.2.3. Property `elevation`
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `number` |
 | **Required** | Yes      |
 
-##### <a name="manholes_items_lids_items_diameter"></a>2.1.10.1.3. Property `JKUM 1.0 > manholes > manholes items > lids > lids items > diameter`
+##### <a name="manholes_items_lids_items_diameter"></a>2.1.10.1.3. Property `diameter`
 
 |              |           |
 | ------------ | --------- |
@@ -404,7 +410,7 @@ Must be one of:
 650
 ```
 
-##### <a name="manholes_items_lids_items_ladder"></a>2.1.10.1.4. Property `JKUM 1.0 > manholes > manholes items > lids > lids items > ladder`
+##### <a name="manholes_items_lids_items_ladder"></a>2.1.10.1.4. Property `ladder`
 
 |              |                    |
 | ------------ | ------------------ |
@@ -423,7 +429,7 @@ Must be one of:
 * "Yes"
 * "No"
 
-##### <a name="manholes_items_lids_items_classification"></a>2.1.10.1.5. Property `JKUM 1.0 > manholes > manholes items > lids > lids items > classification`
+##### <a name="manholes_items_lids_items_classification"></a>2.1.10.1.5. Property `classification`
 
 |              |                    |
 | ------------ | ------------------ |
@@ -442,7 +448,7 @@ Must be one of:
 * "D400"
 * "D700"
 
-#### <a name="manholes_items_links"></a>2.1.11. Property `JKUM 1.0 > manholes > manholes items > links`
+#### <a name="manholes_items_links"></a>2.1.11. Property `links`
 
 |              |         |
 | ------------ | ------- |
@@ -461,7 +467,7 @@ Must be one of:
 | ------------------------------------------ | ----------- |
 | [manholeLink](#manholes_items_links_items) | -           |
 
-##### <a name="autogenerated_heading_4"></a>2.1.11.1. JKUM 1.0 > manholes > manholes items > links > manholeLink
+##### <a name="autogenerated_heading_4"></a>2.1.11.1. manholeLink
 
 |                |                           |
 | -------------- | ------------------------- |
@@ -480,7 +486,7 @@ Must be one of:
 | + [clockPosition](#manholes_items_links_items_clockPosition ) | No      | integer          | No         | -                     | The Clockposition Schema                        |
 | + [diameter](#manholes_items_links_items_diameter )           | No      | integer          | No         | -                     | -                                               |
 
-##### <a name="manholes_items_links_items_guid"></a>2.1.11.1.1. Property `JKUM 1.0 > manholes > manholes items > links > links items > guid`
+##### <a name="manholes_items_links_items_guid"></a>2.1.11.1.1. Property `guid`
 
 |                |                    |
 | -------------- | ------------------ |
@@ -498,7 +504,7 @@ Must be one of:
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-9a-fA-F]{8}[-]{1}[0-9a-fA-F]{4}[-]{1}[0-9a-fA-F]{4}[-]{1}[0-9a-fA-F]{4}[-]{1}[0-9a-fA-F]{12}$``` [Test](https://regex101.com/?regex=%5E%5B0-9a-fA-F%5D%7B8%7D%5B-%5D%7B1%7D%5B0-9a-fA-F%5D%7B4%7D%5B-%5D%7B1%7D%5B0-9a-fA-F%5D%7B4%7D%5B-%5D%7B1%7D%5B0-9a-fA-F%5D%7B4%7D%5B-%5D%7B1%7D%5B0-9a-fA-F%5D%7B12%7D%24&testString=%22cc984777-f7fc-475b-9f32-7cafd70a09cb%22) |
 
-##### <a name="manholes_items_links_items_elementId"></a>2.1.11.1.2. Property `JKUM 1.0 > manholes > manholes items > links > links items > elementId`
+##### <a name="manholes_items_links_items_elementId"></a>2.1.11.1.2. Property `elementId`
 
 |              |          |
 | ------------ | -------- |
@@ -511,7 +517,7 @@ Must be one of:
 "548861"
 ```
 
-##### <a name="manholes_items_links_items_medium"></a>2.1.11.1.3. Property `JKUM 1.0 > manholes > manholes items > links > links items > medium`
+##### <a name="manholes_items_links_items_medium"></a>2.1.11.1.3. Property `medium`
 
 **Title:** The medium transported in the pipe
 
@@ -526,7 +532,7 @@ Must be one of:
 "Water"
 ```
 
-##### <a name="manholes_items_links_items_direction"></a>2.1.11.1.4. Property `JKUM 1.0 > manholes > manholes items > links > links items > direction`
+##### <a name="manholes_items_links_items_direction"></a>2.1.11.1.4. Property `direction`
 
 **Title:** The assumed flow direction of the pipe contents
 
@@ -545,7 +551,7 @@ Must be one of:
 * "Ingoing"
 * "Outgoing"
 
-##### <a name="manholes_items_links_items_pressurized"></a>2.1.11.1.5. Property `JKUM 1.0 > manholes > manholes items > links > links items > pressurized`
+##### <a name="manholes_items_links_items_pressurized"></a>2.1.11.1.5. Property `pressurized`
 
 |              |           |
 | ------------ | --------- |
@@ -559,7 +565,7 @@ Must be one of:
 false
 ```
 
-##### <a name="manholes_items_links_items_elevation"></a>2.1.11.1.6. Property `JKUM 1.0 > manholes > manholes items > links > links items > elevation`
+##### <a name="manholes_items_links_items_elevation"></a>2.1.11.1.6. Property `elevation`
 
 |              |          |
 | ------------ | -------- |
@@ -572,7 +578,7 @@ false
 53.11
 ```
 
-##### <a name="manholes_items_links_items_clockPosition"></a>2.1.11.1.7. Property `JKUM 1.0 > manholes > manholes items > links > links items > clockPosition`
+##### <a name="manholes_items_links_items_clockPosition"></a>2.1.11.1.7. Property `clockPosition`
 
 **Title:** The Clockposition Schema
 
@@ -591,7 +597,7 @@ false
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | **Must match regular expression** | ```^[0-3][0-9]?[0-9]?$``` [Test](https://regex101.com/?regex=%5E%5B0-3%5D%5B0-9%5D%3F%5B0-9%5D%3F%24&testString=20) |
 
-##### <a name="manholes_items_links_items_diameter"></a>2.1.11.1.8. Property `JKUM 1.0 > manholes > manholes items > links > links items > diameter`
+##### <a name="manholes_items_links_items_diameter"></a>2.1.11.1.8. Property `diameter`
 
 |              |           |
 | ------------ | --------- |
@@ -604,7 +610,7 @@ false
 150
 ```
 
-#### <a name="manholes_items_circumference"></a>2.1.12. Property `JKUM 1.0 > manholes > manholes items > circumference`
+#### <a name="manholes_items_circumference"></a>2.1.12. Property `circumference`
 
 |              |         |
 | ------------ | ------- |
@@ -623,7 +629,7 @@ false
 | ----------------------------------------------------------- | ----------- |
 | [manholeCircumference](#manholes_items_circumference_items) | -           |
 
-##### <a name="autogenerated_heading_5"></a>2.1.12.1. JKUM 1.0 > manholes > manholes items > circumference > manholeCircumference
+##### <a name="autogenerated_heading_5"></a>2.1.12.1. manholeCircumference
 
 |                |                                    |
 | -------------- | ---------------------------------- |
@@ -636,7 +642,7 @@ false
 | - [innerVertices](#manholes_items_circumference_items_innerVertices ) | No      | array or null | No         | -          | -                 |
 | - [outerVertices](#manholes_items_circumference_items_outerVertices ) | No      | array or null | No         | -          | -                 |
 
-##### <a name="manholes_items_circumference_items_innerVertices"></a>2.1.12.1.1. Property `JKUM 1.0 > manholes > manholes items > circumference > circumference items > innerVertices`
+##### <a name="manholes_items_circumference_items_innerVertices"></a>2.1.12.1.1. Property `innerVertices`
 
 |              |                 |
 | ------------ | --------------- |
@@ -655,7 +661,7 @@ false
 | ------------------------------------------------------------------- | ----------- |
 | [location](#manholes_items_circumference_items_innerVertices_items) | -           |
 
-##### <a name="autogenerated_heading_6"></a>2.1.12.1.1.1. JKUM 1.0 > manholes > manholes items > circumference > circumference items > innerVertices > location
+##### <a name="autogenerated_heading_6"></a>2.1.12.1.1.1. location
 
 |                           |                                                                           |
 | ------------------------- | ------------------------------------------------------------------------- |
@@ -670,28 +676,28 @@ false
 | + [north](#manholes_items_circumference_items_innerVertices_items_north )         | No      | number | No         | -          | -                 |
 | + [elevation](#manholes_items_circumference_items_innerVertices_items_elevation ) | No      | number | No         | -          | -                 |
 
-##### <a name="manholes_items_circumference_items_innerVertices_items_east"></a>2.1.12.1.1.1.1. Property `JKUM 1.0 > manholes > manholes items > circumference > circumference items > innerVertices > innerVertices items > east`
+##### <a name="manholes_items_circumference_items_innerVertices_items_east"></a>2.1.12.1.1.1.1. Property `east`
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `number` |
 | **Required** | Yes      |
 
-##### <a name="manholes_items_circumference_items_innerVertices_items_north"></a>2.1.12.1.1.1.2. Property `JKUM 1.0 > manholes > manholes items > circumference > circumference items > innerVertices > innerVertices items > north`
+##### <a name="manholes_items_circumference_items_innerVertices_items_north"></a>2.1.12.1.1.1.2. Property `north`
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `number` |
 | **Required** | Yes      |
 
-##### <a name="manholes_items_circumference_items_innerVertices_items_elevation"></a>2.1.12.1.1.1.3. Property `JKUM 1.0 > manholes > manholes items > circumference > circumference items > innerVertices > innerVertices items > elevation`
+##### <a name="manholes_items_circumference_items_innerVertices_items_elevation"></a>2.1.12.1.1.1.3. Property `elevation`
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `number` |
 | **Required** | Yes      |
 
-##### <a name="manholes_items_circumference_items_outerVertices"></a>2.1.12.1.2. Property `JKUM 1.0 > manholes > manholes items > circumference > circumference items > outerVertices`
+##### <a name="manholes_items_circumference_items_outerVertices"></a>2.1.12.1.2. Property `outerVertices`
 
 |              |                 |
 | ------------ | --------------- |
@@ -710,7 +716,7 @@ false
 | ------------------------------------------------------------------- | ----------- |
 | [location](#manholes_items_circumference_items_outerVertices_items) | -           |
 
-##### <a name="autogenerated_heading_7"></a>2.1.12.1.2.1. JKUM 1.0 > manholes > manholes items > circumference > circumference items > outerVertices > location
+##### <a name="autogenerated_heading_7"></a>2.1.12.1.2.1. location
 
 |                           |                                                                           |
 | ------------------------- | ------------------------------------------------------------------------- |
@@ -725,21 +731,21 @@ false
 | + [north](#manholes_items_circumference_items_outerVertices_items_north )         | No      | number | No         | -          | -                 |
 | + [elevation](#manholes_items_circumference_items_outerVertices_items_elevation ) | No      | number | No         | -          | -                 |
 
-##### <a name="manholes_items_circumference_items_outerVertices_items_east"></a>2.1.12.1.2.1.1. Property `JKUM 1.0 > manholes > manholes items > circumference > circumference items > outerVertices > outerVertices items > east`
+##### <a name="manholes_items_circumference_items_outerVertices_items_east"></a>2.1.12.1.2.1.1. Property `east`
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `number` |
 | **Required** | Yes      |
 
-##### <a name="manholes_items_circumference_items_outerVertices_items_north"></a>2.1.12.1.2.1.2. Property `JKUM 1.0 > manholes > manholes items > circumference > circumference items > outerVertices > outerVertices items > north`
+##### <a name="manholes_items_circumference_items_outerVertices_items_north"></a>2.1.12.1.2.1.2. Property `north`
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `number` |
 | **Required** | Yes      |
 
-##### <a name="manholes_items_circumference_items_outerVertices_items_elevation"></a>2.1.12.1.2.1.3. Property `JKUM 1.0 > manholes > manholes items > circumference > circumference items > outerVertices > outerVertices items > elevation`
+##### <a name="manholes_items_circumference_items_outerVertices_items_elevation"></a>2.1.12.1.2.1.3. Property `elevation`
 
 |              |          |
 | ------------ | -------- |
@@ -747,4 +753,4 @@ false
 | **Required** | Yes      |
 
 ----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2024-01-17 at 23:55:40 +0100
+Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2024-01-18 at 00:12:37 +0100

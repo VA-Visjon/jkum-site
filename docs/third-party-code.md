@@ -7,5 +7,4 @@ see the page for [supported] JSON-attributes.
   [json-schema-for-humans]: https://github.com/coveooss/json-schema-for-humans
   [supported]: https://coveooss.github.io/json-schema-for-humans/#/?id=what39s-supported
 
-
-
+# Licences

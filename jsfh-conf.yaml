@@ -1,6 +1,6 @@
 description_is_markdown: false
 copy_js: false
-show_breadcrumbs: true
+show_breadcrumbs: false
 template_name: md
 link_to_reused_ref: false
 show_toc: false

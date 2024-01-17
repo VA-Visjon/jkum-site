@@ -2,4 +2,5 @@
 
 ## Deployment
 
-Run `mkdocs gh-deploy` in order to push updates to the site
+Run `mkdocs gh-deploy --force` in order to push updates to the site
+

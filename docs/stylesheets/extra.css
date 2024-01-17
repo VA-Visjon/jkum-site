@@ -1,0 +1,32 @@
+.home-bg {
+  background-image: url("../assets/images/two-inspectors-darker.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: 50% 65%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.padding-y {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.home-hero {
+    min-height: 100vh;
+    padding: 200px 50px;
+}
+
+.home-hero-content {
+  color: white;
+  text-shadow: 0 0 0.2rem #211d2dcc;
+}
+
+.home-hero-content h1 {
+  color: white;
+  text-shadow: 0 0 0.2rem #211d2dcc;
+}

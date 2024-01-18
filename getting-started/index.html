@@ -17,10 +17,10 @@ Here you will find all relevant information about the requirements and possibili
         <link rel="canonical" href="https://hansmei.github.io/jkum-site/getting-started/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../file-structure/">
       
       
-        <link rel="next" href="../file-structure/">
+        <link rel="next" href="../third-party-code/">
       
       
       <link rel="icon" href="../assets/images/sandfang.png">
@@ -28,7 +28,7 @@ Here you will find all relevant information about the requirements and possibili
     
     
       
-        <title>Installation - JKUM</title>
+        <title>Getting started - JKUM</title>
       
     
     
@@ -115,7 +115,7 @@ Here you will find all relevant information about the requirements and possibili
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation
+              Getting started
             
           </span>
         </div>
@@ -250,7 +250,7 @@ Here you will find all relevant information about the requirements and possibili
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../introduction/" class="md-tabs__link">
           
   
     
@@ -364,6 +364,8 @@ Here you will find all relevant information about the requirements and possibili
       
         
       
+        
+      
     
     
     
@@ -401,6 +403,48 @@ Here you will find all relevant information about the requirements and possibili
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -417,7 +461,7 @@ Here you will find all relevant information about the requirements and possibili
           
   
   <span class="md-ellipsis">
-    Installation
+    Getting started
   </span>
   
 
@@ -428,7 +472,7 @@ Here you will find all relevant information about the requirements and possibili
         
   
   <span class="md-ellipsis">
-    Installation
+    Getting started
   </span>
   
 
@@ -448,24 +492,6 @@ Here you will find all relevant information about the requirements and possibili
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#uses-of-this-file-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Uses of this file format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-do-we-need-a-new-file-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why do we need a new file format?
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
@@ -513,27 +539,6 @@ Here you will find all relevant information about the requirements and possibili
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../file-structure/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    File structure
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -666,24 +671,6 @@ Here you will find all relevant information about the requirements and possibili
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#uses-of-this-file-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Uses of this file format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-do-we-need-a-new-file-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why do we need a new file format?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       Installation
@@ -757,28 +744,6 @@ Here you will find all relevant information about the requirements and possibili
 
 
 <h1 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
-<p>JKUM consist of a set of specifications for managing and transporting 
-information that can be found when inspecting manholes. Since not all data
-is accessible at the time after pipes has been laid, the information in
-general file formats does not take into consideration that only one end of
-the intersecting pipes can be seen. Thus: the need for detailed specification
-of what can be seen inside a manhole when opening it. <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> </p>
-<h2 id="uses-of-this-file-format">Uses of this file format<a class="headerlink" href="#uses-of-this-file-format" title="Permanent link">&para;</a></h2>
-<p>The JKUM file format can be used for:
-- Registering data seen when opening manholes, and allowing easy transport of all data
-  the surveyor finds, without any losses.
-- Interaction of concepts for pipe systems between applications and APIs.</p>
-<h2 id="why-do-we-need-a-new-file-format">Why do we need a new file format?<a class="headerlink" href="#why-do-we-need-a-new-file-format" title="Permanent link">&para;</a></h2>
-<p>Current practice of registrating the contents of the insides of manholes 
-involves people going out into the field, and either:
-- Writing down the measurements and a sketch on a piece of paper.
-- Entering the registrations into an app or similar system.</p>
-<p>After that, the surveyor would go back into the office, and start managing the registrations,
-and producing whatever might be of value to the client that ordered the survey in the first place.
-Often, such end results would be a PDF per manhole, or in best cases: an Excel spreadsheet.</p>
-<p>However, the registration is not standardized anywhere, and thus there are as many ways to
-register this as there are surveyors. The need of a unified and supported mechanism for transporting
-this kind of data is dire!</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="with-pip">with pip <small>recommended</small><a class="headerlink" href="#with-pip" title="Permanent link">&para;</a></h3>
 <p>Material for MkDocs is published as a <a href="https://pypi.org/project/mkdocs-material/">Python package</a> and can be installed with
@@ -795,7 +760,7 @@ Material for MkDocs with:</p>
 </span></code></pre></div>
 <ol>
 <li>
-<p>Material for MkDocs uses <a href="https://semver.org/">semantic versioning</a><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, which is why it's a
+<p>Material for MkDocs uses <a href="https://semver.org/">semantic versioning</a><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup>, which is why it's a
     good idea to limit upgrades to the current major version.</p>
 <p>This will make sure that you don't accidentally <a href="upgrade.md">upgrade to the next
 major version</a>, which may include breaking changes that silently corrupt
@@ -894,17 +859,10 @@ want to use the very latest version:</p>
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:1">
-<p>In 2016, Material for MkDocs started out as a simple theme for MkDocs, but
-over the course of several years, it's now much more than that – with the
-many built-in plugins, settings, and countless customization abilities,
-Material for MkDocs is now one of the simplest and most powerful frameworks
-for creating documentation for your project.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
 <li id="fn:2">
 <p>Note that improvements of existing features are sometimes released as
 patch releases, like for example improved rendering of content tabs, as
-they're not considered to be new features.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+they're not considered to be new features.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -943,7 +901,7 @@ they're not considered to be new features.&#160;<a class="footnote-backref" href
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+          <a href="../file-structure/" class="md-footer__link md-footer__link--prev" aria-label="Previous: File structure">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -953,20 +911,20 @@ they're not considered to be new features.&#160;<a class="footnote-backref" href
                 Previous
               </span>
               <div class="md-ellipsis">
-                Home
+                File structure
               </div>
             </div>
           </a>
         
         
           
-          <a href="../file-structure/" class="md-footer__link md-footer__link--next" aria-label="Next: File structure">
+          <a href="../third-party-code/" class="md-footer__link md-footer__link--next" aria-label="Next: Third-party code">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                File structure
+                Third-party code
               </div>
             </div>
             <div class="md-footer__button md-icon">

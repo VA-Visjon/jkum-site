@@ -28,10 +28,9 @@ In order to generate a minimal and valid file, the JKUM-contents should be like 
     "epsg": 25832
   }
   "manholes": [
-  {
-    
-  },
-  ...
+    {
+      "guid": 
+    }
   ]
 }
 ```

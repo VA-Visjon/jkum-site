@@ -125,8 +125,9 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting started:
-      - Installation: getting-started.md
+      - Introduction: introduction.md
       - File structure: file-structure.md
+      - Getting started: getting-started.md
       - Third-party code: third-party-code.md
   - Schema:
       - Current version: schemas/jkum-schema-1.0.md

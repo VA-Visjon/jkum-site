@@ -11,6 +11,22 @@
   background-size: cover;
 }
 
+.phonetic {
+}
+
+.dark-banner {
+  background: #333333;
+  padding: 100px 0px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.banner-content {
+  font-size: 18pt;
+  color: white;
+}
+
 .padding-y {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -29,4 +45,14 @@
 .home-hero-content h1 {
   color: white;
   text-shadow: 0 0 0.2rem #211d2dcc;
+}
+
+.success {
+  color: #00A36C;
+}
+.warning {
+  color: #FFBF00;
+}
+.error {
+  color: #EE0F0F;
 }

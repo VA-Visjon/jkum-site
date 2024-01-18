@@ -16,7 +16,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hansmei.github.io/jkum-site/getting-started_backup/</loc>
+         <lastmod>2024-01-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hansmei.github.io/jkum-site/introduction/</loc>
+         <lastmod>2024-01-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hansmei.github.io/jkum-site/roadmap/</loc>
          <lastmod>2024-01-18</lastmod>
          <changefreq>daily</changefreq>
     </url>

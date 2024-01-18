@@ -17,10 +17,10 @@ Here you will find all relevant information about the requirements and possibili
         <link rel="canonical" href="https://hansmei.github.io/jkum-site/getting-started/">
       
       
-        <link rel="prev" href="../file-structure/">
+        <link rel="prev" href="../roadmap/">
       
       
-        <link rel="next" href="../third-party-code/">
+        <link rel="next" href="../schemas/jkum-schema-1.0/">
       
       
       <link rel="icon" href="../assets/images/sandfang.png">
@@ -244,18 +244,38 @@ Here you will find all relevant information about the requirements and possibili
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../introduction/" class="md-tabs__link">
           
   
     
   
   Getting started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../roadmap/" class="md-tabs__link">
+          
+  
+    
+  
+  For developers
 
         </a>
       </li>
@@ -275,7 +295,7 @@ Here you will find all relevant information about the requirements and possibili
   
     
   
-  Schema
+  Schemas
 
         </a>
       </li>
@@ -351,14 +371,10 @@ Here you will find all relevant information about the requirements and possibili
       
   
   
-    
   
   
-  
     
     
-      
-        
       
         
       
@@ -373,12 +389,12 @@ Here you will find all relevant information about the requirements and possibili
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -392,7 +408,7 @@ Here you will find all relevant information about the requirements and possibili
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Getting started
@@ -445,109 +461,6 @@ Here you will find all relevant information about the requirements and possibili
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Getting started
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Getting started
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#with-pip" class="md-nav__link">
-    <span class="md-ellipsis">
-      with pip
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#with-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      with docker
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#with-git" class="md-nav__link">
-    <span class="md-ellipsis">
-      with git
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
@@ -560,6 +473,113 @@ Here you will find all relevant information about the requirements and possibili
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For developers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+      </a>
+      
     </li>
   
 
@@ -595,24 +615,24 @@ Here you will find all relevant information about the requirements and possibili
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Schema
+    Schemas
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Schema
+            Schemas
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -664,56 +684,6 @@ Here you will find all relevant information about the requirements and possibili
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#with-pip" class="md-nav__link">
-    <span class="md-ellipsis">
-      with pip
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#with-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      with docker
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#with-git" class="md-nav__link">
-    <span class="md-ellipsis">
-      with git
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -744,128 +714,57 @@ Here you will find all relevant information about the requirements and possibili
 
 
 <h1 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<h3 id="with-pip">with pip <small>recommended</small><a class="headerlink" href="#with-pip" title="Permanent link">&para;</a></h3>
-<p>Material for MkDocs is published as a <a href="https://pypi.org/project/mkdocs-material/">Python package</a> and can be installed with
-<code>pip</code>, ideally by using a <a href="https://realpython.com/what-is-pip/#using-pip-in-a-python-virtual-environment">virtual environment</a>. Open up a terminal and install
-Material for MkDocs with:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="with-pip-latest" name="__tabbed_1" type="radio" /><input id="with-pip-9x" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="with-pip-latest">Latest</label><label for="with-pip-9x">9.x</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material<span class="o">==</span><span class="s2">&quot;9.*&quot;</span><span class="w"> </span><span class="c1"># (1)!</span>
-</span></code></pre></div>
-<ol>
-<li>
-<p>Material for MkDocs uses <a href="https://semver.org/">semantic versioning</a><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup>, which is why it's a
-    good idea to limit upgrades to the current major version.</p>
-<p>This will make sure that you don't accidentally <a href="upgrade.md">upgrade to the next
-major version</a>, which may include breaking changes that silently corrupt
-your site. Additionally, you can use <code>pip freeze</code> to create a lockfile,
-so builds are reproducible at all times:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip freeze &gt; requirements.txt
-</span></code></pre></div>
-<p>Now, the lockfile can be used for installation:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip install -r requirements.txt
-</span></code></pre></div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<p>This will automatically install compatible versions of all dependencies:
-[MkDocs], <a href="https://python-markdown.github.io/">Markdown</a>, <a href="https://pygments.org/">Pygments</a> and <a href="https://facelessuser.github.io/pymdown-extensions/">Python Markdown Extensions</a>. Material for
-MkDocs always strives to support the latest versions, so there's no need to
-install those packages separately.</p>
-<hr />
-<p><span class="twemoji" style="color: #EE0F0F"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></span>
-<strong><a href="https://www.youtube.com/watch?v=Q-YA_dA8C20">How to set up Material for MkDocs</a></strong> by <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/james-willett" title="GitHub User: james-willett">@james-willett</a> – <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.5 7.25a.75.75 0 0 0-1.5 0v5.5c0 .27.144.518.378.651l3.5 2a.75.75 0 0 0 .744-1.302L12.5 12.315V7.25Z"/><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"/></svg></span>
-15m – Learn how to create and host a documentation site using Material for
-MkDocs on GitHub Pages in a step-by-step guide.</p>
-<hr />
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you don't have prior experience with Python, we recommend reading
-<a href="https://realpython.com/what-is-pip/">Using Python's pip to Manage Your Projects' Dependencies</a>, which is a
-really good introduction on the mechanics of Python package management and
-helps you troubleshoot if you run into errors.</p>
-</div>
-<h3 id="with-docker">with docker<a class="headerlink" href="#with-docker" title="Permanent link">&para;</a></h3>
-<p>The official <a href="https://hub.docker.com/r/squidfunk/mkdocs-material/">Docker image</a> is a great way to get up and running in a few
-minutes, as it comes with all dependencies pre-installed. Open up a terminal
-and pull the image with:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="with-docker-latest" name="__tabbed_2" type="radio" /><input id="with-docker-9x" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="with-docker-latest">Latest</label><label for="with-docker-9x">9.x</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker pull squidfunk/mkdocs-material
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker pull squidfunk/mkdocs-material:9
-</span></code></pre></div>
-</div>
-</div>
-</div>
-<p>The <code>mkdocs</code> executable is provided as an entry point and <code>serve</code> is the
-default command. If you're not familiar with Docker don't worry, we have you
-covered in the following sections.</p>
-<p>The following plugins are bundled with the Docker image:</p>
-<ul>
-<li><a href="https://github.com/byrnereese/mkdocs-minify-plugin">mkdocs-minify-plugin</a></li>
-<li><a href="https://github.com/datarobot/mkdocs-redirects">mkdocs-redirects</a></li>
-</ul>
-<details class="question">
-<summary>How to add plugins to the Docker image?</summary>
-<p>Material for MkDocs only bundles selected plugins in order to keep the size
-of the official image small. If the plugin you want to use is not included,
-you can add them easily:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="with-docker-material-for-mkdocs" name="__tabbed_3" type="radio" /><input id="with-docker-insiders" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="with-docker-material-for-mkdocs">Material for MkDocs</label><label for="with-docker-insiders">Insiders</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>Create a <code>Dockerfile</code> and extend the official image:</p>
-<div class="language-Dockerfile highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">squidfunk/mkdocs-material</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-macros-plugin
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-glightbox
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<p>Clone or fork the Insiders repository, and create a file called
-<code>user-requirements.txt</code> in the root of the repository. Then, add the
-plugins that should be installed to the file, e.g.:</p>
-<div class="language-text highlight"><span class="filename">user-requirements.txt</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mkdocs-macros-plugin
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>mkdocs-glightbox
-</span></code></pre></div>
-</div>
-</div>
-</div>
-<p>Next, build the image with the following command:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker build -t squidfunk/mkdocs-material .
-</span></code></pre></div>
-<p>The new image will have additional packages installed and can be used
-exactly like the official image.</p>
-</details>
-<h3 id="with-git">with git<a class="headerlink" href="#with-git" title="Permanent link">&para;</a></h3>
-<p>Material for MkDocs can be directly used from <a href="https://github.com/squidfunk/mkdocs-material">GitHub</a> by cloning the
-repository into a subfolder of your project root which might be useful if you
-want to use the very latest version:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git clone https://github.com/squidfunk/mkdocs-material.git
-</span></code></pre></div>
-<p>Next, install the theme and its dependencies with:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>pip install -e mkdocs-material
-</span></code></pre></div>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:2">
-<p>Note that improvements of existing features are sometimes released as
-patch releases, like for example improved rendering of content tabs, as
-they're not considered to be new features.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<p>The project roadmap describes a goal of establishing open-source parsers for the
+JKUM-file format for lots of different programming languages. Currently, only a few
+are established.</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Supported?</th>
+<th>Status</th>
+<th>Repo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C#</td>
+<td><span class="twemoji warning"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span> Yes</td>
+<td>In progress</td>
+<td><a href="https://github.com/hansmei/JkumParser"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg></span> JkumParser</a></td>
+</tr>
+<tr>
+<td>python</td>
+<td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span> No</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>If you are familiar with any of the non-supported languages and want to contribute,
+feel free to drop an email to <code>kontakt@vavisjon.no</code> about it or submit a pull request, and
+we will add it here.</p>
+<h1 id="relevant-software">Relevant software<a class="headerlink" href="#relevant-software" title="Permanent link">&para;</a></h1>
+<p>There will be apps and software solutions that will build upon this standard. This is a 
+summarized list of softwares and solutions utilizing the JKUM-standard.</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Software</th>
+<th>Provider</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C#</td>
+<td>Autocad Civil JKUM Interface</td>
+<td>VA Visjon</td>
+<td>Open Source</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -901,7 +800,7 @@ they're not considered to be new features.&#160;<a class="footnote-backref" href
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../file-structure/" class="md-footer__link md-footer__link--prev" aria-label="Previous: File structure">
+          <a href="../roadmap/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Roadmap">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -911,20 +810,20 @@ they're not considered to be new features.&#160;<a class="footnote-backref" href
                 Previous
               </span>
               <div class="md-ellipsis">
-                File structure
+                Roadmap
               </div>
             </div>
           </a>
         
         
           
-          <a href="../third-party-code/" class="md-footer__link md-footer__link--next" aria-label="Next: Third-party code">
+          <a href="../schemas/jkum-schema-1.0/" class="md-footer__link md-footer__link--next" aria-label="Next: Current version">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Third-party code
+                Current version
               </div>
             </div>
             <div class="md-footer__button md-icon">

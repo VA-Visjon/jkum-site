@@ -121,16 +121,3 @@ Overall, we're led to the conclusion that no file format exists that can truly
 cover all we want to know about a single manhole, without relying on lots of
 other objects (the pipes) or doing geometric calculations to identify angles for
 inlets or outlets.
-
-## Roadmap
-The current progress og this project is:
-
-- [x] Develop a basic standard version 1.0.
-- [ ] Develop documentation for the standard.
-    * [x] Initial configuration of the docs site.
-    * [ ] Increase textual representation about the standard.
-    * [x] Implement a JSON schema reader to represent the standard in the docs.
-- [ ] Configure the standard in relation with users that need it.
-- [ ] Create readers and writers in different relevant languages.
-    * [x] Library for C#
-    * [ ] Library for python

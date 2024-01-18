@@ -127,9 +127,11 @@ nav:
   - Getting started:
       - Introduction: introduction.md
       - File structure: file-structure.md
-      - Getting started: getting-started.md
       - Third-party code: third-party-code.md
-  - Schema:
+  - For developers:
+      - Roadmap: roadmap.md
+      - Getting started: getting-started.md
+  - Schemas:
       - Current version: schemas/jkum-schema-1.0.md
 
 plugins:

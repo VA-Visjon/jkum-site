@@ -11,33 +11,48 @@
         <div class="mdx-hero__content home-hero-content">
           <h1>JKUM file format</h1>
           <h4>Transporting manhole data in a way that just works</h4>
-          <p>{{ config.site_description }}. Set up in 5 minutes.</p>
+          <p>{{ config.site_description }}.</p>
           <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}" class="md-button md-button--primary">
             Quick start
           </a>
           <a href="{{ 'validate-file/' | url }}" title="Validate your JKUM-file" class="md-button">
             Validate JKUM-file
           </a>
+
         </div>
       </div>
     </div>
   </section>
-  <section class="mdx-container padding-y">
+
+
+  <section class="mdx-container dark-banner">
+    <div class="banner-content">
+      <h3>JKUM</h3>
+      <p><span class="phonetic">['dʒɛi'kom]</span> - from the Norwegian word "kum" - meaning manhole</p>
+    </div>
+  </section>
+
+  <section class="mdx-container">
     <div class="md-grid md-typeset">
-      <div class="mdx-hero">
-        <!---<div class="mdx-hero__image">
-          <img src="assets/images/illustration.png" alt="" width="300" draggable="false">
-        </div>--->
-        <div class="mdx-hero__content">
-          <h1>Technical documentation that just works</h1>
-          <p>{{ config.site_description }}. Set up in 5 minutes.</p>
-          <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}" class="md-button md-button--primary">
-            Quick start
-          </a>
-          <a href="{{ 'insiders/' | url }}" title="Material for MkDocs Insiders" class="md-button">
-            Get Insiders
-          </a>
+      <div class="md-content__inner" style="display: flex;">
+
+        <div class="my-block">
+          <h2>Kumkort</h2>
+          <h4>- A blessing and a curse</h4>
+          <p>We really need a better alternative than sending PDFs and Excel spreadsheets around
+          in order to understand what is happening underground. The <code>.jkum</code> file format is coming
+            to the rescue!</p>
+
+
         </div>
+          <figure class="mdx-spotlight__feature">
+            <div class="mdx-hero__image">
+              <img src="assets/images/kumkort-sample2.png" alt="" width="400" draggable="false">
+            </div>-
+            <figcaption class="md-typeset">
+              <p>A sample of "kumkort", the way it is currently used. This we want to improve!</p>
+            </figcaption>
+          </figure>
       </div>
     </div>
   </section>

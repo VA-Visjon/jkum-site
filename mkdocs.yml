@@ -1,6 +1,6 @@
 # Project information
 site_name: JKUM
-site_url: https://hansmei.github.io/jkum-site/
+site_url: https://www.jkum.info/
 site_author: Hans Martin Eikerol
 site_description: >-
   A brand new system description for establishing data flow related to manhole data
@@ -12,8 +12,8 @@ site_description: >-
   this file format, and you can validate your files.
 
 # Repository
-repo_name: hansmei/jkum-site
-repo_url: https://github.com/hansmei/jkum-site
+repo_name: VA-Visjon/jkum-site
+repo_url: https://github.com/VA-Visjon/jkum-site
 
 # Copyright
 copyright: Copyright &copy; 2020 - 2024 Hans Martin Eikerol
@@ -126,14 +126,12 @@ nav:
   - Home: index.md
   - Getting started:
       - Introduction: introduction.md
+      - File downloads: file-downloads.md
+  - For developers:
       - File structure: file-structure.md
       - Examples: examples.md
-      - Third-party code: third-party-code.md
-  - For developers:
-      - Getting started: getting-started.md
       - Roadmap: roadmap.md
-  - Schemas:
-      - Current version: schemas/jkum-schema-1.0.md
+      - Third-party code: third-party-code.md
 
 plugins:
   - search

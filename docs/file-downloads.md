@@ -1,4 +1,4 @@
-# Getting started
+# File downloads
 The schema definition files for this standard can be downloaded here:
 
 | Schema definition | Status | File |
@@ -16,6 +16,7 @@ for this standard. They are represented here:
 | JKUM Version 1.0 | :material-check-circle:{ .warning } Current | Basal kumfigurator API | Not ready |
 
 
+## Parser repos
 
 The project roadmap describes a goal of establishing open-source parsers for the
 JKUM-file format for lots of different programming languages. Currently, only a few

@@ -1,42 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://hansmei.github.io/jkum-site/</loc>
+         <loc>https://www.jkum.info/</loc>
          <lastmod>2024-01-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hansmei.github.io/jkum-site/examples/</loc>
+         <loc>https://www.jkum.info/examples/</loc>
          <lastmod>2024-01-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hansmei.github.io/jkum-site/file-structure/</loc>
+         <loc>https://www.jkum.info/file-downloads/</loc>
          <lastmod>2024-01-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hansmei.github.io/jkum-site/getting-started/</loc>
+         <loc>https://www.jkum.info/file-structure/</loc>
          <lastmod>2024-01-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hansmei.github.io/jkum-site/introduction/</loc>
+         <loc>https://www.jkum.info/introduction/</loc>
          <lastmod>2024-01-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hansmei.github.io/jkum-site/roadmap/</loc>
+         <loc>https://www.jkum.info/roadmap/</loc>
          <lastmod>2024-01-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hansmei.github.io/jkum-site/third-party-code/</loc>
-         <lastmod>2024-01-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hansmei.github.io/jkum-site/schemas/jkum-schema-1.0/</loc>
+         <loc>https://www.jkum.info/third-party-code/</loc>
          <lastmod>2024-01-20</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -127,6 +127,7 @@ nav:
   - Getting started:
       - Introduction: introduction.md
       - File structure: file-structure.md
+      - Examples: examples.md
       - Third-party code: third-party-code.md
   - For developers:
       - Roadmap: roadmap.md

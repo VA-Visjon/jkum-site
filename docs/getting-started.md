@@ -6,7 +6,7 @@ are established.
 
 | Language | Supported? | Status | Repo |
 | ------------ | ------------- | ------------ | ------------ |
-| C# | :material-check-circle:{ .warning } Yes | In progress | [:material-github: JkumParser](https://github.com/hansmei/JkumParser) |
+| C# | :material-check-circle:{ .success } Yes | Completed | [:material-github: JkumParser](https://github.com/hansmei/JkumParser) |
 | python | :material-close-circle:{ .error } No |  |  |
 
 If you are familiar with any of the non-supported languages and want to contribute,

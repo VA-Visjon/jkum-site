@@ -18,7 +18,7 @@ The structure should be similar to this:
 }
 ```
 
-# Properties
+## Properties
 The `.jkum`-file has two properties at the top level: `head` and `manholes`. In the following, all
 related objects and properties are described.
 
@@ -82,8 +82,8 @@ The `location`-attribute consists of the three properties `east`, `north` and `e
 
 | Property Name | Type | Required | Description |
 | ------- | -------- |-------- | ------ |
-| innerVertices | array<Location> | :material-check-circle:{ .success } | An array of vertices within the EPSG-system as defined in the file `head`-property. |
-| outerVertices | array<Location> | :material-check-circle:{ .success } | An array of vertices within the EPSG-system as defined in the file `head`-property. |
+| innerVertices | array<[Location](#location)> | :material-check-circle:{ .success } | An array of vertices within the EPSG-system as defined in the file `head`-property. |
+| outerVertices | array<[Location](#location)> | :material-check-circle:{ .success } | An array of vertices within the EPSG-system as defined in the file `head`-property. |
 
 ### Lid
 
@@ -122,152 +122,3 @@ The `imageData`-property should consist of at least one of the following data.
 | ------- | -------- |-------- | ------ |
 | base64String | string | :material-close-circle:{ .error } | A base 64 encoded string representing the image. |
 | imageUrl | string | :material-close-circle:{ .error } | A valid url to the location of the file, where it should be available for download. |
-
-
-
-# Minumum file sample
-In order to generate a minimal and valid file, the JKUM-contents should be like this:
-
-
-``` json
-{
-  "head": {
-    "epsg": "25832",
-    "date": "2024-01-20",
-    "author": "Hans Martin Eikerol"
-  },
-  "manholes": [
-    {
-      "guid": "03de0a00-d6c0-4cb4-81bd-8f6ebdfad7a6",
-      "elementId": "556001",
-      "bottomCenter": {
-        "east": 588447.155,
-        "north": 6642743.891,
-        "elevation": 52.714
-      },
-      "shape": "Circular",
-      "diameter": 1600,
-      "width": 0,
-      "length": 0,
-      "rotation": 0,
-      "lids": [
-        {
-          "position": {
-            "east": 588447.155,
-            "north": 6642743.826,
-            "elevation": 55.145
-          },
-          "diameter": 650
-        }
-      ],
-      "links": [
-        {
-          "guid": "3d562553-bb5c-4e40-937d-dffcff9ad885",
-          "elementId": "548861",
-          "medium": "Water",
-          "pressurized": true,
-          "elevation": 53.11,
-          "clockPosition": 20,
-          "diameter": 150
-        },
-        {
-          "guid": "dfd6261e-9f09-45b3-95b2-87c47f104598",
-          "elementId": "548862",
-          "medium": "Water",
-          "pressurized": true,
-          "elevation": 53.11,
-          "clockPosition": 200,
-          "diameter": 150
-        },
-        {
-          "guid": "9ca4244b-32cf-4da7-9cd8-18bb64e65716",
-          "elementId": "548864",
-          "medium": "Water",
-          "pressurized": true,
-          "elevation": 53.11,
-          "clockPosition": 110,
-          "diameter": 150
-        }
-      ]
-    },
-    {
-      "guid": "6cb3f4f6-eb4a-4a34-9e93-b311560752e5",
-      "elementId": "522431",
-      "bottomCenter": {
-        "east": 588429.23,
-        "north": 6642811.51,
-        "elevation": 53.218
-      },
-      "shape": "Rectangular",
-      "diameter": 0,
-      "width": 3000,
-      "length": 1200,
-      "rotation": 20,
-      "lids": [
-        {
-          "position": {
-            "east": 588428.23,
-            "north": 6642811.71,
-            "elevation": 55.16
-          },
-          "diameter": 650,
-          "ladder": "Yes",
-          "classification": "D400"
-        },
-        {
-          "position": {
-            "east": 588430.23,
-            "north": 6642811.31,
-            "elevation": 55.16
-          },
-          "diameter": 650
-        }
-      ],
-      "links": [
-        {
-          "guid": "12d8cf29-ab45-4682-becd-6f8738c5d94a",
-          "medium": "Water",
-          "pressurized": true,
-          "elevation": 53.65,
-          "clockPosition": 20,
-          "diameter": 150
-        },
-        {
-          "guid": "e0bf1aa9-ece5-498e-bd23-ed37db0f58d7",
-          "medium": "Water",
-          "pressurized": true,
-          "elevation": 53.65,
-          "clockPosition": 200,
-          "diameter": 150
-        },
-        {
-          "guid": "afed4879-737c-467a-a6f8-80241b8bfca7",
-          "medium": "Water",
-          "pressurized": true,
-          "elevation": 53.65,
-          "clockPosition": 110,
-          "diameter": 150
-        },
-        {
-          "guid": "5150af2a-156c-4c4f-8cf0-49203513acdc",
-          "medium": "StormWater",
-          "direction": "Ingoing",
-          "pressurized": false,
-          "elevation": 53.11,
-          "clockPosition": 110,
-          "diameter": 160
-        },
-        {
-          "guid": "05cee4d1-e99f-41a9-8c94-305b75cd6afc",
-          "medium": "StormWater",
-          "direction": "Outgoing",
-          "pressurized": false,
-          "elevation": 53.07,
-          "clockPosition": 230,
-          "diameter": 300
-        }
-      ]
-    }
-  ]
-}
-```

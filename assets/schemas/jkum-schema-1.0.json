@@ -1,0 +1,306 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "$id": "http://www.vavisjon.no/jkum/jkum-schema1.0.json",
+  "required": [
+    "head"
+  ],
+  "title": "JSON Schema for the JKUM file format",
+  "type": "object",
+  "definitions": {
+    "head": {
+      "type": "object",
+      "title": "The head of the JKUM file, containing relevant information about the file",
+      "required": [
+        "epsg"
+      ],
+      "properties": {
+        "epsg": {
+          "type": "integer",
+          "default": "",
+          "examples": [
+            25832,
+            25832,
+            5110,
+            5111
+          ],
+          "pattern": "^[0-9]{4,5}$"
+        },
+        "date": {
+          "type": "string",
+          "default": "",
+          "examples": [
+            "2020-01-22"
+          ],
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$"
+        },
+        "author": {
+          "type": "string",
+          "title": "The Author Schema",
+          "default": "",
+          "examples": [
+            "Hans Martin Eikerol"
+          ]
+        }
+      }
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "east": { "type": "number" },
+        "north": { "type": "number" },
+        "elevation": { "type": "number" }
+      },
+      "required": [ "east", "north", "elevation" ]
+    },
+    "guid": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{8}[-]{1}[0-9a-fA-F]{4}[-]{1}[0-9a-fA-F]{4}[-]{1}[0-9a-fA-F]{4}[-]{1}[0-9a-fA-F]{12}$",
+      "examples": [
+        "cc984777-f7fc-475b-9f32-7cafd70a09cb"
+      ]
+    },
+    "lid": {
+      "type": "object",
+      "properties": {
+        "guid": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "position": {
+          "$ref": "#/definitions/location"
+        },
+        "diameter": {
+          "$id": "#/properties/manholes/items/properties/lids/items/properties/diameter",
+          "type": "integer",
+          "examples": [
+            650
+          ]
+        },
+        "ladder": {
+          "type": "string",
+          "default": "Unspecified",
+          "examples": [
+            "Yes"
+          ],
+          "enum": [ "Unspecified", "Yes", "No" ]
+        },
+        "classification": {
+          "type": "string",
+          "default": "Unspecified",
+          "examples": [
+            "D400"
+          ],
+          "enum": [ "Unspecified", "D400", "D700" ]
+        }
+      },
+      "required": [
+        "position",
+        "diameter"
+      ]
+    },
+    "imageData": {
+      "type": "object",
+      "properties": {
+        "base64String": {
+          "type": "string"
+        },
+      },
+      "required": [
+        "base64String"
+      ]
+    },
+    "manhole": {
+      "type": "object",
+      "required": [
+        "guid",
+        "bottomCenter",
+        "lids"
+      ],
+      "properties": {
+        "guid": {
+          "$ref": "#/definitions/guid"
+        },
+        "sid": {
+          "type": "string",
+          "default": "",
+          "examples": [
+            "556001"
+          ]
+        },
+        "bottomCenter": {
+          "$ref": "#/definitions/location"
+        },
+        "shape": {
+          "type": "string",
+          "default": "Circular",
+          "examples": [
+            "Rectangular"
+          ],
+          "enum": [ "Circular", "Rectangular", "Polygon" ]
+        },
+        "material": {
+          "type": "string",
+          "default": "Concrete",
+          "examples": [
+            "Concrete"
+          ],
+          "enum": [ "Concrete", "Bricks", "Plastic", "Rehabilitated", "Other" ]
+        },
+        "diameter": {
+          "type": "integer",
+          "examples": [
+            1600
+          ]
+        },
+        "width": {
+          "type": "integer",
+          "examples": [
+            1200
+          ]
+        },
+        "length": {
+          "type": "integer",
+          "examples": [
+            1600,
+            1400,
+            1200,
+            400
+          ]
+        },
+        "lids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/lid"
+          }
+        },
+        "pipes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/pipeConnection"
+          }
+        },
+        "circumference": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/manholeCircumference"
+          }
+        },
+        "imageData": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/imageData"
+          }
+        }
+      }
+    },
+    "manholeCircumference": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "innerVertices": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/location"
+          }
+        },
+        "outerVertices": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/location"
+          }
+        }
+      }
+    },
+    "pipeConnection": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "guid": {
+          "$ref": "#/definitions/guid"
+        },
+        "sid": {
+          "type": "string",
+          "examples": [
+            "548861"
+          ]
+        },
+        "medium": {
+          "type": "string",
+          "title": "The medium transported in the pipe",
+          "examples": [
+            "Water",
+            "Sewer",
+            "Storm water",
+            "Drain"
+          ],
+          "enum": [ "Water", "Sewer", "Storm water", "Drain" ]
+        },
+        "direction": {
+          "type": "string",
+          "title": "The assumed flow direction of the pipe contents",
+          "examples": [
+            "Ingoing"
+          ],
+          "enum": [ "Ingoing", "Outgoing" ]
+        },
+        "pressurized": {
+          "type": "boolean",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "elevation": {
+          "type": "number",
+          "examples": [
+            53.11
+          ]
+        },
+        "clockPosition": {
+          "type": "integer",
+          "title": "The Clockposition Schema",
+          "examples": [
+            20
+          ],
+          "pattern": "^[0-3][0-9]?[0-9]?$"
+        },
+        "diameter": {
+          "type": "integer",
+          "examples": [
+            150
+          ]
+        }
+      },
+      "required": [
+        "guid",
+        "pressurized",
+        "elevation",
+        "clockPosition",
+        "diameter"
+      ]
+    }
+  },
+  "properties": {
+    "head": {
+      "$ref": "#/definitions/head"
+    },
+    "manholes": {
+      "type": [ "array", "null" ],
+      "items": {
+        "$ref": "#/definitions/manhole"
+      }
+    }
+  }
+}

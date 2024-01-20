@@ -14,26 +14,28 @@ Here you will find all relevant information about the requirements and possibili
         <meta name="author" content="Hans Martin Eikerol">
       
       
-        <link rel="canonical" href="https://hansmei.github.io/jkum-site/">
+        <link rel="canonical" href="https://hansmei.github.io/jkum-site/examples/">
       
       
+        <link rel="prev" href="../file-structure/">
       
-        <link rel="next" href="introduction/">
+      
+        <link rel="next" href="../third-party-code/">
       
       
-      <link rel="icon" href="assets/images/sandfang.png">
+      <link rel="icon" href="../assets/images/sandfang.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
-        <title>JKUM file format - JKUM</title>
+        <title>Examples - JKUM</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,9 +54,9 @@ Here you will find all relevant information about the requirements and possibili
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -79,6 +81,11 @@ Here you will find all relevant information about the requirements and possibili
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#examples" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -89,9 +96,9 @@ Here you will find all relevant information about the requirements and possibili
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="JKUM" class="md-header__button md-logo" aria-label="JKUM" data-md-component="logo">
+    <a href=".." title="JKUM" class="md-header__button md-logo" aria-label="JKUM" data-md-component="logo">
       
-  <img src="assets/images/sandfang.png" alt="logo">
+  <img src="../assets/images/sandfang.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -108,7 +115,7 @@ Here you will find all relevant information about the requirements and possibili
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              JKUM file format
+              Examples
             
           </span>
         </div>
@@ -210,7 +217,6 @@ Here you will find all relevant information about the requirements and possibili
     <div class="md-container" data-md-component="container">
       
       
-  
         
           
             
@@ -221,11 +227,9 @@ Here you will find all relevant information about the requirements and possibili
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
         
   
     
@@ -240,11 +244,13 @@ Here you will find all relevant information about the requirements and possibili
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="introduction/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../introduction/" class="md-tabs__link">
           
   
     
@@ -264,7 +270,7 @@ Here you will find all relevant information about the requirements and possibili
     
     
       <li class="md-tabs__item">
-        <a href="roadmap/" class="md-tabs__link">
+        <a href="../roadmap/" class="md-tabs__link">
           
   
     
@@ -284,7 +290,7 @@ Here you will find all relevant information about the requirements and possibili
     
     
       <li class="md-tabs__item">
-        <a href="schemas/jkum-schema-1.0/" class="md-tabs__link">
+        <a href="../schemas/jkum-schema-1.0/" class="md-tabs__link">
           
   
     
@@ -303,60 +309,6 @@ Here you will find all relevant information about the requirements and possibili
           
         
       
-  <style>.md-header{position:initial}.md-main__inner{margin:0}.md-content{display:none}@media screen and (min-width:60em){.md-sidebar--secondary{display:none}}@media screen and (min-width:76.25em){.md-sidebar--primary{display:none}}</style>
-  <section class="mdx-container home-bg">
-    <div class="md-grid md-typeset">
-      <div class="mdx-hero home-hero">
-        <div class="mdx-hero__content home-hero-content">
-          <h1>JKUM file format</h1>
-          <h4>Transporting manhole data in a way that just works</h4>
-          <p>A brand new system description for establishing data flow related to manhole data across applications. Based on the well-established JSON-file format to allow integrations for web-based applications as well.
-
-Here you will find all relevant information about the requirements and possibilities of this file format, and you can validate your files..</p>
-          <a href="introduction/" title="Introduction" class="md-button md-button--primary">
-            Quick start
-          </a>
-          <!---<a href="validate-file/" title="Validate your JKUM-file" class="md-button">
-            Validate JKUM-file
-          </a>--->
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="mdx-container dark-banner">
-    <div class="banner-content">
-      <h3>JKUM</h3>
-      <p><span class="phonetic">['dʒɛi'kom]</span> - from the Norwegian word "kum" - meaning manhole</p>
-    </div>
-  </section>
-
-  <section class="mdx-container">
-    <div class="md-grid md-typeset">
-      <div class="md-content__inner" style="display: flex;">
-
-        <div class="my-block">
-          <h2>Kumkort</h2>
-          <h4>- A blessing and a curse</h4>
-          <p>We really need a better alternative than sending PDFs and Excel spreadsheets around
-          in order to understand what is happening underground. The <code>.jkum</code> file format is coming
-            to the rescue!</p>
-
-
-        </div>
-          <figure class="mdx-spotlight__feature">
-            <div class="mdx-hero__image">
-              <img src="assets/images/kumkort-sample2.png" alt="" width="400" draggable="false">
-            </div>-
-            <figcaption class="md-typeset">
-              <p>A sample of "kumkort", the way it is currently used. This we want to improve!</p>
-            </figcaption>
-          </figure>
-      </div>
-    </div>
-  </section>
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
@@ -373,9 +325,9 @@ Here you will find all relevant information about the requirements and possibili
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="JKUM" class="md-nav__button md-logo" aria-label="JKUM" data-md-component="logo">
+    <a href=".." title="JKUM" class="md-nav__button md-logo" aria-label="JKUM" data-md-component="logo">
       
-  <img src="assets/images/sandfang.png" alt="logo">
+  <img src="../assets/images/sandfang.png" alt="logo">
 
     </a>
     JKUM
@@ -399,17 +351,10 @@ Here you will find all relevant information about the requirements and possibili
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -418,7 +363,6 @@ Here you will find all relevant information about the requirements and possibili
   
 
       </a>
-      
     </li>
   
 
@@ -427,8 +371,10 @@ Here you will find all relevant information about the requirements and possibili
       
   
   
+    
   
   
+  
     
     
       
@@ -447,12 +393,12 @@ Here you will find all relevant information about the requirements and possibili
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -466,7 +412,7 @@ Here you will find all relevant information about the requirements and possibili
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Getting started
@@ -480,7 +426,7 @@ Here you will find all relevant information about the requirements and possibili
   
   
     <li class="md-nav__item">
-      <a href="introduction/" class="md-nav__link">
+      <a href="../introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -501,7 +447,7 @@ Here you will find all relevant information about the requirements and possibili
   
   
     <li class="md-nav__item">
-      <a href="file-structure/" class="md-nav__link">
+      <a href="../file-structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -519,10 +465,30 @@ Here you will find all relevant information about the requirements and possibili
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="examples/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -531,6 +497,35 @@ Here you will find all relevant information about the requirements and possibili
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#minumum-file-sample" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minumum file sample
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -543,7 +538,7 @@ Here you will find all relevant information about the requirements and possibili
   
   
     <li class="md-nav__item">
-      <a href="third-party-code/" class="md-nav__link">
+      <a href="../third-party-code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -617,7 +612,7 @@ Here you will find all relevant information about the requirements and possibili
   
   
     <li class="md-nav__item">
-      <a href="roadmap/" class="md-nav__link">
+      <a href="../roadmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -638,7 +633,7 @@ Here you will find all relevant information about the requirements and possibili
   
   
     <li class="md-nav__item">
-      <a href="getting-started/" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -710,7 +705,7 @@ Here you will find all relevant information about the requirements and possibili
   
   
     <li class="md-nav__item">
-      <a href="schemas/jkum-schema-1.0/" class="md-nav__link">
+      <a href="../schemas/jkum-schema-1.0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -748,6 +743,25 @@ Here you will find all relevant information about the requirements and possibili
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#minumum-file-sample" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minumum file sample
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -758,6 +772,66 @@ Here you will find all relevant information about the requirements and possibili
           
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/hansmei/jkum-site/edit/master/docs/examples.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/hansmei/jkum-site/raw/master/docs/examples.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
+<p>This page comprise a few sample files that will be counted as valid files within
+the JKUM file format.</p>
+<h2 id="minumum-file-sample">Minumum file sample<a class="headerlink" href="#minumum-file-sample" title="Permanent link">&para;</a></h2>
+<p>In order to generate a minimal and valid file, the JKUM-contents should be like this:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;head&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;epsg&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">25832</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;manholes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;03de0a00-d6c0-4cb4-81bd-8f6ebdfad7a6&quot;</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nt">&quot;shape&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Circular&quot;</span><span class="p">,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="nt">&quot;diameter&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1600</span><span class="p">,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">&quot;lids&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">          </span><span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;216e1618-bdf4-4ade-8Bg9-h9BBs34df115&quot;</span><span class="p">,</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">          </span><span class="nt">&quot;position&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">588447.155</span><span class="p">,</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">6642743.826</span><span class="p">,</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">            </span><span class="nt">&quot;elevation&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">55.145</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">          </span><span class="p">}</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">      </span><span class="p">]</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">}</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
                 
               </article>
             </div>
@@ -774,16 +848,78 @@ Here you will find all relevant information about the requirements and possibili
         
       </main>
       
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../file-structure/" class="md-footer__link md-footer__link--prev" aria-label="Previous: File structure">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                File structure
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../third-party-code/" class="md-footer__link md-footer__link--next" aria-label="Next: Third-party code">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Third-party code
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 - 2024 Hans Martin Eikerol
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.7389ff0e.min.js"></script>
+      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
   </body>

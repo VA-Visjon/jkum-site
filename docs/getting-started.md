@@ -1,4 +1,9 @@
 # Getting started
+The schema definition files for this standard can be downloaded here:
+
+| Schema definition | Status | File |
+| ------------ | ------------- | ------------ |
+| JKUM Version 1.0 | Current | [Version 1.0](https://www.jkum.info/assets/schemas/jkum-schema-1.0.json) |
 
 The project roadmap describes a goal of establishing open-source parsers for the
 JKUM-file format for lots of different programming languages. Currently, only a few
@@ -13,7 +18,7 @@ If you are familiar with any of the non-supported languages and want to contribu
 feel free to drop an email to `kontakt@vavisjon.no` about it or submit a pull request, and
 we will add it here.
 
-# Relevant software
+## Relevant software
 There will be apps and software solutions that will build upon this standard. This is a 
 summarized list of softwares and solutions utilizing the JKUM-standard.
 

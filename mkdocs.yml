@@ -130,8 +130,8 @@ nav:
       - Examples: examples.md
       - Third-party code: third-party-code.md
   - For developers:
-      - Roadmap: roadmap.md
       - Getting started: getting-started.md
+      - Roadmap: roadmap.md
   - Schemas:
       - Current version: schemas/jkum-schema-1.0.md
 

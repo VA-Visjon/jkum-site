@@ -11,5 +11,5 @@ mkdocs gh-deploy --force
 Run the following in order to build all `.md`-contents for the current schemas:
 
 ```
-generate-schema-doc --config-file .\jsfh-conf.yaml .\schemas .\docs\schemas\
+generate-schema-doc --config-file .\jsfh-conf.yaml .\docs\assets\schemas\ .\docs\schemas\
 ```

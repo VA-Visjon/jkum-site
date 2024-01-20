@@ -4,38 +4,29 @@
   "required": [
     "head"
   ],
-  "title": "JKUM 1.0",
-  "description": "A file standard for transporting information about manhole data",
+  "title": "JSON Schema for the JKUM file format",
   "type": "object",
-  "additionalProperties": false,
   "definitions": {
     "head": {
       "type": "object",
-      "examples": [
-        {
-          "epsg": 28532,
-          "date": "2024-01-17",
-          "author": "Hans Martin Eikerol"
-        }
-      ],
       "title": "The head of the JKUM file, containing relevant information about the file",
       "required": [
         "epsg"
       ],
-      "additionalProperties": false,
       "properties": {
         "epsg": {
           "type": "integer",
-          "description": "A valid EPSG code, see www.epsg.io for reference.",
           "default": "",
           "examples": [
-            25832, 25833, 5110, 5111
+            25832,
+            25832,
+            5110,
+            5111
           ],
           "pattern": "^[0-9]{4,5}$"
         },
         "date": {
           "type": "string",
-          "description": "A valid date on the ISO 8601-format: YYYY-MM-DD",
           "default": "",
           "examples": [
             "2020-01-22"
@@ -44,7 +35,7 @@
         },
         "author": {
           "type": "string",
-          "description": "The name of the company or author of the file",
+          "title": "The Author Schema",
           "default": "",
           "examples": [
             "Hans Martin Eikerol"
@@ -109,6 +100,17 @@
         "diameter"
       ]
     },
+    "imageData": {
+      "type": "object",
+      "properties": {
+        "base64String": {
+          "type": "string"
+        },
+      },
+      "required": [
+        "base64String"
+      ]
+    },
     "manhole": {
       "type": "object",
       "required": [
@@ -120,7 +122,7 @@
         "guid": {
           "$ref": "#/definitions/guid"
         },
-        "elementId": {
+        "sid": {
           "type": "string",
           "default": "",
           "examples": [
@@ -161,16 +163,10 @@
         "length": {
           "type": "integer",
           "examples": [
-            1600
-          ]
-        },
-        "rotation": {
-          "type": "integer",
-          "title": "Clockwise cone or rectangular manhole rotation",
-          "description": "The rotation on a clock dial in degrees (0 - 360), starting at 12 O'clock, with positive numbers going clockwise",
-          "default": 0,
-          "examples": [
-            120
+            1600,
+            1400,
+            1200,
+            400
           ]
         },
         "lids": {
@@ -179,16 +175,22 @@
             "$ref": "#/definitions/lid"
           }
         },
-        "links": {
+        "pipes": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/manholeLink"
+            "$ref": "#/definitions/pipeConnection"
           }
         },
         "circumference": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/manholeCircumference"
+          }
+        },
+        "imageData": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/imageData"
           }
         }
       }
@@ -219,7 +221,7 @@
         }
       }
     },
-    "manholeLink": {
+    "pipeConnection": {
       "type": [
         "object",
         "null"
@@ -228,7 +230,7 @@
         "guid": {
           "$ref": "#/definitions/guid"
         },
-        "elementId": {
+        "sid": {
           "type": "string",
           "examples": [
             "548861"
@@ -238,8 +240,12 @@
           "type": "string",
           "title": "The medium transported in the pipe",
           "examples": [
-            "Water"
-          ]
+            "Water",
+            "Sewer",
+            "Storm water",
+            "Drain"
+          ],
+          "enum": [ "Water", "Sewer", "Storm water", "Drain" ]
         },
         "direction": {
           "type": "string",
@@ -247,7 +253,7 @@
           "examples": [
             "Ingoing"
           ],
-          "enum": [ "Ingoing", "Outgoing"]
+          "enum": [ "Ingoing", "Outgoing" ]
         },
         "pressurized": {
           "type": "boolean",

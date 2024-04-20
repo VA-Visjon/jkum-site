@@ -1,5 +1,11 @@
 # jkum-site
 
+## Development
+The main bulk of the documentation is built with mkdocs. In order to run development, use:
+```
+mkdocs serve
+```
+
 ## Deployment
 
 Run the following in order to push updates to the site:

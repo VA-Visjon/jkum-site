@@ -1,6 +1,6 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "$id": "http://www.vavisjon.no/jkum/jkum-schema1.0.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/VA-Visjon/jkum-site/main/docs/assets/schemas/jkum-schema-1.0.json",
   "required": [
     "head"
   ],
@@ -22,8 +22,7 @@
             25832,
             5110,
             5111
-          ],
-          "pattern": "^[0-9]{4,5}$"
+          ]
         },
         "date": {
           "type": "string",
@@ -105,7 +104,7 @@
       "properties": {
         "base64String": {
           "type": "string"
-        },
+        }
       },
       "required": [
         "base64String"
@@ -269,18 +268,20 @@
           ]
         },
         "clockPosition": {
-          "type": "integer",
+          "type": "number",
           "title": "The Clockposition Schema",
           "examples": [
             20
           ],
-          "pattern": "^[0-3][0-9]?[0-9]?$"
+          "minimum": 0,
+          "exclusiveMaximum": 360
         },
         "diameter": {
           "type": "integer",
           "examples": [
             150
-          ]
+          ],
+          "description": "Should reflect the diameter of the pipe in millimeters"
         }
       },
       "required": [

@@ -1,0 +1,157 @@
+.map-wrapper {
+    display: block;
+    position:relative;
+    height: 100%;
+    flex-grow: 1;
+    background-color: red;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  border: 1px dashed gray;
+  margin: 0px;
+  padding: 20px;
+  min-height: 500px;
+}
+
+.report-container {
+  display: flex;
+  flex-direction: column;
+
+
+    .report-header {
+        margin:0;
+    }
+
+    .report-info {
+        margin:0;
+        border-bottom: 1px dotted gray;
+    }
+}
+
+.report-container > div {
+  display: block;
+  width: 100%;
+}
+
+.alert-error {
+    padding: 20px;
+    margin-top: 10px;
+    width: 100%;
+    display: none;
+    background-color: #ffcccc;
+    color: red;
+    border: 1px solid red;
+}
+
+.alert-warning {
+    padding: 20px;
+    margin-top: 10px;
+    width: 100%;
+    display: none;
+    background-color: #ffffcc;
+    color: orange;
+    border: 1px solid orange;
+}
+
+.alert-success {
+    padding: 20px;
+    margin-top: 10px;
+    width: 100%;
+    display: none;
+    background-color: #ccffcc;
+    color: green;
+    border: 1px solid green;
+}
+
+.validation {
+
+    h4.validation-header {
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px dotted gray;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.key {
+  color: red;
+}
+.number {
+  color: darkorange;
+}
+.string {
+  color: green;
+}
+.boolean {
+  color: blue;
+}
+.null {
+  color: magenta;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}

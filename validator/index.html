@@ -14,22 +14,28 @@ Here you will find all relevant information about the requirements and possibili
         <meta name="author" content="Hans Martin Eikerol">
       
       
+        <link rel="canonical" href="https://www.jkum.info/validator/">
       
       
+        <link rel="prev" href="..">
       
-      <link rel="icon" href="/assets/images/sandfang.png">
+      
+        <link rel="next" href="../introduction/">
+      
+      
+      <link rel="icon" href="../assets/images/sandfang.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
-        <title>JKUM</title>
+        <title>JKUM validator - JKUM</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,22 +54,22 @@ Here you will find all relevant information about the requirements and possibili
       
     
     
-      <link rel="stylesheet" href="/stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="/stylesheets/validator.css">
+      <link rel="stylesheet" href="../stylesheets/validator.css">
     
-      <link rel="stylesheet" href="/stylesheets/forms.css">
+      <link rel="stylesheet" href="../stylesheets/forms.css">
     
-      <link rel="stylesheet" href="/stylesheets/drag-and-drop.css">
+      <link rel="stylesheet" href="../stylesheets/drag-and-drop.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-<!--  <link rel="stylesheet" href="/assets/stylesheets/custom.00c04c01.min.css">-->
+<!--  <link rel="stylesheet" href="../assets/stylesheets/custom.00c04c01.min.css">-->
 
   </head>
   
@@ -116,9 +122,9 @@ Here you will find all relevant information about the requirements and possibili
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="JKUM" class="md-header__button md-logo" aria-label="JKUM" data-md-component="logo">
+    <a href=".." title="JKUM" class="md-header__button md-logo" aria-label="JKUM" data-md-component="logo">
       
-  <img src="/assets/images/sandfang.png" alt="logo">
+  <img src="../assets/images/sandfang.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -135,7 +141,7 @@ Here you will find all relevant information about the requirements and possibili
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              JKUM validator
             
           </span>
         </div>
@@ -237,6 +243,7 @@ Here you will find all relevant information about the requirements and possibili
     <div class="md-container" data-md-component="container">
       
       
+  
         
           
             
@@ -249,7 +256,7 @@ Here you will find all relevant information about the requirements and possibili
   
   
     <li class="md-tabs__item">
-      <a href="/." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
     
@@ -264,9 +271,11 @@ Here you will find all relevant information about the requirements and possibili
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="/validator/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -285,7 +294,7 @@ Here you will find all relevant information about the requirements and possibili
     
     
       <li class="md-tabs__item">
-        <a href="/introduction/" class="md-tabs__link">
+        <a href="../introduction/" class="md-tabs__link">
           
   
     
@@ -305,7 +314,7 @@ Here you will find all relevant information about the requirements and possibili
     
     
       <li class="md-tabs__item">
-        <a href="/file-structure/" class="md-tabs__link">
+        <a href="../file-structure/" class="md-tabs__link">
           
   
     
@@ -341,6 +350,119 @@ Here you will find all relevant information about the requirements and possibili
           
         
       
+  <section class="mdx-container validator-bg">
+    <div class="banner-content">
+      <h3 class="text-shadow">Validate your JKUM file</h3>
+      <p class="text-shadow">Upload your file and test it against one of the schema definition files in the valid standard.</p>
+
+<!--      <div id="safeTimer">-->
+<!--        <p id="safeTimerDisplay">00:00</p>-->
+<!--      </div>-->
+      <div class="md-grid">
+        <form class="box" method="post" action="" enctype="multipart/form-data" style="cursor: pointer;" onclick="document.getElementById('file').click();">
+          <div class="box__input" >
+            <input class="box__file" type="file" name="files[]" id="file" />
+            <label><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+            <button class="box__button" type="submit">Upload</button>
+          </div>
+        </form>
+        <div class="grid">
+          <label class="card">
+            <input name="schema" class="radio" type="radio" value="jkum-schema-1.0.json" checked/>
+
+            <span class="card-contents">
+              <span class="card-type">JKUM</span>
+              <span class="card-header">Standard</span>
+              <span class="file-name">jkum-schema-1.0.json</span>
+              <span>The JKUM standard at its core. No use-specific requirements</span>
+            </span>
+          </label>
+          <label class="card">
+            <input name="schema" class="radio" type="radio" value="jkum-basal-schema-1.0.json" />
+            <span class="card-contents" aria-hidden="true">
+              <span class="card-type">Basal</span>
+              <span class="card-header">Kumfigurator API</span>
+              <span class="file-name">jkum-basal-schema-1.0.json</span>
+              <span>Schema definition for requirements related to API kumfigurator.</span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mdx-container" id="sidebar-main" style="position:relative;">
+    <!-- <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div> -->
+    <div class="md-grid">
+      <div class="md-content__inner">
+        <div class="flex-container md-typeset">
+          <!-- <div>
+            <button class="openbtn" onclick="toggleNav()">☰ Open Sidebar</button><br />
+          </div> -->
+          <div style="width: 50%;">
+            <button class="undoredo-btn" onclick="undoEdit();" id="undo">
+              <span class="twemoji">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8Z"/></svg>
+              </span>
+            </button>
+            <button class="undoredo-btn" onclick="redoEdit();" id="redo">
+              <span class="twemoji">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.4 10.6C16.55 9 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16a8.002 8.002 0 0 1 7.6-5.5c1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6Z"/></svg>
+              </span>
+            </button>
+            <button class="md-button" onclick="formatContents();">Prettify</button>
+            <button class="md-button" onclick="validateSchema();">Validate</button>
+            <div class="alert-error" id="formatting_error"></div>
+            <pre class="md-jsonarea" id="upload_file_presentation" oninput="updateRaw()" spellcheck="false" contenteditable>
+{
+  "head": {
+    "epsg": 25832
+  },
+  "manholes": [
+    {
+      "guid": "03de0a00-d6c0-4cb4-81bd-8f6ebdfad7a6",
+      "shape": "Circular",
+      "diameter": 1600,
+      "bottomCenter": {
+        "east": 588447.01,
+        "north": 6642743.66,
+        "elevation": 53.04
+      },
+      "lids": [
+        {
+          "guid": "216e1618-bdf4-4ade-8Bg9-h9BBs34df115",
+          "diameter": 650,
+          "position": {
+            "east": 588447.155,
+            "north": 6642743.826,
+            "elevation": 55.145
+          }
+        }
+      ]
+    }
+  ]
+}
+            </pre>
+            <textarea style="display: none;" id="upload_file"></textarea>
+          </div>
+          <div class="report-container" style="width: 50%;">
+            <h2 class="report-header">Validation report</h2>
+            <p class="report-info">Run Validate in order to process the JSON-contents</p>
+            <div class="report-container" id="schema-report">
+            </div>
+          </div>
+    <!--      <div id="map" class="map-wrapper" />-->
+        </div>
+      </div>
+    </div>
+  </section>
+
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
@@ -357,9 +479,9 @@ Here you will find all relevant information about the requirements and possibili
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="JKUM" class="md-nav__button md-logo" aria-label="JKUM" data-md-component="logo">
+    <a href=".." title="JKUM" class="md-nav__button md-logo" aria-label="JKUM" data-md-component="logo">
       
-  <img src="/assets/images/sandfang.png" alt="logo">
+  <img src="../assets/images/sandfang.png" alt="logo">
 
     </a>
     JKUM
@@ -386,7 +508,7 @@ Here you will find all relevant information about the requirements and possibili
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -403,10 +525,17 @@ Here you will find all relevant information about the requirements and possibili
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/validator/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -415,6 +544,7 @@ Here you will find all relevant information about the requirements and possibili
   
 
       </a>
+      
     </li>
   
 
@@ -472,7 +602,7 @@ Here you will find all relevant information about the requirements and possibili
   
   
     <li class="md-nav__item">
-      <a href="/introduction/" class="md-nav__link">
+      <a href="../introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -493,7 +623,7 @@ Here you will find all relevant information about the requirements and possibili
   
   
     <li class="md-nav__item">
-      <a href="/file-downloads/" class="md-nav__link">
+      <a href="../file-downloads/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -571,7 +701,7 @@ Here you will find all relevant information about the requirements and possibili
   
   
     <li class="md-nav__item">
-      <a href="/file-structure/" class="md-nav__link">
+      <a href="../file-structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -592,7 +722,7 @@ Here you will find all relevant information about the requirements and possibili
   
   
     <li class="md-nav__item">
-      <a href="/examples/" class="md-nav__link">
+      <a href="../examples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -613,7 +743,7 @@ Here you will find all relevant information about the requirements and possibili
   
   
     <li class="md-nav__item">
-      <a href="/roadmap/" class="md-nav__link">
+      <a href="../roadmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -634,7 +764,7 @@ Here you will find all relevant information about the requirements and possibili
   
   
     <li class="md-nav__item">
-      <a href="/third-party-code/" class="md-nav__link">
+      <a href="../third-party-code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -703,8 +833,6 @@ Here you will find all relevant information about the requirements and possibili
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
-
               </article>
             </div>
           
@@ -722,6 +850,44 @@ Here you will find all relevant information about the requirements and possibili
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../introduction/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Introduction
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -750,11 +916,12 @@ Here you will find all relevant information about the requirements and possibili
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "/assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
   
-      <script src="/assets/javascripts/bundle.7389ff0e.min.js"></script>
+  
+      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
     <script type="text/javascript" src="/assets/javascripts/neatjson.js"></script>
@@ -765,6 +932,48 @@ Here you will find all relevant information about the requirements and possibili
             }
         }
     </script>
+
+  <script src="../assets/javascripts/json-highlighting.js"></script>
+  <script src="../assets/javascripts/drag-and-drop.js"></script>
+  <script type="module" src="../assets/javascripts/m.json-validator.js"></script>
+  <script src="../assets/javascripts/json-validate.js"></script>
+  <script src="../assets/javascripts/json-editor.js"></script>
+
+  <script>
+    // From drag-and-drop
+    document$.subscribe(initDragAndDrop)
+    // To expose modules
+    const modules = {};
+  </script>
+
+  <script>
+  let isOpen = false;
+  function toggleNav() {
+    if(isOpen){
+      closeNav();
+    }
+    else {
+      openNav();
+    }
+    isOpen = !isOpen;
+  }
+
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("sidebar-main").style.marginLeft = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("sidebar-main").style.marginLeft= "0";
+  }
+
+  </script>
+
+  <script type="module">
+    import { validateJson } from "/assets/javascripts/m.json-validator.js";
+    modules.validateJson = validateJson;
+  </script>
 
   </body>
 </html>

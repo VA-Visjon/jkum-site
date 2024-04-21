@@ -11,6 +11,29 @@
   background-size: cover;
 }
 
+.validator-bg {
+  background-image: url("../assets/images/validator.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 50px 0px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+
+}
+
+.text-shadow {
+  text-shadow: 0 0 0.2rem #211d2dcc;
+}
+
 .dark-banner {
   background: #333333;
   padding: 100px 0px;

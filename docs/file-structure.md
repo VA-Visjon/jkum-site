@@ -49,6 +49,8 @@ The properties for manholes are listed in this table.
 | sid | string | :material-close-circle:{ .error } | A unique ID commonly used in mapping systems. Enables a better human-readable ID for the object. |
 | bottomCenter | [Location](#location) | :material-close-circle:{ .error } | The position of the centerpoint of the manhole construction at its bottom center. |
 | shape | string | :material-close-circle:{ .error } | The shape of the Manhole, one of: Circular, Rectangular or Polygon. |
+| topSolution | string | :material-close-circle:{ .error } | The solution applied for the top part of the manhole, one of:  `Cone`, `Top plate`, `Cast removable`, `Cast not removable`, `Unknown` |
+| material | string | :material-close-circle:{ .error } | The material of the pipe in the connection. Enum restricted to predefined values. |
 | lids | array<[Lid](#lid)> | :material-check-circle:{ .success } | An array of Lid objects. Contains an array of Lids, since some manholes may have more than one Lid. |
 | pipes | array<[PipeConnection](#pipeconnection)> | :material-close-circle:{ .error } | An array of PipeConnection objects. |
 | imageData | array<[ImageData](#imagedata)> | :material-close-circle:{ .error } | An array of ImageData objects. |
@@ -97,7 +99,7 @@ The `location`-attribute consists of the three properties `east`, `north` and `e
 | ------- | -------- |-------- | ------ |
 | guid | GUID | :material-check-circle:{ .success } | A unique system-generated GUID for future reference and identification for the object. |
 | position | [Location](#location) | :material-check-circle:{ .success } | The position of the center point of the lid in the terrain. |
-| diameter | integer | :material-close-circle:{ .error } | The manhole inner diameter in millimeters. |
+| diameter | integer | :material-close-circle:{ .error } | The manhole lid diameter in millimeters. Measured as lid size, not outer ring size. |
 | ladder | string | :material-close-circle:{ .error } | If there is a ladder: `Yes`, otherwise `No`. Defaults to `Unspecified` in the absence of the property. |
 | classification | string | :material-close-circle:{ .error } | Details of the lid type, one of: `Unspecified`, `D400`, `D700` |
 
@@ -114,6 +116,7 @@ connector points that can be seen from inside the manhole.
 | sid | string | :material-close-circle:{ .error } | A unique ID commonly used in mapping systems. Enables a better human-readable ID for the object. |
 | medium | string | :material-close-circle:{ .error } | The medium transported in the pipe. Must be one of the following: `Water`, `Sewer`, `Storm water`, `Drain` |
 | direction | string | :material-close-circle:{ .error } | The assumed flow direction of the pipe contents. Must be one of the following: `Ingoing`, `Outgoing` |
+| material | string | :material-close-circle:{ .error } | The material of the pipe in the connection. Enum restricted to predefined values. |
 | pressurized | boolean | :material-close-circle:{ .error } | If the pipe is a pressurized system. |
 | elevation | float | :material-close-circle:{ .error } | The real-world elevation coordinate for the pipe connection. |
 | clockPosition | integer | :material-close-circle:{ .error } | The location of the pipe as seen inside the manhole, oriented clockwise from between 0 and 359 degrees relative to north. |

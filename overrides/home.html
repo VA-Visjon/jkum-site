@@ -9,15 +9,31 @@
     <div class="md-grid md-typeset">
       <div class="mdx-hero home-hero">
         <div class="mdx-hero__content home-hero-content">
-          <h1>JKUM file format</h1>
-          <h4>Transporting manhole data in a way that just works</h4>
-          <p>{{ config.site_description }}.</p>
-          <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}" class="md-button md-button--primary">
-            Quick start
-          </a>
-          <!---<a href="{{ 'validate-file/' | url }}" title="Validate your JKUM-file" class="md-button">
-            Validate JKUM-file
-          </a>--->
+          <div class="home-hero-left">
+            <h1>JKUM file format</h1>
+            <h4>Transporting manhole data in a way that just works</h4>
+            <p>{{ config.site_description }}.</p>
+            <a href="{{ 'introduction/' | url }}" title="Getting started" class="md-button md-button--primary">
+              Getting started
+            </a>
+          </div>
+          <div class="home-hero-right">
+            <h2>Get Started</h2>
+
+            <a href="{{ 'validator/' | url }}" title="Validate your JKUM-file" class="md-button mb-2">
+              <span class="twemoji">
+                {% include ".icons/material/attachment-check.svg" %}
+              </span>
+              Validate JKUM-file
+            </a>
+            <a href="{{ 'file-downloads/' | url }}" title="Downloads" class="md-button mb-2">
+              <span class="twemoji">
+                {% include ".icons/material/download.svg" %}
+              </span>
+              Downloads
+            </a>
+<!--            <img src="/assets/images/map-with-markers.png" />-->
+          </div>
 
         </div>
       </div>

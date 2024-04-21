@@ -67,7 +67,7 @@ In order to generate a minimal and valid file, the JKUM-contents should be like 
             "north": 6642743.826,
             "elevation": 55.145
           },
-          "diameter": 650
+          "diameter": "650"
         }
       ],
       "pipeConnections": [

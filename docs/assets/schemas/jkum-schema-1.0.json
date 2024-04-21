@@ -72,10 +72,11 @@
         },
         "diameter": {
           "$id": "#/properties/manholes/items/properties/lids/items/properties/diameter",
-          "type": "integer",
+          "type": "string",
           "examples": [
-            650
-          ]
+            "400", "650", "800"
+          ],
+          "enum": [ "400", "650", "800" ]
         },
         "ladder": {
           "type": "string",
@@ -138,6 +139,12 @@
             "Rectangular"
           ],
           "enum": [ "Circular", "Rectangular", "Polygon" ]
+        },
+        "topSolution": {
+          "type": "string",
+          "default": "Cone",
+          "examples": ["Cone", "Top plate" ],
+          "enum": [ "Cone", "Top plate", "Cast removable", "Cast not removable", "Unknown" ]
         },
         "material": {
           "type": "string",
@@ -253,6 +260,15 @@
             "Ingoing"
           ],
           "enum": [ "Ingoing", "Outgoing" ]
+        },
+        "material": {
+          "type": "string",
+          "default": "PVC",
+          "examples": [
+            "PVC",
+            "PE"
+          ],
+          "enum": [ "Concrete", "PVC", "PE", "Cast iron", "Ductile iron", "Asbestos", "Glassfiber", "Other" ]
         },
         "pressurized": {
           "type": "boolean",

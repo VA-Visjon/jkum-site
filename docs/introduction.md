@@ -11,7 +11,7 @@ of what can be seen inside a manhole when opening it.
     There are several file formats, but none that covers all the requirements we've
     identified in our works with this standard.
     
-The [JKUM Schema Definitions](/file-downloads/#file-downloads) will make sure you can validate
+The [JKUM Schema Definitions](file-downloads.md#file-downloads) will make sure you can validate
 any file according to allowed values, and if your produced `.jkum`-files adhere to
 the standard.
 

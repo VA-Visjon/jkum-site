@@ -1,8 +1,12 @@
+
 .home-bg {
-  background-image: url("../assets/images/two-inspectors-darker.png");
+  background: linear-gradient(
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.4)
+        ), url("../assets/images/two-inspectors-in-yellow.png");
 
   /* Full height */
-  height: 100%;
+  min-height: 85vh;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -53,18 +57,53 @@
 }
 
 .home-hero {
-    min-height: 100vh;
-    padding: 200px 50px;
+    min-height: 90vh;
+    padding: 150px 50px;
 }
 
 .home-hero-content {
   color: white;
   text-shadow: 0 0 0.2rem #211d2dcc;
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width:720px) {
+    .home-hero {
+        padding: 50px 50px;
+    }
+  .home-hero-content  { flex-wrap: wrap;  }
+  .home-hero-content > div { flex-basis: 100%; }
+}
+
+.home-hero-content > div {
+    width: 50%;
+}
+
+.home-hero-left {
+  background-color: #000000aa;
+  padding: 20px;
+}
+
+.home-hero-right {
+  background-color: #333333aa;
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.7)
+        ), url("../assets/images/map-with-markers.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .home-hero-content h1 {
   color: white;
   text-shadow: 0 0 0.2rem #211d2dcc;
+}
+
+.mb-2 {
+    margin-bottom: 20px;
 }
 
 .success {

@@ -331,23 +331,6 @@ Here you will find all relevant information about the requirements and possibili
   
 
       
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="https://github.com/VA-Visjon/jkum-site/issues" class="md-tabs__link">
-        
-  
-    
-  
-  Issue Tracker
-
-      </a>
-    </li>
-  
-
-      
     </ul>
   </div>
 </nav>
@@ -797,26 +780,6 @@ Here you will find all relevant information about the requirements and possibili
   
 
     
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="https://github.com/VA-Visjon/jkum-site/issues" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Issue Tracker
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -1052,6 +1015,18 @@ related objects and properties are described.</p>
 <td>The shape of the Manhole, one of: Circular, Rectangular or Polygon.</td>
 </tr>
 <tr>
+<td>topSolution</td>
+<td>string</td>
+<td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
+<td>The solution applied for the top part of the manhole, one of:  <code>Cone</code>, <code>Top plate</code>, <code>Cast removable</code>, <code>Cast not removable</code>, <code>Unknown</code></td>
+</tr>
+<tr>
+<td>material</td>
+<td>string</td>
+<td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
+<td>The material of the pipe in the connection. Enum restricted to predefined values.</td>
+</tr>
+<tr>
 <td>lids</td>
 <td>array&lt;<a href="#lid">Lid</a>&gt;</td>
 <td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
@@ -1226,7 +1201,7 @@ related objects and properties are described.</p>
 <td>diameter</td>
 <td>integer</td>
 <td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
-<td>The manhole inner diameter in millimeters.</td>
+<td>The manhole lid diameter in millimeters. Measured as lid size, not outer ring size.</td>
 </tr>
 <tr>
 <td>ladder</td>
@@ -1279,6 +1254,12 @@ connector points that can be seen from inside the manhole.</p>
 <td>string</td>
 <td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
 <td>The assumed flow direction of the pipe contents. Must be one of the following: <code>Ingoing</code>, <code>Outgoing</code></td>
+</tr>
+<tr>
+<td>material</td>
+<td>string</td>
+<td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
+<td>The material of the pipe in the connection. Enum restricted to predefined values.</td>
 </tr>
 <tr>
 <td>pressurized</td>
@@ -1435,7 +1416,6 @@ connector points that can be seen from inside the manhole.</p>
       <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
-    <script type="text/javascript" src="/assets/javascripts/neatjson.js"></script>
     <script type="importmap">
         {
             "imports": {

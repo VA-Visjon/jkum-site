@@ -25,6 +25,15 @@
           const text = document.createElement("p");
           text.innerHTML = "<b>" + err.instancePath + "</b> " + err.message;
 
+          // Handle special stuff
+          switch(err.keyword){
+            case "enum":
+                text.innerHTML += ": <b>" + err.params.allowedValues.join(", ") + "</b>";
+                console.log(err);
+            default:
+                // Do nothing
+          }
+
           node.appendChild(heading);
           node.appendChild(text);
 

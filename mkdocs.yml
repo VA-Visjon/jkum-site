@@ -71,6 +71,9 @@ theme:
 # Custom css
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/validator.css
+  - stylesheets/forms.css
+  - stylesheets/drag-and-drop.css
 
 # Extensions
 markdown_extensions:
@@ -125,6 +128,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
+  - Validator: validator.md
   - Getting started:
       - Introduction: introduction.md
       - File downloads: file-downloads.md
@@ -133,6 +137,7 @@ nav:
       - Examples: examples.md
       - Roadmap: roadmap.md
       - Third-party code: third-party-code.md
+  - 'Issue Tracker': 'https://github.com/VA-Visjon/jkum-site/issues'
 
 plugins:
   - search

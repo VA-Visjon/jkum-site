@@ -1,0 +1,27 @@
+{#-
+  This file was automatically generated - do not edit
+-#}
+{% extends "base.html" %}
+{% block extrahead %}
+<!--  <link rel="stylesheet" href="{{ 'assets/stylesheets/custom.00c04c01.min.css' | url }}">-->
+{% endblock %}
+{% block announce %}
+  For updates follow <strong>@VAVisjon</strong> on
+  <a href="https://linkedin.com/company/vavisjon">
+    <span class="twemoji linkedin">
+      {% include ".icons/fontawesome/brands/linkedin.svg" %}
+    </span>
+    <strong>LinkedIn</strong>
+  </a>
+{% endblock %}
+{% block scripts %}
+  {{ super() }}
+    <script type="text/javascript" src="/assets/javascripts/neatjson.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "ajv7": "https://esm.sh/ajv@8.12.0"
+            }
+        }
+    </script>
+{% endblock %}

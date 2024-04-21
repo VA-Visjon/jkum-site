@@ -1,0 +1,201 @@
+
+:root {
+  --card-line-height: 1.2em;
+  --card-background: #405065;
+  --background-checked: #304052;
+  --card-padding: 1em;
+  --card-radius: 5px;
+  --color-green: #00bdd6;
+  --color-gray: #e2ebf6;
+  --color-dark-gray: #c4d1e1;
+  --radio-border-width: 2px;
+  --radio-size: 1.5em;
+}
+
+.undoredo-btn {
+    display: inline-block;
+    padding: 10px 10px;
+    font-weight: 700;
+    color: var(--md-primary-fg-color);
+    cursor: pointer;
+    border: 2px solid var(--md-primary-fg-color);
+    border-radius: 2px;
+    transition:
+      color            125ms,
+      background-color 125ms,
+      border-color     125ms;
+}
+
+.undoredo-btn:disabled {
+  color: var(--md-primary-bg-color);
+  background-color: #dedede;
+  border-color: #bebebe;
+}
+
+.undoredo-btn:is(:focus, :hover):not(:disabled) {
+  color: var(--md-accent-bg-color);
+  background-color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+}
+
+.md-jsonarea {
+  width: 100%;
+  height: 650px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 13px;
+  resize: none;
+}
+
+
+.grid {
+  display: grid;
+  grid-gap: var(--card-padding);
+  margin: 0 auto;
+  max-width: 60em;
+  padding: 0;
+  margin-top: 10px;
+
+  @media (min-width: 42em) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: var(--card-background);
+  border-radius: var(--card-radius);
+  position: relative;
+
+  &:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.radio {
+  font-size: inherit;
+  margin: 0;
+  position: absolute;
+  right: calc(var(--card-padding) + var(--radio-border-width));
+  top: calc(var(--card-padding) + var(--radio-border-width));
+}
+
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+  .radio {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #fff;
+    border: var(--radio-border-width) solid var(--color-gray);
+    border-radius: 50%;
+    cursor: pointer;
+    height: var(--radio-size);
+    outline: none;
+    transition:
+      background 0.2s ease-out,
+      border-color 0.2s ease-out;
+    width: var(--radio-size);
+
+    &::after {
+      border: var(--radio-border-width) solid #fff;
+      border-top: 0;
+      border-left: 0;
+      content: '';
+      display: block;
+      height: 0.75rem;
+      left: 25%;
+      position: absolute;
+      top: 50%;
+      transform:
+        rotate(45deg)
+        translate(-50%, -50%);
+      width: 0.375rem;
+    }
+
+    &:checked {
+      background: var(--color-green);
+      border-color: var(--color-green);
+    }
+  }
+
+  .card:hover .radio {
+    border-color: var(--color-dark-gray);
+
+    &:checked {
+      border-color: var(--color-green);
+    }
+  }
+}
+
+.card-contents {
+  border: var(--radio-border-width) solid var(--color-gray);
+  border-radius: var(--card-radius);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: var(--card-padding);
+  transition: border-color 0.2s ease-out;
+  font-size: 1rem;
+  height: 100%;
+}
+
+.card:hover .card-contents {
+  border-color: var(--color-dark-gray);
+  background-color: var(--background-checked);
+}
+
+.radio:checked ~ .card-contents {
+  border-color: var(--color-green);
+  background-color: var(--background-checked);
+}
+
+.radio:focus ~ .card-contents {
+  box-shadow: 0 0 0 2px var(--color-dark-gray);
+}
+
+.radio:disabled ~ .card-contents {
+  color: var(--color-dark-gray);
+  cursor: default;
+}
+
+.radio:disabled ~ .card-contents .card-type {
+  color: var(--color-dark-gray);
+}
+
+.card:hover .radio:disabled ~ .card-contents {
+  border-color: var(--color-gray);
+  box-shadow: none;
+}
+
+.card:hover .radio:disabled {
+  border-color: var(--color-gray);
+}
+
+.card-type {
+  color: var(--color-green);
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+.file-name {
+  color: var(--color-green);
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.card-header {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+
+.plan-cycle {
+  font-size: 2rem;
+  font-variant: none;
+  border-bottom: none;
+  cursor: inherit;
+  text-decoration: none;
+}

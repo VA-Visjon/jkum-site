@@ -109,8 +109,8 @@ connector points that can be seen from inside the manhole.
 | medium | string | :material-close-circle:{ .error } | The medium transported in the pipe. Must be one of the following: `Water`, `Sewer`, `Storm water`, `Drain` |
 | direction | string | :material-close-circle:{ .error } | The assumed flow direction of the pipe contents. Must be one of the following: `Ingoing`, `Outgoing` |
 | pressurized | boolean | :material-close-circle:{ .error } | If the pipe is a pressurized system. |
-| elevation | float | :material-close-circle:{ .error } |  |
-| clockPosition | integer | :material-close-circle:{ .error } |  |
+| elevation | float | :material-close-circle:{ .error } | The real-world elevation coordinate for the pipe connection. |
+| clockPosition | integer | :material-close-circle:{ .error } | The location of the pipe as seen inside the manhole, oriented clockwise from between 0 and 359 degrees relative to north. |
 | diameter | integer | :material-close-circle:{ .error } | The pipe diameter in millimeters. |
 
 

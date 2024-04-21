@@ -11,7 +11,9 @@ of what can be seen inside a manhole when opening it.
     There are several file formats, but none that covers all the requirements we've
     identified in our works with this standard.
     
-
+The [JKUM Schema Definitions](/file-downloads/#file-downloads) will make sure you can validate
+any file according to allowed values, and if your produced `.jkum`-files adhere to
+the standard.
 
 ## Uses of this file format
 The JKUM file format can be used for:
@@ -20,7 +22,7 @@ The JKUM file format can be used for:
   the surveyor finds, without any losses.
 - Interaction of concepts for pipe systems between applications and APIs.
 
-## Why do we need a new file format?
+## Why do we need this file format?
 Current practice of registrating the contents of the insides of manholes 
 involves people going out into the field, and either:
 

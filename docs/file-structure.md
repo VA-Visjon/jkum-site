@@ -1,11 +1,17 @@
 # File structure
 
 All JKUM-compatible files should have the extension `.jkum`. The
-contents of the file is based on the [JSON-file standard], and should in general
-follow all syntax regulations as described there.
+contents of the file is based on the [JSON-file standard]{:target="_blank"} and should in general
+follow all syntax regulations as described there. The `.jkum` file must validate
+according to this JKUM-standard, which is defined by a JSON Schema Definition file.
+The Standard is for the time being applying schema definition draft 7
+(see [JSON-schema]{:target="_blank"}), which covers most use cases to schema handling.
 
   [JSON-file standard]: https://www.json.org/
-  
+  [JSON-schema]: https://json-schema.org/
+
+Any file created should adhere to the JSON-schemas as defined by JKUM.
+
 The file should consist of two primary attributes: the `head` and the `manholes`. 
 The structure should be similar to this:
 

@@ -1005,14 +1005,14 @@ related objects and properties are described.</p>
 <tr>
 <td>bottomCenter</td>
 <td><a href="#location">Location</a></td>
-<td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
+<td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
 <td>The position of the centerpoint of the manhole construction at its bottom center.</td>
 </tr>
 <tr>
 <td>shape</td>
 <td>string</td>
 <td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
-<td>The shape of the Manhole, one of: Circular, Rectangular or Polygon.</td>
+<td>The shape of the Manhole, one of: <code>Circular</code>, <code>Rectangular</code> or <code>Polygonal</code>.</td>
 </tr>
 <tr>
 <td>topSolution</td>
@@ -1024,7 +1024,7 @@ related objects and properties are described.</p>
 <td>material</td>
 <td>string</td>
 <td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
-<td>The material of the pipe in the connection. Enum restricted to predefined values.</td>
+<td>The material of the manhole construction. Restricted by predefined values, one of: <code>Concrete</code>, <code>Bricks</code>, <code>Plastic</code>, <code>Rehabilitated</code>, <code>Other</code></td>
 </tr>
 <tr>
 <td>lids</td>
@@ -1047,7 +1047,7 @@ related objects and properties are described.</p>
 </tbody>
 </table>
 <p>Depending on the <code>shape</code> of the manhole, the following properties are also required:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="manhole-circular" name="__tabbed_1" type="radio" /><input id="manhole-rectangular" name="__tabbed_1" type="radio" /><input id="manhole-polygon" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="manhole-circular">Circular</label><label for="manhole-rectangular">Rectangular</label><label for="manhole-polygon">Polygon</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="manhole-circular" name="__tabbed_1" type="radio" /><input id="manhole-rectangular" name="__tabbed_1" type="radio" /><input id="manhole-polygonal" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="manhole-circular">Circular</label><label for="manhole-rectangular">Rectangular</label><label for="manhole-polygonal">Polygonal</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table>

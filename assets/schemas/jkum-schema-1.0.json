@@ -62,10 +62,7 @@
       "type": "object",
       "properties": {
         "guid": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "$ref": "#/definitions/guid"
         },
         "position": {
           "$ref": "#/definitions/location"
@@ -96,8 +93,8 @@
         }
       },
       "required": [
-        "position",
-        "diameter"
+        "guid",
+        "position"
       ]
     },
     "imageData": {
@@ -138,7 +135,7 @@
           "examples": [
             "Rectangular"
           ],
-          "enum": [ "Circular", "Rectangular", "Polygon" ]
+          "enum": [ "Circular", "Rectangular", "Polygonal" ]
         },
         "topSolution": {
           "type": "string",
@@ -199,7 +196,61 @@
             "$ref": "#/definitions/imageData"
           }
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "shape": {
+                "const": "Circular"
+              }
+            },
+            "required": [
+              "shape"
+            ]
+          },
+          "then": {
+            "required": [
+              "diameter"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "shape": {
+                "const": "Rectangular"
+              }
+            },
+            "required": [
+              "shape"
+            ]
+          },
+          "then": {
+            "required": [
+              "width",
+              "length"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "shape": {
+                "const": "Polygonal"
+              }
+            },
+            "required": [
+              "shape"
+            ]
+          },
+          "then": {
+            "required": [
+              "circumference"
+            ]
+          }
+        }
+      ]
     },
     "manholeCircumference": {
       "type": [

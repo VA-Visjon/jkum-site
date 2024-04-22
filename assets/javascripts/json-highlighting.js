@@ -62,7 +62,9 @@ const syntaxHighlight = (json) => {
     json = jsonToValidPrettyString(json);
     if(!json) return;
 
-    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    // Regex to strip out all image data
+    let regex = /"base64String":\s*"[^"]+"/g;
+    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(regex, '"base64String": "IMAGE_REMOVED_FOR_READABILITY"');
     return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
         var cls = 'number';
         if (/^"/.test(match)) {

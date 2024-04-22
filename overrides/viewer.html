@@ -1,0 +1,94 @@
+{#-
+  This file was automatically generated - do not edit
+-#}
+{% extends "main.html" %}
+{% block tabs %}
+  {{ super() }}
+  <section class="mdx-container validator-bg">
+    <div class="banner-content">
+      <h3 class="text-shadow">Validate your JKUM file</h3>
+      <p class="text-shadow">Upload your file and test it against one of the schema definition files in the valid standard.</p>
+
+<!--      <div id="safeTimer">-->
+<!--        <p id="safeTimerDisplay">00:00</p>-->
+<!--      </div>-->
+      <div class="md-grid">
+        <form class="box" method="post" action="" enctype="multipart/form-data" style="cursor: pointer;" onclick="document.getElementById('file').click();">
+          <div class="box__input" >
+            <input class="box__file" type="file" name="files[]" id="file" />
+            <label><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+            <button class="box__button" type="submit">Upload</button>
+          </div>
+        </form>
+        <div class="grid">
+          <label class="card">
+            <input name="schema" class="radio" type="radio" value="jkum-schema-1.0.json" checked/>
+
+            <span class="card-contents">
+              <span class="card-type">JKUM</span>
+              <span class="card-header">Standard</span>
+              <span class="file-name">jkum-schema-1.0.json</span>
+              <span>The JKUM standard at its core. No use-specific requirements</span>
+            </span>
+          </label>
+          <label class="card">
+            <input name="schema" class="radio" type="radio" value="jkum-basal-schema-1.0.json" />
+            <span class="card-contents" aria-hidden="true">
+              <span class="card-type">Basal</span>
+              <span class="card-header">Kumfigurator API</span>
+              <span class="file-name">jkum-basal-schema-1.0.json</span>
+              <span>Schema definition for requirements related to API kumfigurator.</span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+{% block toc %}{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block scripts %}
+  {{ super() }}
+  <script src="{{ 'assets/javascripts/json-highlighting.js' | url }}"></script>
+  <script src="{{ 'assets/javascripts/drag-and-drop.js' | url }}"></script>
+  <script type="module" src="{{ 'assets/javascripts/m.json-validator.js' | url }}"></script>
+  <script src="{{ 'assets/javascripts/json-validate.js' | url }}"></script>
+  <script src="{{ 'assets/javascripts/json-editor.js' | url }}"></script>
+
+  <script>
+    // From drag-and-drop
+    document$.subscribe(initDragAndDrop)
+    // To expose modules
+    const modules = {};
+  </script>
+
+  <script>
+  let isOpen = false;
+  function toggleNav() {
+    if(isOpen){
+      closeNav();
+    }
+    else {
+      openNav();
+    }
+    isOpen = !isOpen;
+  }
+
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("sidebar-main").style.marginLeft = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("sidebar-main").style.marginLeft= "0";
+  }
+
+  </script>
+
+  <script type="module">
+    import { validateJson } from "/assets/javascripts/m.json-validator.js";
+    modules.validateJson = validateJson;
+  </script>
+{% endblock %}

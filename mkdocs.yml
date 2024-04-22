@@ -137,6 +137,7 @@ nav:
       - Examples: examples.md
       - Roadmap: roadmap.md
       - Third-party code: third-party-code.md
+#  - Viewer: viewer.md
 #  - 'Issue Tracker': 'https://github.com/VA-Visjon/jkum-site/issues'
 
 plugins:

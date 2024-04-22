@@ -16,6 +16,11 @@ function process_file(file){
     const display_file = ( e ) => { // set the contents of the <textarea>
         console.info( '. . got: ', e.target.result.length, e );
         const text = e.target.result;
+
+        // Regex to strip out all image data
+        let regex = /"base64String":\s*"[^"]+"/g;
+        json = text.replace(regex, '"base64String": "IMAGE_REMOVED_FOR_READABILITY"');
+
         const highlighted = syntaxHighlight(text);
         document.getElementById('upload_file_presentation').innerHTML = highlighted;
         document.getElementById('upload_file').innerHTML = e.target.result;

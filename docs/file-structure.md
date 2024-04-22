@@ -47,10 +47,10 @@ The properties for manholes are listed in this table.
 | ------- | -------- |-------- | ------ |
 | guid | GUID | :material-check-circle:{ .success } | A unique system-generated GUID for future reference and identification for the object. |
 | sid | string | :material-close-circle:{ .error } | A unique ID commonly used in mapping systems. Enables a better human-readable ID for the object. |
-| bottomCenter | [Location](#location) | :material-close-circle:{ .error } | The position of the centerpoint of the manhole construction at its bottom center. |
-| shape | string | :material-close-circle:{ .error } | The shape of the Manhole, one of: Circular, Rectangular or Polygon. |
+| bottomCenter | [Location](#location) | :material-check-circle:{ .success } | The position of the centerpoint of the manhole construction at its bottom center. |
+| shape | string | :material-close-circle:{ .error } | The shape of the Manhole, one of: `Circular`, `Rectangular` or `Polygonal`. |
 | topSolution | string | :material-close-circle:{ .error } | The solution applied for the top part of the manhole, one of:  `Cone`, `Top plate`, `Cast removable`, `Cast not removable`, `Unknown` |
-| material | string | :material-close-circle:{ .error } | The material of the pipe in the connection. Enum restricted to predefined values. |
+| material | string | :material-close-circle:{ .error } | The material of the manhole construction. Restricted by predefined values, one of: `Concrete`, `Bricks`, `Plastic`, `Rehabilitated`, `Other` |
 | lids | array<[Lid](#lid)> | :material-check-circle:{ .success } | An array of Lid objects. Contains an array of Lids, since some manholes may have more than one Lid. |
 | pipes | array<[PipeConnection](#pipeconnection)> | :material-close-circle:{ .error } | An array of PipeConnection objects. |
 | imageData | array<[ImageData](#imagedata)> | :material-close-circle:{ .error } | An array of ImageData objects. |
@@ -70,7 +70,7 @@ Depending on the `shape` of the manhole, the following properties are also requi
     | width | integer | :material-check-circle:{ .success } | The manhole inner width in millimeters. |
     | length | integer | :material-check-circle:{ .success } | The manhole inner length in millimeters. |
 
-=== "Polygon"
+=== "Polygonal"
 
     | Property Name | Type | Required | Description |
     | ------- | -------- |-------- | ------ |

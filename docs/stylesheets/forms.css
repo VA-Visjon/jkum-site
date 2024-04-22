@@ -40,7 +40,7 @@
 
 .md-jsonarea {
   width: 100%;
-  height: 650px;
+  min-height: 650px;
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;

@@ -29,8 +29,8 @@ are established.
 
 | Language | Supported? | Status | Repo |
 | ------------ | ------------- | ------------ | ------------ |
-| C# | :material-check-circle:{ .success } Yes | Completed | [:material-github: JkumParser](https://github.com/hansmei/JkumParser) |
-| python | :material-close-circle:{ .error } No |  |  |
+| C# | Yes | Completed | [JkumParser](https://github.com/hansmei/JkumParser) |
+| python | No |  |  |
 
 If you are familiar with any of the non-supported languages and want to contribute,
 feel free to drop an email to `kontakt@vavisjon.no` about it or submit a pull request, and

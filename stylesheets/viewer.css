@@ -1,0 +1,199 @@
+
+.fullpage {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+@media screen and (min-width:1220px) {
+    .fullpage {  top: 96px; }
+}
+
+@media screen and (min-width:1600px) {
+    .fullpage {  top: 105px; }
+}
+
+@media screen and (min-width:2000px) {
+    .fullpage {  top: 115px; }
+}
+
+.map-wrapper {
+    display: block;
+    position:relative;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.drag-drop-slim {
+    margin-top: 0px;
+}
+
+.manhole-list{
+    background: #fefefe;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+dl.manhole-details dt {
+    font-weight: bold;
+}
+
+div.lid-card {
+    padding: 5px;
+    background: #fefefe;
+    border: 1px solid #cacaca;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
+div.lid-card dt {
+    font-weight: bold;
+}
+
+.manhole-drawer h4{
+    font-size: 20px;
+}
+
+.manhole-drawer h4.title{
+    border-bottom: 1px solid black;
+}
+
+#fullpage_modal {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat no-repeat;
+  background-position: center center;
+  background-color: black;
+}
+
+.manhole-drawer .image-list  img{
+    max-width: 320px;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+.manhole-list::-webkit-scrollbar,
+.manhole-drawer::-webkit-scrollbar,
+.sidebar::-webkit-scrollbar {
+    width: 12px;
+}
+
+.manhole-list::-webkit-scrollbar-track,
+.manhole-drawer::-webkit-scrollbar-track,
+.sidebar::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+.manhole-list::-webkit-scrollbar-thumb,
+.manhole-drawer::-webkit-scrollbar-thumb,
+.sidebar::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #888888;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .8);
+}
+
+.manhole-item {
+    font-size: 13px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid gray;
+    box-shadow: 10px 1px 5x rgba(0,0,0,0.4);
+    background: #dedede;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.viewer-left-pane {
+  min-width: 200px;
+  background: #dedede;
+  border-right: 1px dashed gray;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  z-index: 2;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: relative;
+  background-color: #efefef;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: 0.2s;
+  padding-top: 8px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #545454;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sidebar .manhole-drawer{
+  padding: 15px;
+  font-size: 14px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}

@@ -58,6 +58,8 @@ Here you will find all relevant information about the requirements and possibili
     
       <link rel="stylesheet" href="../stylesheets/validator.css">
     
+      <link rel="stylesheet" href="../stylesheets/viewer.css">
+    
       <link rel="stylesheet" href="../stylesheets/forms.css">
     
       <link rel="stylesheet" href="../stylesheets/drag-and-drop.css">
@@ -328,6 +330,23 @@ Here you will find all relevant information about the requirements and possibili
         </a>
       </li>
     
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../viewer/" class="md-tabs__link">
+        
+  
+    
+  
+  Viewer
+
+      </a>
+    </li>
   
 
       
@@ -780,6 +799,26 @@ Here you will find all relevant information about the requirements and possibili
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Viewer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1027,6 +1066,12 @@ related objects and properties are described.</p>
 <td>The material of the manhole construction. Restricted by predefined values, one of: <code>Concrete</code>, <code>Bricks</code>, <code>Plastic</code>, <code>Rehabilitated</code>, <code>Other</code></td>
 </tr>
 <tr>
+<td>diameter</td>
+<td>integer</td>
+<td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
+<td>The inner diameter of the manhole construction.</td>
+</tr>
+<tr>
 <td>lids</td>
 <td>array&lt;<a href="#lid">Lid</a>&gt;</td>
 <td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
@@ -1039,7 +1084,7 @@ related objects and properties are described.</p>
 <td>An array of PipeConnection objects.</td>
 </tr>
 <tr>
-<td>imageData</td>
+<td>images</td>
 <td>array&lt;<a href="#imagedata">ImageData</a>&gt;</td>
 <td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
 <td>An array of ImageData objects.</td>
@@ -1288,7 +1333,10 @@ connector points that can be seen from inside the manhole.</p>
 </tbody>
 </table>
 <h3 id="imagedata">ImageData<a class="headerlink" href="#imagedata" title="Permanent link">&para;</a></h3>
-<p>The <code>imageData</code>-property should consist of at least one of the following data.</p>
+<p>The <code>imageData</code>-property needs one of the following data contents:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="imagedata-base64-and-media-type" name="__tabbed_2" type="radio" /><input id="imagedata-image-url-to-online-source" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="imagedata-base64-and-media-type">Base64 and media type</label><label for="imagedata-image-url-to-online-source">Image URL to online source</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <table>
 <thead>
 <tr>
@@ -1302,17 +1350,40 @@ connector points that can be seen from inside the manhole.</p>
 <tr>
 <td>base64String</td>
 <td>string</td>
-<td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
+<td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
 <td>A base 64 encoded string representing the image.</td>
 </tr>
 <tr>
-<td>imageUrl</td>
+<td>mediaType</td>
 <td>string</td>
-<td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
+<td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
 <td>A valid url to the location of the file, where it should be available for download.</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>imageUrl</td>
+<td>string</td>
+<td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
+<td>A valid url to the location of the file, where it should be available for download.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
 
 

@@ -17,6 +17,8 @@ Here you will find all relevant information about the requirements and possibili
         <link rel="canonical" href="https://www.jkum.info/viewer/">
       
       
+        <link rel="prev" href="../third-party-code/">
+      
       
       
       <link rel="icon" href="../assets/images/sandfang.png">
@@ -54,6 +56,8 @@ Here you will find all relevant information about the requirements and possibili
     
       <link rel="stylesheet" href="../stylesheets/validator.css">
     
+      <link rel="stylesheet" href="../stylesheets/viewer.css">
+    
       <link rel="stylesheet" href="../stylesheets/forms.css">
     
       <link rel="stylesheet" href="../stylesheets/drag-and-drop.css">
@@ -65,7 +69,7 @@ Here you will find all relevant information about the requirements and possibili
     
     
     
-<!--  <link rel="stylesheet" href="../assets/stylesheets/custom.00c04c01.min.css">-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v9.1.0/ol.css">
 
   </head>
   
@@ -321,390 +325,89 @@ Here you will find all relevant information about the requirements and possibili
   
 
       
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Viewer
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
           
         
       
-  <section class="mdx-container validator-bg">
-    <div class="banner-content">
-      <h3 class="text-shadow">Validate your JKUM file</h3>
-      <p class="text-shadow">Upload your file and test it against one of the schema definition files in the valid standard.</p>
+  <section class="fullpage flex-row">
+    <div class="viewer-left-pane flex-col">
+      <!-- <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div> -->
+<!--      <button class="openbtn" onclick="toggleNav()">☰ Open Sidebar</button><br />-->
 
-<!--      <div id="safeTimer">-->
-<!--        <p id="safeTimerDisplay">00:00</p>-->
-<!--      </div>-->
-      <div class="md-grid">
-        <form class="box" method="post" action="" enctype="multipart/form-data" style="cursor: pointer;" onclick="document.getElementById('file').click();">
-          <div class="box__input" >
-            <input class="box__file" type="file" name="files[]" id="file" />
-            <label><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
-            <button class="box__button" type="submit">Upload</button>
-          </div>
-        </form>
-        <div class="grid">
-          <label class="card">
-            <input name="schema" class="radio" type="radio" value="jkum-schema-1.0.json" checked/>
-
-            <span class="card-contents">
-              <span class="card-type">JKUM</span>
-              <span class="card-header">Standard</span>
-              <span class="file-name">jkum-schema-1.0.json</span>
-              <span>The JKUM standard at its core. No use-specific requirements</span>
-            </span>
-          </label>
-          <label class="card">
-            <input name="schema" class="radio" type="radio" value="jkum-basal-schema-1.0.json" />
-            <span class="card-contents" aria-hidden="true">
-              <span class="card-type">Basal</span>
-              <span class="card-header">Kumfigurator API</span>
-              <span class="file-name">jkum-basal-schema-1.0.json</span>
-              <span>Schema definition for requirements related to API kumfigurator.</span>
-            </span>
-          </label>
+        <div class=" drag-drop-slim">
+          <form class="box" method="post" action="" enctype="multipart/form-data" style="cursor: pointer;" onclick="document.getElementById('file').click();">
+            <div class="box__input" >
+              <input class="box__file" type="file" name="files[]" id="file" />
+              <label><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+              <button class="box__button" type="submit">Upload</button>
+            </div>
+          </form>
+          <pre style="display: none;" id="file_contents"></pre>
         </div>
+        <div class="manhole-list" id="manhole_list"></div>
+    </div>
+    <div id="manhole_drawer" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <div class="manhole-drawer">
+        <h4 class="title">SID: <span id="manhole_details_sid"></span></h4>
+        <dl class="manhole-details">
+          <dt>GUID</dt>
+          <dd id="manhole_details_guid"></dd>
+          <dt>Shape</dt>
+          <dd id="manhole_details_shape"></dd>
+          <dt>Diameter</dt>
+          <dd id="manhole_details_diameter"></dd>
+          <dt>Width/Length</dt>
+          <dd><span id="manhole_details_width"></span>/<span id="manhole_details_length"></span></dd>
+          <dt>Material</dt>
+          <dd id="manhole_details_material"></dd>
+          <dt>Top solution</dt>
+          <dd id="manhole_details_topsolution"></dd>
+        </dl>
+        <h4>Images</h4>
+        <div class="image-list" id="manhole_details_images"></div>
+        <h4>Lids</h4>
+        <div id="manhole_details_lids"></div>
+        <h4>Pipes</h4>
+        <div id="manhole_details_pipes"></div>
       </div>
+
+    </div>
+    <div class="map-wrapper" id="map">
+      <div class="" id="popup"></div>
     </div>
   </section>
+  <div id="fullpage_modal" onclick="this.style.display='none';"></div>
 
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href=".." title="JKUM" class="md-nav__button md-logo" aria-label="JKUM" data-md-component="logo">
-      
-  <img src="../assets/images/sandfang.png" alt="logo">
-
-    </a>
-    JKUM
-  </label>
-  
-    <div class="md-nav__source">
-      <a href="https://github.com/VA-Visjon/jkum-site" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
-  </div>
-  <div class="md-source__repository">
-    VA-Visjon/jkum-site
-  </div>
-</a>
-    </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../validator/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Validator
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Getting started
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Getting started
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../introduction/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Introduction
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../file-downloads/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    File downloads
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    For developers
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            For developers
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../file-structure/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    File structure
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Examples
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../roadmap/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Roadmap
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../third-party-code/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Third-party code
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -747,11 +450,14 @@ Here you will find all relevant information about the requirements and possibili
         }
     </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/javascripts/json-highlighting.js"></script>
   <script src="../assets/javascripts/drag-and-drop.js"></script>
   <script type="module" src="../assets/javascripts/m.json-validator.js"></script>
+  <script type="module" src="../assets/javascripts/map-viewer.js"></script>
+  <script src="../assets/javascripts/proj4@2.11.0.min.js"></script>
+  <script src="../assets/javascripts/ol@9.1.0.js"></script>
   <script src="../assets/javascripts/json-validate.js"></script>
-  <script src="../assets/javascripts/json-editor.js"></script>
 
   <script>
     // From drag-and-drop
@@ -773,13 +479,11 @@ Here you will find all relevant information about the requirements and possibili
   }
 
   function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("sidebar-main").style.marginLeft = "250px";
+    document.getElementById("manhole_drawer").style.width = "350px";
   }
 
   function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("sidebar-main").style.marginLeft= "0";
+    document.getElementById("manhole_drawer").style.width = "0";
   }
 
   </script>

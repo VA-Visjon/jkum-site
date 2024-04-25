@@ -58,6 +58,8 @@ Here you will find all relevant information about the requirements and possibili
     
       <link rel="stylesheet" href="../stylesheets/validator.css">
     
+      <link rel="stylesheet" href="../stylesheets/viewer.css">
+    
       <link rel="stylesheet" href="../stylesheets/forms.css">
     
       <link rel="stylesheet" href="../stylesheets/drag-and-drop.css">
@@ -327,6 +329,23 @@ Here you will find all relevant information about the requirements and possibili
   
 
       
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../viewer/" class="md-tabs__link">
+        
+  
+    
+  
+  Viewer
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -342,7 +361,7 @@ Here you will find all relevant information about the requirements and possibili
 <!--        <p id="safeTimerDisplay">00:00</p>-->
 <!--      </div>-->
       <div class="md-grid">
-        <form class="box" method="post" action="" enctype="multipart/form-data" style="cursor: pointer;" onclick="document.getElementById('file').click();">
+        <form class="box mt-2" method="post" action="" enctype="multipart/form-data" style="cursor: pointer;" onclick="document.getElementById('file').click();">
           <div class="box__input" >
             <input class="box__file" type="file" name="files[]" id="file" />
             <label><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
@@ -375,19 +394,10 @@ Here you will find all relevant information about the requirements and possibili
   </section>
 
   <section class="mdx-container" id="sidebar-main" style="position:relative;">
-    <!-- <div id="mySidebar" class="sidebar">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
-    </div> -->
+
     <div class="md-grid">
       <div class="md-content__inner">
         <div class="flex-container md-typeset">
-          <!-- <div>
-            <button class="openbtn" onclick="toggleNav()">☰ Open Sidebar</button><br />
-          </div> -->
           <div style="width: 50%;">
             <button class="undoredo-btn" onclick="undoEdit();" id="undo">
               <span class="twemoji">
@@ -402,7 +412,7 @@ Here you will find all relevant information about the requirements and possibili
             <button class="md-button" onclick="formatContents();">Prettify</button>
             <button class="md-button" onclick="validateSchema();">Validate</button>
             <div class="alert-error" id="formatting_error"></div>
-            <pre class="md-jsonarea" id="upload_file_presentation" oninput="updateRaw()" spellcheck="false" contenteditable>
+            <pre class="md-jsonarea" id="upload_file_presentation" spellcheck="false" contenteditable>
 {
   "head": {
     "epsg": 25832
@@ -432,7 +442,6 @@ Here you will find all relevant information about the requirements and possibili
   ]
 }
             </pre>
-            <textarea style="display: none;" id="upload_file"></textarea>
           </div>
           <div class="report-container" style="width: 50%;">
             <h2 class="report-header">Validation report</h2>
@@ -768,6 +777,26 @@ Here you will find all relevant information about the requirements and possibili
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Viewer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -906,30 +935,6 @@ Here you will find all relevant information about the requirements and possibili
     document$.subscribe(initDragAndDrop)
     // To expose modules
     const modules = {};
-  </script>
-
-  <script>
-  let isOpen = false;
-  function toggleNav() {
-    if(isOpen){
-      closeNav();
-    }
-    else {
-      openNav();
-    }
-    isOpen = !isOpen;
-  }
-
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("sidebar-main").style.marginLeft = "250px";
-  }
-
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("sidebar-main").style.marginLeft= "0";
-  }
-
   </script>
 
   <script type="module">

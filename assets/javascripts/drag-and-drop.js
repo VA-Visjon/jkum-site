@@ -1,29 +1,29 @@
+
 const isAdvancedUpload = function() {
   const div = document.createElement('div');
   return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
 }();
 
+
 function handle_file_select( evt ) {
-    let fl_files = evt.target.files; // JS FileList object
-    process_file(fl_files[0]);
+    processFile(evt.target.files[0]);
 }
 
 
-function process_file(file){
+function processFile(file){
+    const reader = new FileReader();
 
-    const reader = new FileReader(); // built in API
-
-    const display_file = ( e ) => { // set the contents of the <textarea>
-        console.info( '. . got: ', e.target.result.length, e );
+    const display_file = ( e ) => {
         const text = e.target.result;
-
-        // Regex to strip out all image data
-        let regex = /"base64String":\s*"[^"]+"/g;
-        json = text.replace(regex, '"base64String": "IMAGE_REMOVED_FOR_READABILITY"');
-
         const highlighted = syntaxHighlight(text);
-        document.getElementById('upload_file_presentation').innerHTML = highlighted;
-        document.getElementById('upload_file').innerHTML = e.target.result;
+        const preview = document.getElementById('upload_file_presentation');
+        const file_contents = document.getElementById('file_contents');
+        if(preview){
+            preview.innerHTML = highlighted;
+        }
+        if(file_contents){
+            file_contents.innerHTML = text;
+        }
     };
 
     const on_reader_load = ( fl ) => {
@@ -73,7 +73,7 @@ function initDragAndDrop(){
       })
 
       uploadForm.addEventListener('drop', function(e, b) {
-        process_file(e.dataTransfer.files[0])
+        processFile(e.dataTransfer.files[0]);
       });
     }
 

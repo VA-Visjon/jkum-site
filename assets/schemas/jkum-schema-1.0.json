@@ -13,6 +13,7 @@
       "required": [
         "epsg"
       ],
+      "additionalProperties": false,
       "properties": {
         "epsg": {
           "type": "integer",
@@ -44,6 +45,7 @@
     },
     "location": {
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "east": { "type": "number" },
         "north": { "type": "number" },
@@ -60,6 +62,7 @@
     },
     "lid": {
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "guid": {
           "$ref": "#/definitions/guid"
@@ -71,9 +74,9 @@
           "$id": "#/properties/manholes/items/properties/lids/items/properties/diameter",
           "type": "string",
           "examples": [
-            "400", "650", "800"
+            "315", "650", "800"
           ],
-          "enum": [ "400", "650", "800" ]
+          "enum": [ "315", "650", "800" ]
         },
         "ladder": {
           "type": "string",
@@ -101,11 +104,32 @@
       "type": "object",
       "properties": {
         "base64String": {
-          "type": "string"
+            "type": "string",
+            "contentEncoding": "base64",
+            "contentMediaType": "image/png"
+        },
+        "mediaType": {
+          "type": "string",
+          "default": "img/png",
+          "enum": [ "image/png", "image/jpg"]
+        },
+        "imageUrl": {
+            "type": "string",
+            "pattern": "^https?:\\/\\/.*\\/.*\\.(png|gif|webp|jpeg|jpg)\\??.*$"
         }
       },
-      "required": [
-        "base64String"
+      "oneOf": [
+        {
+          "required": [
+            "imageUrl"
+          ]
+        },
+        {
+          "required": [
+            "base64String",
+            "mediaType"
+          ]
+        }
       ]
     },
     "manhole": {
@@ -115,6 +139,7 @@
         "bottomCenter",
         "lids"
       ],
+      "additionalProperties": false,
       "properties": {
         "guid": {
           "$ref": "#/definitions/guid"
@@ -174,6 +199,7 @@
         },
         "lids": {
           "type": "array",
+          "minItems": 1,
           "items": {
             "$ref": "#/definitions/lid"
           }
@@ -190,7 +216,7 @@
             "$ref": "#/definitions/manholeCircumference"
           }
         },
-        "imageData": {
+        "images": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/imageData"
@@ -257,6 +283,7 @@
         "object",
         "null"
       ],
+      "additionalProperties": false,
       "properties": {
         "innerVertices": {
           "type": [
@@ -283,6 +310,7 @@
         "object",
         "null"
       ],
+      "additionalProperties": false,
       "properties": {
         "guid": {
           "$ref": "#/definitions/guid"

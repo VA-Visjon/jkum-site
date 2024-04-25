@@ -23,8 +23,8 @@ In order to generate a minimal and valid file, the JKUM-contents should be like 
       },
       "lids": [
         {
-          "guid": "216e1618-bdf4-4ade-8Bg9-h9BBs34df115",
-          "diameter": 650,
+          "guid": "216e1618-bdf4-4ade-8Ba9-b9BB334df115",
+          "diameter": "650",
           "position": {
             "east": 588447.155,
             "north": 6642743.826,

@@ -2,59 +2,81 @@
   This file was automatically generated - do not edit
 -#}
 {% extends "main.html" %}
+{% block extrahead %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v9.1.0/ol.css">
+{% endblock %}
 {% block tabs %}
   {{ super() }}
-  <section class="mdx-container validator-bg">
-    <div class="banner-content">
-      <h3 class="text-shadow">Validate your JKUM file</h3>
-      <p class="text-shadow">Upload your file and test it against one of the schema definition files in the valid standard.</p>
+  <section class="fullpage flex-row">
+    <div class="viewer-left-pane flex-col">
+      <!-- <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div> -->
+<!--      <button class="openbtn" onclick="toggleNav()">☰ Open Sidebar</button><br />-->
 
-<!--      <div id="safeTimer">-->
-<!--        <p id="safeTimerDisplay">00:00</p>-->
-<!--      </div>-->
-      <div class="md-grid">
-        <form class="box" method="post" action="" enctype="multipart/form-data" style="cursor: pointer;" onclick="document.getElementById('file').click();">
-          <div class="box__input" >
-            <input class="box__file" type="file" name="files[]" id="file" />
-            <label><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
-            <button class="box__button" type="submit">Upload</button>
-          </div>
-        </form>
-        <div class="grid">
-          <label class="card">
-            <input name="schema" class="radio" type="radio" value="jkum-schema-1.0.json" checked/>
-
-            <span class="card-contents">
-              <span class="card-type">JKUM</span>
-              <span class="card-header">Standard</span>
-              <span class="file-name">jkum-schema-1.0.json</span>
-              <span>The JKUM standard at its core. No use-specific requirements</span>
-            </span>
-          </label>
-          <label class="card">
-            <input name="schema" class="radio" type="radio" value="jkum-basal-schema-1.0.json" />
-            <span class="card-contents" aria-hidden="true">
-              <span class="card-type">Basal</span>
-              <span class="card-header">Kumfigurator API</span>
-              <span class="file-name">jkum-basal-schema-1.0.json</span>
-              <span>Schema definition for requirements related to API kumfigurator.</span>
-            </span>
-          </label>
+        <div class=" drag-drop-slim">
+          <form class="box" method="post" action="" enctype="multipart/form-data" style="cursor: pointer;" onclick="document.getElementById('file').click();">
+            <div class="box__input" >
+              <input class="box__file" type="file" name="files[]" id="file" />
+              <label><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+              <button class="box__button" type="submit">Upload</button>
+            </div>
+          </form>
+          <pre style="display: none;" id="file_contents"></pre>
         </div>
+        <div class="manhole-list" id="manhole_list"></div>
+    </div>
+    <div id="manhole_drawer" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <div class="manhole-drawer">
+        <h4 class="title">SID: <span id="manhole_details_sid"></span></h4>
+        <dl class="manhole-details">
+          <dt>GUID</dt>
+          <dd id="manhole_details_guid"></dd>
+          <dt>Shape</dt>
+          <dd id="manhole_details_shape"></dd>
+          <dt>Diameter</dt>
+          <dd id="manhole_details_diameter"></dd>
+          <dt>Width/Length</dt>
+          <dd><span id="manhole_details_width"></span>/<span id="manhole_details_length"></span></dd>
+          <dt>Material</dt>
+          <dd id="manhole_details_material"></dd>
+          <dt>Top solution</dt>
+          <dd id="manhole_details_topsolution"></dd>
+        </dl>
+        <h4>Images</h4>
+        <div class="image-list" id="manhole_details_images"></div>
+        <h4>Lids</h4>
+        <div id="manhole_details_lids"></div>
+        <h4>Pipes</h4>
+        <div id="manhole_details_pipes"></div>
       </div>
+
+    </div>
+    <div class="map-wrapper" id="map">
+      <div class="" id="popup"></div>
     </div>
   </section>
+  <div id="fullpage_modal" onclick="this.style.display='none';"></div>
 {% endblock %}
 {% block toc %}{% endblock %}
+{% block site_nav %}{% endblock %}
 {% block content %}{% endblock %}
 {% block footer %}{% endblock %}
 {% block scripts %}
   {{ super() }}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="{{ 'assets/javascripts/json-highlighting.js' | url }}"></script>
   <script src="{{ 'assets/javascripts/drag-and-drop.js' | url }}"></script>
   <script type="module" src="{{ 'assets/javascripts/m.json-validator.js' | url }}"></script>
+  <script type="module" src="{{ 'assets/javascripts/map-viewer.js' | url }}"></script>
+  <script src="{{ 'assets/javascripts/proj4@2.11.0.min.js' | url }}"></script>
+  <script src="{{ 'assets/javascripts/ol@9.1.0.js' | url }}"></script>
   <script src="{{ 'assets/javascripts/json-validate.js' | url }}"></script>
-  <script src="{{ 'assets/javascripts/json-editor.js' | url }}"></script>
 
   <script>
     // From drag-and-drop
@@ -76,13 +98,11 @@
   }
 
   function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("sidebar-main").style.marginLeft = "250px";
+    document.getElementById("manhole_drawer").style.width = "350px";
   }
 
   function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("sidebar-main").style.marginLeft= "0";
+    document.getElementById("manhole_drawer").style.width = "0";
   }
 
   </script>

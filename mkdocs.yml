@@ -72,6 +72,7 @@ theme:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/validator.css
+  - stylesheets/viewer.css
   - stylesheets/forms.css
   - stylesheets/drag-and-drop.css
 
@@ -137,7 +138,7 @@ nav:
       - Examples: examples.md
       - Roadmap: roadmap.md
       - Third-party code: third-party-code.md
-#  - Viewer: viewer.md
+  - Viewer: viewer.md
 #  - 'Issue Tracker': 'https://github.com/VA-Visjon/jkum-site/issues'
 
 plugins:

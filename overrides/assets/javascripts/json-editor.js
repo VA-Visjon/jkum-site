@@ -5,12 +5,10 @@ const editor = document.getElementById("upload_file_presentation");
 
 function formatContents() {
     const pretty = document.getElementById('upload_file_presentation');
-    const raw = document.getElementById('upload_file');
     const errorDiv = document.getElementById('formatting_error');
     // Strip all tags
     const text = pretty.innerHTML.replace(/<[^>]*>?/gm, '');
-    raw.innerHTML = text;
-    const highlighted = syntaxHighlight(raw.innerHTML);
+    const highlighted = syntaxHighlight(text);
     if (jsonParseError === null){
       errorDiv.innerHTML = "";
       errorDiv.style = "display:none;";
@@ -23,13 +21,6 @@ function formatContents() {
     saveState(pretty.innerHTML);
 }
 
-
-function updateRaw() {
-    const pretty = document.getElementById('upload_file_presentation');
-    const raw = document.getElementById('upload_file');
-    const text = pretty.innerHTML.replace(/<[^>]*>?/gm, '');
-    raw.innerHTML = text;
-}
 
 let debounceTimer;
 function debounce(func, timeout = 500){

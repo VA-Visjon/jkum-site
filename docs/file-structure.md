@@ -51,9 +51,10 @@ The properties for manholes are listed in this table.
 | shape | string | :material-close-circle:{ .error } | The shape of the Manhole, one of: `Circular`, `Rectangular` or `Polygonal`. |
 | topSolution | string | :material-close-circle:{ .error } | The solution applied for the top part of the manhole, one of:  `Cone`, `Top plate`, `Cast removable`, `Cast not removable`, `Unknown` |
 | material | string | :material-close-circle:{ .error } | The material of the manhole construction. Restricted by predefined values, one of: `Concrete`, `Bricks`, `Plastic`, `Rehabilitated`, `Other` |
+| diameter | integer | :material-close-circle:{ .error } | The inner diameter of the manhole construction. |
 | lids | array<[Lid](#lid)> | :material-check-circle:{ .success } | An array of Lid objects. Contains an array of Lids, since some manholes may have more than one Lid. |
 | pipes | array<[PipeConnection](#pipeconnection)> | :material-close-circle:{ .error } | An array of PipeConnection objects. |
-| imageData | array<[ImageData](#imagedata)> | :material-close-circle:{ .error } | An array of ImageData objects. |
+| images | array<[ImageData](#imagedata)> | :material-close-circle:{ .error } | An array of ImageData objects. |
 
 Depending on the `shape` of the manhole, the following properties are also required:
 
@@ -125,9 +126,18 @@ connector points that can be seen from inside the manhole.
 
 
 ### ImageData
-The `imageData`-property should consist of at least one of the following data.
+The `imageData`-property needs one of the following data contents:
 
-| Property Name | Type | Required | Description |
-| ------- | -------- |-------- | ------ |
-| base64String | string | :material-close-circle:{ .error } | A base 64 encoded string representing the image. |
-| imageUrl | string | :material-close-circle:{ .error } | A valid url to the location of the file, where it should be available for download. |
+=== "Base64 and media type"
+
+    | Property Name | Type | Required | Description |
+    | ------- | -------- |-------- | ------ |
+    | base64String | string | :material-check-circle:{ .success } | A base 64 encoded string representing the image. |
+    | mediaType | string | :material-check-circle:{ .success } | A valid url to the location of the file, where it should be available for download. |
+
+=== "Image URL to online source"
+
+    | Property Name | Type | Required | Description |
+    | ------- | -------- |-------- | ------ |
+    | imageUrl | string | :material-check-circle:{ .success } | A valid url to the location of the file, where it should be available for download. |
+

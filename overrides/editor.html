@@ -19,7 +19,7 @@
   <script type="module">
     import { initJkumEditor } from "/assets/javascripts/jkum-manager.js";
 
-    const isControlsOpen = true;
+    const startOpen = true;
     const manhole = {
             "espg": 5110,
             "guid": "d7e0a214-7862-46b8-9df3-4080c42f60ec",
@@ -63,7 +63,7 @@
             ]
         };
 
-    initJkumEditor(manhole);
+    initJkumEditor(manhole, startOpen);
   </script>
 {% endblock %}
 

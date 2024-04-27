@@ -100,7 +100,7 @@ function debounce(func, timeout = 400){
   };
 }
 
-export function initJkumEditor(manhole) {
+export function initJkumEditor(manhole, startControlsOpen) {
     console.log("MANHOLE", manhole);
 
     // Clear the pipes and reset for next init
@@ -214,7 +214,7 @@ export function initJkumEditor(manhole) {
 //    gui.add( params, 'removePoint' );
 //    gui.add( params, 'exportSpline' );
     gui.add( params, 'addPipe' );
-    if(isControlsOpen){
+    if(startControlsOpen){
         gui.open();
     } else{
         gui.close();

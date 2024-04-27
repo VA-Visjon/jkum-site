@@ -214,9 +214,12 @@ export function initJkumEditor(manhole) {
 //    gui.add( params, 'removePoint' );
 //    gui.add( params, 'exportSpline' );
     gui.add( params, 'addPipe' );
-    gui.close();
+    if(isControlsOpen){
+        gui.open();
+    } else{
+        gui.close();
+    }
     container.appendChild(gui.domElement);
-//    gui.open();
 
     // Controls
     const controls = new OrbitControls( camera, renderer.domElement );

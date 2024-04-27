@@ -60,7 +60,7 @@ const matrRustIron = new THREE.MeshLambertMaterial( { color: 0xcc6633 } );
 
 //const splines = {};
 
-const pipes = {};
+let pipes = {};
 const pipeFolders = {};
 
 const params = {
@@ -93,7 +93,7 @@ function doCSG(a,b,op,mat){
 
 let timer;
 
-function debounce(func, timeout = 300){
+function debounce(func, timeout = 400){
   return (...args) => {
     clearTimeout(timer);
     timer = setTimeout(() => { func.apply(this, args); }, timeout);
@@ -102,6 +102,18 @@ function debounce(func, timeout = 300){
 
 export function initJkumEditor(manhole) {
     console.log("MANHOLE", manhole);
+
+    // Clear the pipes and reset for next init
+    pipes = {};
+    lidElevation = 0;
+    lowestElevation = 0;
+    deltaH = 0;
+    bottomSectionHeight = 0;
+
+    originalBottomConstruction = null;
+    bottomConstruction = null;
+    transformControl = null;
+
     manholeData = manhole;
 
     // Prepare manhole data
@@ -185,7 +197,8 @@ export function initJkumEditor(manhole) {
     viewHelper = new ViewHelper(camera, container);
     scene.add(viewHelper);
 
-    gui = new GUI();
+    gui = new GUI({ autoPlace: false });
+    gui.domElement.id = 'gui';
 
 //    gui.add( params, 'uniform' ).onChange( render );
 //    gui.add( params, 'tension', 0, 1 ).step( 0.01 ).onChange( function ( value ) {
@@ -201,7 +214,9 @@ export function initJkumEditor(manhole) {
 //    gui.add( params, 'removePoint' );
 //    gui.add( params, 'exportSpline' );
     gui.add( params, 'addPipe' );
-    gui.open();
+    gui.close();
+    container.appendChild(gui.domElement);
+//    gui.open();
 
     // Controls
     const controls = new OrbitControls( camera, renderer.domElement );

@@ -222,6 +222,12 @@ div.lid-card dt {
     padding: 2px;
 }
 
+#gui {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
 /*
 .lil-gui {
     background-color: white;

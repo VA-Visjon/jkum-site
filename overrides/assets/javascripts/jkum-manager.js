@@ -53,6 +53,7 @@ let bottomConstruction;
 // Define some materials
 const matrTransparent = new THREE.MeshLambertMaterial( { color: 0xffffff, transparent: true, opacity: 0.1 } );
 const matrGray = new THREE.MeshLambertMaterial( { color: 0x999999 } );
+const matrGrayWireframe = new THREE.MeshLambertMaterial( { color: 0x999999, wireframe: true } );
 const matrRed = new THREE.MeshLambertMaterial( { color: 0xff0000 } );
 const matrPipe = new THREE.MeshLambertMaterial( { color: 0x22ff22 } );
 const matrRustIron = new THREE.MeshLambertMaterial( { color: 0xcc6633 } );
@@ -113,11 +114,11 @@ export function initJkumEditor(manhole) {
             }
         }
     }
-    if(manhole.bottomElevation && manhole.bottomElevation < lowestElevation){
-        lowestElevation = manhole.bottomElevation;
+    if(manhole.elevationBottom && manhole.elevationBottom < lowestElevation){
+        lowestElevation = manhole.elevationBottom;
     }
     deltaH = (lidElevation - lowestElevation) * 100;
-    console.log("TOP-BOT ELEV:", lidElevation, lowestElevation);
+    console.log("TOP-BOT ELEV:", lidElevation, lowestElevation, deltaH);
 
     // Set the scene
     const gizmoContainer = document.getElementById( 'gizmo-container' );
@@ -156,6 +157,7 @@ export function initJkumEditor(manhole) {
     scene.add( plane );
 
     const helper = new THREE.GridHelper( 2000, 100 );
+//    helper.position.y = deltaH;
     helper.position.y = -19;
     helper.material.opacity = 0.25;
     helper.material.transparent = true;
@@ -254,14 +256,16 @@ export function initJkumEditor(manhole) {
     }
 
     // Create the bottom of the manhole
-    bottomSectionHeight = deltaH - 70;
+    const topHeight = 70;
+    const bottomThickness = 15;
+    bottomSectionHeight = deltaH - topHeight + bottomThickness;
     const radius = manhole.diameter ? manhole.diameter / 20 : 1200 / 20;
     const geomInner = new THREE.CylinderGeometry( radius, radius, bottomSectionHeight, 32 );
     const cylinderInner = new THREE.Mesh( geomInner, matrGray );
 
     const geomOuter = new THREE.CylinderGeometry( radius + 10, radius + 10, bottomSectionHeight, 32 );
     const cylinderOuter = new THREE.Mesh( geomOuter, matrGray );
-    cylinderOuter.position.set(0, -15, 0); // Using centimeters here, 15 cm down as is a regular precast concrete manhole
+    cylinderOuter.position.set(0, -bottomThickness, 0); // Using centimeters here, 15 cm down as is a regular precast concrete manhole
 
     cylinderInner.updateMatrix();
     cylinderOuter.updateMatrix();
@@ -269,6 +273,26 @@ export function initJkumEditor(manhole) {
     const bottom = doCSG(cylinderOuter, cylinderInner, "subtract", matrGray);
     originalBottomConstruction = bottom.clone();
 
+    // Build top solution
+    const coneInner = new THREE.CylinderGeometry( 65/2, radius, 50, 32 );
+    const topInner = new THREE.Mesh( coneInner, matrGray );
+    const coneOuter = new THREE.CylinderGeometry( 65/2 + 10, radius + 10, 50, 32 );
+    const topOuter = new THREE.Mesh( coneOuter, matrGray );
+    const coneMesh = doCSG(topOuter, topInner, "subtract", matrGray);
+    coneMesh.position.set(0, deltaH - 45, 0);
+    coneMesh.name = "topCone";
+    scene.add(coneMesh);
+
+    const adjustmentRingInner = new THREE.CylinderGeometry( 65/2, 65/2, 15, 32 );
+    const adjustmentRing = new THREE.Mesh( adjustmentRingInner, matrGray );
+    const adjustmentRingOuterGeom = new THREE.CylinderGeometry( 65/2 + 10, 65/2 + 10, 15, 32 );
+    const adjustmentRingOuter = new THREE.Mesh( adjustmentRingOuterGeom, matrGray );
+    const adjustmentRingMesh = doCSG(adjustmentRingOuter, adjustmentRing, "subtract", matrGray);
+    adjustmentRingMesh.position.set(0, deltaH - 5 - 15/2.0, 0);
+    adjustmentRingMesh.name = "topAdjustmentRing";
+    scene.add(adjustmentRingMesh);
+
+    // Create annotations
     const origoDiv = document.createElement( 'div' );
     origoDiv.className = 'label';
     origoDiv.textContent = 'kt +'+ lowestElevation;
@@ -361,6 +385,9 @@ function loadPipes() {
         if(!pipe.diameter){
             pipe.diameter = 160;
         }
+        if(!pipe.clockPosition){
+            pipe.clockPosition = 0;
+        }
 
         const r = pipe.diameter / 20;
         const segmentLength = 50;
@@ -379,14 +406,8 @@ function loadPipes() {
         cylinderOuter.position.set(0, 0, manholeData.diameter / 20 + segmentLength / 2 - inset);
 
         const elevationRelativeToOrigo = calculateElevation(pipe);
-
-        const geometry = new THREE.SphereGeometry( 0.5, 12, 12 );
-        const material = new THREE.MeshBasicMaterial( { color: 0x000000 } );
-        const sphere = new THREE.Mesh( geometry, material );
-
         const point = new THREE.Object3D();
         point.add(pipeMesh);
-        point.add(sphere);
         point.position.set(0, elevationRelativeToOrigo, 0);
         point.name = pipe.guid;
         point.updateMatrix();
@@ -413,7 +434,8 @@ function loadPipes() {
 
             pipeFolder.add( pipe, 'measurementLocation', measurementMethods ).name( 'Measurement location' )
                 .onFinishChange( function (value) {
-                    console.log(value);
+                    updatePipeElevations();
+                    render();
                 }
             );
             pipeFolder.add(pipe, 'elevation', lowestElevation - 0.5, lidElevation).name("Elevation")
@@ -453,7 +475,6 @@ function calculateElevation(pipe) {
         elevationRelativeToOrigo = (pipe.elevation - lowestElevation) * 100 + r;
     }
 
-    console.log("pipe.guid", elevationRelativeToOrigo);
     return elevationRelativeToOrigo;
 }
 
@@ -521,6 +542,7 @@ function addPipe() {
         "guid": uuidv4(),
         "elevation": lowestElevation,
         "clockPosition": 0,
+        "measurementLocation": "bottomInsidePipe",
         "diameter": 200,
         "material": "Concrete"
     }
@@ -560,7 +582,23 @@ function prepareForView() {
     scene.remove(selectedObject);
 
     const alpha = Math.atan2(camera.position.z, camera.position.x);
-    console.log(alpha);
+    const verticalAngle = Math.atan2(camera.position.y, camera.position.x);
+    console.log(verticalAngle);
+
+    var topCone = scene.getObjectByName("topCone");
+    var topAdjustmentRing = scene.getObjectByName("topAdjustmentRing");
+    if(verticalAngle > Math.PI/3 && verticalAngle < Math.PI - Math.PI/3){
+        // Hide the top solution
+//        topCone.visible = false;
+//        topAdjustmentRing.visible = false;
+        topCone.material = matrGrayWireframe;
+        topAdjustmentRing.material = matrGrayWireframe;
+    } else{
+//        topCone.visible = true;
+//        topAdjustmentRing.visible = true;
+        topCone.material = matrGray;
+        topAdjustmentRing.material = matrGray;
+    }
 
     const posX = Math.cos(alpha) * manholeData.diameter / 20;
     const posZ = Math.sin(alpha) * manholeData.diameter / 20;
@@ -595,7 +633,6 @@ function cutBottomSection() {
         const pipeCylinder = pipe.cylinder;
 
         const child = pipe.cylinder.children[0].clone();
-        console.log(pipeCylinder.matrixWorld, child.matrixWorld);
         child.removeFromParent();
         child.applyMatrix4(pipeCylinder.matrixWorld);
         modified = doCSG(modified, child, "subtract", matrGray);
@@ -635,12 +672,10 @@ function updatePipeAngles() {
     for ( const guid in pipes ) {
 
         const pipe = pipes[ guid ];
-        console.log(pipe);
 
         const pipeMesh = pipe.mesh;
         const pipeCylinder = pipe.cylinder;
         const radians = clockPositionToRadians(pipe.clockPosition) + Math.PI/2;
-//        const radians = pipe.clockPosition * Math.PI / 180;
         pipeMesh.setRotationFromAxisAngle(new THREE.Vector3(0,1,0), radians);
         pipeCylinder.setRotationFromAxisAngle(new THREE.Vector3(0,1,0), radians);
         pipeMesh.updateMatrix();

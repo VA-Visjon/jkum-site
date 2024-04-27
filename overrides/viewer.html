@@ -28,7 +28,8 @@
           </form>
           <pre style="display: none;" id="file_contents"></pre>
         </div>
-        <div class="manhole-list" id="manhole_list"></div>
+        <div id="container" class="canvas"></div>
+<!--        <div class="manhole-list" id="manhole_list"></div>-->
     </div>
     <div id="manhole_drawer" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -77,6 +78,7 @@
   <script src="{{ 'assets/javascripts/proj4@2.11.0.min.js' | url }}"></script>
   <script src="{{ 'assets/javascripts/ol@9.1.0.js' | url }}"></script>
   <script src="{{ 'assets/javascripts/json-validate.js' | url }}"></script>
+  <script type="module" src="{{ 'assets/javascripts/jkum-manager.js' | url }}" ></script>
 
   <script>
     // From drag-and-drop

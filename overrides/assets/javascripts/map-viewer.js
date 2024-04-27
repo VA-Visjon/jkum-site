@@ -4,6 +4,7 @@
 //import View from './ol@9.1.0.js/View';
 
 import {jkumStyleFunction} from './map-styles.js';
+import {initJkumEditor, clearJkumEditor} from './jkum-manager.js';
 
 // Apply coordinate systems
 proj4.defs('EPSG:25832', '+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs');
@@ -72,7 +73,9 @@ function disposePopover() {
 
 
 function populateDrawer(manhole) {
-    console.log(manhole);
+
+    initJkumEditor(manhole);
+
     document.getElementById("manhole_details_sid").innerHTML = manhole.sid;
     document.getElementById("manhole_details_guid").innerHTML = manhole.guid;
     document.getElementById("manhole_details_shape").innerHTML = manhole.shape;
@@ -169,6 +172,7 @@ selectSingleClick.on('select', function (e) {
       populateDrawer(m);
       openNav();
   } else{
+      clearJkumEditor();
       closeNav();
   }
 });
@@ -256,18 +260,18 @@ const observer = new MutationObserver(function(mutationsList, observer) {
       i += 1;
     }
 
-    // Populate all divs
-    const manholeListDom = document.getElementById('manhole_list');
-    manholeListDom.innerHTML = "";
-    for (const manhole of manholeData) {
-        const wrap = document.createElement("div");
-        wrap.classList.add("manhole-item");
-        const head = document.createElement("h4");
-        head.innerHTML = "SID: <b>" + manhole.sid + "</b>";
-        wrap.appendChild(head);
-
-        manholeListDom.appendChild(wrap);
-    }
+//    // Populate all divs
+//    const manholeListDom = document.getElementById('manhole_list');
+//    manholeListDom.innerHTML = "";
+//    for (const manhole of manholeData) {
+//        const wrap = document.createElement("div");
+//        wrap.classList.add("manhole-item");
+//        const head = document.createElement("h4");
+//        head.innerHTML = "SID: <b>" + manhole.sid + "</b>";
+//        wrap.appendChild(head);
+//
+//        manholeListDom.appendChild(wrap);
+//    }
 
     // Add to map
     const vectorSource = new ol.source.Vector({

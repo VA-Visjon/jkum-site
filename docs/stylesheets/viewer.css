@@ -197,3 +197,27 @@ div.lid-card dt {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
+
+.canvas {
+    min-width: 400px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gizmo-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 200px;
+    width: 200px;
+    background-color: green;
+    z-index: 500;
+}
+
+.label {
+    color: black;
+    font-family: sans-serif;
+    padding: 2px;
+    background: rgba( 0, 0, 0, .6 );
+}

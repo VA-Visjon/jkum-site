@@ -18,8 +18,9 @@ The structure should be similar to this:
 ``` json
 {
   "head": {
-    "epsg": 25832
-  }
+    "epsg": 25832,
+    "purpose": "Surveying"
+  },
   "manholes": [...]
 }
 ```
@@ -34,6 +35,7 @@ The `head` property consists of these possible properties:
 | Property Name | Type | Required | Description |
 | ------- | -------- |-------- | ------ |
 | epsg | integer | :material-check-circle:{ .success } | The EPSG ID for the coordinate system which the coordinates this file system is represented. |
+| purpose | string | :material-check-circle:{ .success } | The purpose for this file, which will affect which fields are considered required or not. One of the following values: `Surveying`, `Export` |
 | date | string | :material-close-circle:{ .error } | An [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)-formatted date string on the format YYYY-MM-DD. |
 | author | string | :material-close-circle:{ .error } | The name or descriptive text about the author of the file. |
 
@@ -47,8 +49,9 @@ The properties for manholes are listed in this table.
 | ------- | -------- |-------- | ------ |
 | guid | GUID | :material-check-circle:{ .success } | A unique system-generated GUID for future reference and identification for the object. |
 | sid | string | :material-close-circle:{ .error } | A unique ID commonly used in mapping systems. Enables a better human-readable ID for the object. |
-| bottomCenter | [Location](#location) | :material-check-circle:{ .success } | The position of the centerpoint of the manhole construction at its bottom center. |
 | shape | string | :material-close-circle:{ .error } | The shape of the Manhole, one of: `Circular`, `Rectangular` or `Polygonal`. |
+| elevationBottom | number | :material-close-circle:{ .error } | The altitude (elevation) for the bottom inside of the manhole in absolute elevation relative to zero. |
+| elevationBanquet | number | :material-close-circle:{ .error } | The altitude (elevation) for any potential banquet, relative to zero. Skip this property if a banquet is not present. |
 | topSolution | string | :material-close-circle:{ .error } | The solution applied for the top part of the manhole, one of:  `Cone`, `Top plate`, `Cast removable`, `Cast not removable`, `Unknown` |
 | material | string | :material-close-circle:{ .error } | The material of the manhole construction. Restricted by predefined values, one of: `Concrete`, `Bricks`, `Plastic`, `Rehabilitated`, `Other` |
 | diameter | integer | :material-close-circle:{ .error } | The inner diameter of the manhole construction. |
@@ -63,13 +66,18 @@ Depending on the `shape` of the manhole, the following properties are also requi
     | Property Name | Type | Required | Description |
     | ------- | -------- |-------- | ------ |
     | diameter | integer | :material-check-circle:{ .success } | The manhole inner diameter in millimeters. |
+    | isEccentric | bool | :material-check-circle:{ .success } | Wether the manhole is eccentric or centric. |
+    | rotation | integer | :material-check-circle:{ .warning } | `Required if the manhole is eccentric.`<br />The rotation pointing towards the center of the manhole lid. Relative to north, oriented clockwise from between 0 and 359 degrees. |
+
 
 === "Rectangular"
 
     | Property Name | Type | Required | Description |
     | ------- | -------- |-------- | ------ |
-    | width | integer | :material-check-circle:{ .success } | The manhole inner width in millimeters. |
-    | length | integer | :material-check-circle:{ .success } | The manhole inner length in millimeters. |
+    | sizeX | integer | :material-check-circle:{ .success } | The manhole size in millimeters, along the X-axis according to its rotation. |
+    | sizeY | integer | :material-check-circle:{ .success } | The manhole size in millimeters, along the Y-axis according to its rotation. |
+    | rotation | integer | :material-check-circle:{ .success } | The y-axis relative to north, oriented clockwise from between 0 and 359 degrees. |
+    | center | [Location](#location) | :material-check-circle:{ .success } | The center position of the manhole chamber. |
 
 === "Polygonal"
 
@@ -115,18 +123,19 @@ connector points that can be seen from inside the manhole.
 | ------- | -------- |-------- | ------ |
 | guid | GUID | :material-check-circle:{ .success } | A unique system-generated GUID for future reference and identification for the object. |
 | sid | string | :material-close-circle:{ .error } | A unique ID commonly used in mapping systems. Enables a better human-readable ID for the object. |
-| medium | string | :material-close-circle:{ .error } | The medium transported in the pipe. Must be one of the following: `Water`, `Sewer`, `Storm water`, `Drain` |
+| medium | string | :material-close-circle:{ .error } | The medium transported in the pipe. Must be one of the following: `Water`, `Sewer`, `Combination sewer`, `Storm water`, `Drain` |
 | direction | string | :material-close-circle:{ .error } | The assumed flow direction of the pipe contents. Must be one of the following: `Ingoing`, `Outgoing` |
 | material | string | :material-close-circle:{ .error } | The material of the pipe in the connection. Enum restricted to predefined values. |
-| pressurized | boolean | :material-close-circle:{ .error } | If the pipe is a pressurized system. |
-| elevation | float | :material-close-circle:{ .error } | The real-world elevation coordinate for the pipe connection. |
-| clockPosition | integer | :material-close-circle:{ .error } | The location of the pipe as seen inside the manhole, oriented clockwise from between 0 and 359 degrees relative to north. |
+| pressurized | boolean | :material-check-circle:{ .success } | If the pipe is a pressurized system. |
+| measurementLocation | string | :material-check-circle:{ .success } | The location of where on the pipe the elevation was measured. One of: `topOutsidePipe`, `bottomInsidePipe`, `centerPipe` |
+| elevation | float | :material-check-circle:{ .success } | The real-world elevation coordinate for the pipe connection. |
+| clockPosition | integer | :material-check-circle:{ .success } | The location of the pipe as seen inside the manhole, oriented clockwise from between 0 and 359 degrees relative to north. |
 | diameter | integer | :material-close-circle:{ .error } | The pipe diameter in millimeters. |
 
 
 
 ### ImageData
-The `imageData`-property needs one of the following data contents:
+The `images`-items needs one of the following data contents:
 
 === "Base64 and media type"
 

@@ -6,6 +6,7 @@
   right: 0;
   bottom: 0;
   overflow: hidden;
+  z-index: 2;
 }
 
 @media screen and (min-width:1220px) {
@@ -128,7 +129,7 @@ div.lid-card dt {
 }
 
 .viewer-left-pane {
-  min-width: 200px;
+  min-width: 300px;
   background: #dedede;
   border-right: 1px dashed gray;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.6);
@@ -217,9 +218,21 @@ div.lid-card dt {
 
 .label {
     color: black;
-    background: white;
+    background: rgba(255, 255, 255,0.5);
     font-family: sans-serif;
-    padding: 2px;
+    padding: 1px;
+    border: 1px solid black;
+}
+
+.directions-label {
+    color: black;
+    background: rgba(255, 255, 255,0.8);
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px 8px;
+    border: 1px solid black;
+    border-radius: 50%;
 }
 
 #gui {
@@ -227,16 +240,3 @@ div.lid-card dt {
     top: 10px;
     left: 10px;
 }
-
-/*
-.lil-gui {
-    background-color: white;
-    color: black;
-}
-
-.lil-gui div.children .controller {
-    color:black;
-    padding: 0px 10px;
-}
-
-*/

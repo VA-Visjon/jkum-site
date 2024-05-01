@@ -3,12 +3,12 @@ const previousRevisions = [];
 let redoRevisions = [];
 const editor = document.getElementById("upload_file_presentation");
 
-function formatContents() {
+function formatContents(validationErrors) {
     const pretty = document.getElementById('upload_file_presentation');
     const errorDiv = document.getElementById('formatting_error');
     // Strip all tags
     const text = pretty.innerHTML.replace(/<[^>]*>?/gm, '');
-    const highlighted = syntaxHighlight(text);
+    const highlighted = syntaxHighlight(text, validationErrors);
     if (jsonParseError === null){
       errorDiv.innerHTML = "";
       errorDiv.style = "display:none;";

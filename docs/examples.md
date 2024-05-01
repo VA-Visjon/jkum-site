@@ -9,18 +9,15 @@ In order to generate a minimal and valid file, the JKUM-contents should be like 
 ``` json
 {
   "head": {
-    "epsg": 25832
+    "epsg": 25832,
+    "purpose": "Surveying"
   },
   "manholes": [
     {
       "guid": "03de0a00-d6c0-4cb4-81bd-8f6ebdfad7a6",
       "shape": "Circular",
       "diameter": 1600,
-      "bottomCenter": {
-        "east": 588447.01,
-        "north": 6642743.66,
-        "elevation": 53.04
-      },
+      "elevationBottom": 53.05,
       "lids": [
         {
           "guid": "216e1618-bdf4-4ade-8Ba9-b9BB334df115",

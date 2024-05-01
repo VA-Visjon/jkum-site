@@ -28,10 +28,10 @@ export const validateJson = async (json, schemaName, callback) => {
     if(!json) return;
 
     const validate = await loadValidator(schemaName);
-    console.log(validate);
     if (validate(json)) {
         callback(null);
     } else {
+      console.log(validate);
       // DefinedError is a type for all pre-defined keywords errors,
       // validate.errors has type ErrorObject[] - to allow user-defined keywords with any error parameters.
       // Users can extend DefinedError to include the keywords errors they defined.

@@ -4,31 +4,29 @@
   {{ super() }}
   <section class="fullpage flex-row">
       <div id="container" class="canvas"></div>
-<!--      <div id="gizmo-container" class="gizmo-wrapper"></div>-->
   </section>
   <div id="fullpage_modal" onclick="this.style.display='none';"></div>
 {% endblock %}
 {% block toc %}{% endblock %}
-{% block site_nav %}{% endblock %}
 {% block content %}{% endblock %}
 {% block footer %}{% endblock %}
 {% block scripts %}
   {{ super() }}
   <script type="module" src="{{ 'assets/javascripts/jkum-manager.js' | url }}" ></script>
-
   <script type="module">
     import { initJkumEditor } from "/assets/javascripts/jkum-manager.js";
 
     const startOpen = true;
-    const manhole = {
+    let manhole;
+    manhole = {
             "espg": 5110,
             "guid": "d7e0a214-7862-46b8-9df3-4080c42f60ec",
             "sid": "209081",
             "shape": "Circular",
-            "diameter": 1200,
+            "diameter": 1600,
+            "isEccentric": true,
+            "rotation": 45,
             "elevationBottom": 63.35,
-            "width": 0,
-            "height": 0,
             "lids": [
                 {
                     "guid": "b8e17984-dd06-4575-8aef-780dafc55809",
@@ -47,6 +45,7 @@
                     "material": "Concrete",
                     "pressurized": true,
                     "elevation": 64.54,
+                    "medium": "Water",
                     "measurementLocation": "topOutsidePipe",
                     "clockPosition": 270.0,
                     "diameter": 150
@@ -56,12 +55,62 @@
                     "material": "Concrete",
                     "pressurized": false,
                     "elevation": 64.23,
+                    "medium": "Storm water",
                     "measurementLocation": "bottomInsidePipe",
                     "clockPosition": 135.0,
                     "diameter": 400
                 }
             ]
         };
+
+    /* manhole = {
+            "espg": 5110,
+            "guid": "d7e0a214-7862-46b8-9df3-4080c42f60ec",
+            "sid": "209081",
+            "shape": "Rectangular",
+            "sizeX": 3000,
+            "sizeY": 1600,
+            "rotation": 45,
+            "center": {
+                "east": 115878.268,
+                "north": 1213529.243
+            },
+            "elevationBottom": 63.35,
+            "lids": [
+                {
+                    "guid": "b8e17984-dd06-4575-8aef-780dafc55809",
+                    "position": {
+                        "east": 115878.268,
+                        "north": 1213529.243,
+                        "elevation": 66.51
+                    },
+                    "ladder": "Unspecified",
+                    "classification": "Unspecified"
+                }
+            ],
+            "pipes": [
+                {
+                    "guid": "3b98880b-db8b-4295-ae24-a3c6d7b35169",
+                    "material": "Concrete",
+                    "pressurized": true,
+                    "elevation": 64.54,
+                    "medium": "Water",
+                    "measurementLocation": "topOutsidePipe",
+                    "clockPosition": 270.0,
+                    "diameter": 150
+                },
+                {
+                    "guid": "cdb1ce5a-47e7-4fab-a84c-436a237c5e92",
+                    "material": "Concrete",
+                    "pressurized": false,
+                    "elevation": 64.23,
+                    "medium": "Storm water",
+                    "measurementLocation": "bottomInsidePipe",
+                    "clockPosition": 135.0,
+                    "diameter": 400
+                }
+            ]
+        };*/
 
     initJkumEditor(manhole, startOpen);
   </script>

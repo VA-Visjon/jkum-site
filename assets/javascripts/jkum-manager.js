@@ -232,41 +232,41 @@ export function initJkumEditor(manhole, startControlsOpen) {
     viewHelper = new ViewHelper(camera, container);
     scene.add(viewHelper);
 
-//    // Setting up postprocessing
-//    const width = container.clientWidth;
-//    const height = container.clientHeight;
-//
-//    const depthTexture = new THREE.DepthTexture();
-//    const renderTarget = new THREE.WebGLRenderTarget(
-//      width,
-//      height,
-//      {
-//        depthTexture: depthTexture,
-//        depthBuffer: true,
-//      }
-//    );
-//
-//    // Postprocessing first run
-//    composer = new EffectComposer( renderer, renderTarget );
-//
-//    const renderPass = new RenderPass(scene, camera);
-//    composer.addPass(renderPass);
-//
-//    // Outline pass
-//    customOutline = new CustomOutlinePassNoIndices(
-//      new THREE.Vector2(width, height),
-//      scene,
-//      camera
-//    );
-//    composer.addPass(customOutline);
-//
-//    // Antialias pass
-//    effectFXAA = new ShaderPass(FXAAShader);
-//    effectFXAA.uniforms["resolution"].value.set(
-//      1 / width,
-//      1 / height
-//    );
-//    composer.addPass(effectFXAA);
+    // Setting up postprocessing
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+
+    const depthTexture = new THREE.DepthTexture();
+    const renderTarget = new THREE.WebGLRenderTarget(
+      width,
+      height,
+      {
+        depthTexture: depthTexture,
+        depthBuffer: true,
+      }
+    );
+
+    // Postprocessing first run
+    composer = new EffectComposer( renderer, renderTarget );
+
+    const renderPass = new RenderPass(scene, camera);
+    composer.addPass(renderPass);
+
+    // Outline pass
+    customOutline = new CustomOutlinePassNoIndices(
+      new THREE.Vector2(width, height),
+      scene,
+      camera
+    );
+    composer.addPass(customOutline);
+
+    // Antialias pass
+    effectFXAA = new ShaderPass(FXAAShader);
+    effectFXAA.uniforms["resolution"].value.set(
+      1 / width,
+      1 / height
+    );
+    composer.addPass(effectFXAA);
 
     // Gui
     gui = new GUI({ autoPlace: false });
@@ -1071,7 +1071,18 @@ function addHoverObject( object ) {
 function render() {
     labelRenderer.render( scene, camera );
     renderer.render( scene, camera );
-//    composer.render();
+
+//    const allMeshes = []
+//    scene.traverse( function( object ) {
+//        if(object instanceof THREE.Mesh){
+//            allMeshes.push(object);
+//        }
+//    } );
+//    console.log(allMeshes);
+//    outlinePass.selectedObjects = allMeshes;
+
+    composer.render();
+//    finalComposer.render();
     viewHelper.render(renderer);
 }
 
@@ -1136,6 +1147,7 @@ function onPointerMove( event ) {
 //
 //    }
 //    composer.render();
+//    finalComposer.render();
 
 }
 

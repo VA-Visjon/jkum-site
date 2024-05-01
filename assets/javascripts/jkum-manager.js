@@ -251,22 +251,22 @@ export function initJkumEditor(manhole, startControlsOpen) {
 
     const renderPass = new RenderPass(scene, camera);
     composer.addPass(renderPass);
-
-    // Outline pass
-    customOutline = new CustomOutlinePassNoIndices(
-      new THREE.Vector2(width, height),
-      scene,
-      camera
-    );
-    composer.addPass(customOutline);
-
-    // Antialias pass
-    effectFXAA = new ShaderPass(FXAAShader);
-    effectFXAA.uniforms["resolution"].value.set(
-      1 / width,
-      1 / height
-    );
-    composer.addPass(effectFXAA);
+//
+//    // Outline pass
+//    customOutline = new CustomOutlinePassNoIndices(
+//      new THREE.Vector2(width, height),
+//      scene,
+//      camera
+//    );
+//    composer.addPass(customOutline);
+//
+//    // Antialias pass
+//    effectFXAA = new ShaderPass(FXAAShader);
+//    effectFXAA.uniforms["resolution"].value.set(
+//      1 / width,
+//      1 / height
+//    );
+//    composer.addPass(effectFXAA);
 
     // Gui
     gui = new GUI({ autoPlace: false });

@@ -346,6 +346,23 @@ Here you will find all relevant information about the requirements and possibili
   
 
       
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../editor/" class="md-tabs__link">
+        
+  
+    
+  
+  Editor
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -415,18 +432,15 @@ Here you will find all relevant information about the requirements and possibili
             <pre class="md-jsonarea" id="upload_file_presentation" spellcheck="false" contenteditable>
 {
   "head": {
-    "epsg": 25832
+    "epsg": 25832,
+    "purpose": "Surveying"
   },
   "manholes": [
     {
       "guid": "03de0a00-d6c0-4cb4-81bd-8f6ebdfad7a6",
       "shape": "Circular",
       "diameter": 1600,
-      "bottomCenter": {
-        "east": 588447.01,
-        "north": 6642743.66,
-        "elevation": 53.04
-      },
+      "elevationBottom": 53.05,
       "lids": [
         {
           "guid": "216e1618-bdf4-4ade-8Ba9-b9BB334df115",
@@ -797,6 +811,26 @@ Here you will find all relevant information about the requirements and possibili
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -919,7 +953,9 @@ Here you will find all relevant information about the requirements and possibili
     <script type="importmap">
         {
             "imports": {
-                "ajv7": "https://esm.sh/ajv@8.12.0"
+                "ajv7": "https://esm.sh/ajv@8.12.0",
+                "three": "/assets/javascripts/three/three.module.min.js",
+                "three/addons/": "/assets/javascripts/three/"
             }
         }
     </script>

@@ -350,6 +350,23 @@ Here you will find all relevant information about the requirements and possibili
   
 
       
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../editor/" class="md-tabs__link">
+        
+  
+    
+  
+  Editor
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -819,6 +836,26 @@ Here you will find all relevant information about the requirements and possibili
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -975,10 +1012,11 @@ The Standard is for the time being applying schema definition draft 7
 The structure should be similar to this:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;head&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;epsg&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">25832</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;manholes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">]</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;epsg&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">25832</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;purpose&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Surveying&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;manholes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">]</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
 <p>The <code>.jkum</code>-file has two properties at the top level: <code>head</code> and <code>manholes</code>. In the following, all
@@ -1000,6 +1038,12 @@ related objects and properties are described.</p>
 <td>integer</td>
 <td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
 <td>The EPSG ID for the coordinate system which the coordinates this file system is represented.</td>
+</tr>
+<tr>
+<td>purpose</td>
+<td>string</td>
+<td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
+<td>The purpose for this file, which will affect which fields are considered required or not. One of the following values: <code>Surveying</code>, <code>Export</code></td>
 </tr>
 <tr>
 <td>date</td>
@@ -1042,16 +1086,22 @@ related objects and properties are described.</p>
 <td>A unique ID commonly used in mapping systems. Enables a better human-readable ID for the object.</td>
 </tr>
 <tr>
-<td>bottomCenter</td>
-<td><a href="#location">Location</a></td>
-<td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
-<td>The position of the centerpoint of the manhole construction at its bottom center.</td>
-</tr>
-<tr>
 <td>shape</td>
 <td>string</td>
 <td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
 <td>The shape of the Manhole, one of: <code>Circular</code>, <code>Rectangular</code> or <code>Polygonal</code>.</td>
+</tr>
+<tr>
+<td>elevationBottom</td>
+<td>number</td>
+<td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
+<td>The altitude (elevation) for the bottom inside of the manhole in absolute elevation relative to zero.</td>
+</tr>
+<tr>
+<td>elevationBanquet</td>
+<td>number</td>
+<td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
+<td>The altitude (elevation) for any potential banquet, relative to zero. Skip this property if a banquet is not present.</td>
 </tr>
 <tr>
 <td>topSolution</td>
@@ -1111,6 +1161,18 @@ related objects and properties are described.</p>
 <td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
 <td>The manhole inner diameter in millimeters.</td>
 </tr>
+<tr>
+<td>isEccentric</td>
+<td>bool</td>
+<td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
+<td>Wether the manhole is eccentric or centric.</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>integer</td>
+<td><span class="twemoji warning"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
+<td><code>Required if the manhole is eccentric.</code><br />The rotation pointing towards the center of the manhole lid. Relative to north, oriented clockwise from between 0 and 359 degrees.</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1126,16 +1188,28 @@ related objects and properties are described.</p>
 </thead>
 <tbody>
 <tr>
-<td>width</td>
+<td>sizeX</td>
 <td>integer</td>
 <td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
-<td>The manhole inner width in millimeters.</td>
+<td>The manhole size in millimeters, along the X-axis according to its rotation.</td>
 </tr>
 <tr>
-<td>length</td>
+<td>sizeY</td>
 <td>integer</td>
 <td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
-<td>The manhole inner length in millimeters.</td>
+<td>The manhole size in millimeters, along the Y-axis according to its rotation.</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>integer</td>
+<td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
+<td>The y-axis relative to north, oriented clockwise from between 0 and 359 degrees.</td>
+</tr>
+<tr>
+<td>center</td>
+<td><a href="#location">Location</a></td>
+<td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
+<td>The center position of the manhole chamber.</td>
 </tr>
 </tbody>
 </table>
@@ -1292,7 +1366,7 @@ connector points that can be seen from inside the manhole.</p>
 <td>medium</td>
 <td>string</td>
 <td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
-<td>The medium transported in the pipe. Must be one of the following: <code>Water</code>, <code>Sewer</code>, <code>Storm water</code>, <code>Drain</code></td>
+<td>The medium transported in the pipe. Must be one of the following: <code>Water</code>, <code>Sewer</code>, <code>Combination sewer</code>, <code>Storm water</code>, <code>Drain</code></td>
 </tr>
 <tr>
 <td>direction</td>
@@ -1309,19 +1383,25 @@ connector points that can be seen from inside the manhole.</p>
 <tr>
 <td>pressurized</td>
 <td>boolean</td>
-<td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
+<td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
 <td>If the pipe is a pressurized system.</td>
+</tr>
+<tr>
+<td>measurementLocation</td>
+<td>string</td>
+<td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
+<td>The location of where on the pipe the elevation was measured. One of: <code>topOutsidePipe</code>, <code>bottomInsidePipe</code>, <code>centerPipe</code></td>
 </tr>
 <tr>
 <td>elevation</td>
 <td>float</td>
-<td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
+<td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
 <td>The real-world elevation coordinate for the pipe connection.</td>
 </tr>
 <tr>
 <td>clockPosition</td>
 <td>integer</td>
-<td><span class="twemoji error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7Z"/></svg></span></td>
+<td><span class="twemoji success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg></span></td>
 <td>The location of the pipe as seen inside the manhole, oriented clockwise from between 0 and 359 degrees relative to north.</td>
 </tr>
 <tr>
@@ -1333,7 +1413,7 @@ connector points that can be seen from inside the manhole.</p>
 </tbody>
 </table>
 <h3 id="imagedata">ImageData<a class="headerlink" href="#imagedata" title="Permanent link">&para;</a></h3>
-<p>The <code>imageData</code>-property needs one of the following data contents:</p>
+<p>The <code>images</code>-items needs one of the following data contents:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="imagedata-base64-and-media-type" name="__tabbed_2" type="radio" /><input id="imagedata-image-url-to-online-source" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="imagedata-base64-and-media-type">Base64 and media type</label><label for="imagedata-image-url-to-online-source">Image URL to online source</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1490,7 +1570,9 @@ connector points that can be seen from inside the manhole.</p>
     <script type="importmap">
         {
             "imports": {
-                "ajv7": "https://esm.sh/ajv@8.12.0"
+                "ajv7": "https://esm.sh/ajv@8.12.0",
+                "three": "/assets/javascripts/three/three.module.min.js",
+                "three/addons/": "/assets/javascripts/three/"
             }
         }
     </script>

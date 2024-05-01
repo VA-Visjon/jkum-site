@@ -11,7 +11,8 @@
       "type": "object",
       "title": "The head of the JKUM file, containing relevant information about the file",
       "required": [
-        "epsg"
+        "epsg",
+        "purpose"
       ],
       "additionalProperties": false,
       "properties": {
@@ -40,6 +41,14 @@
           "examples": [
             "Hans Martin Eikerol"
           ]
+        },
+        "purpose": {
+          "type": "string",
+          "default": "Surveying",
+          "examples": [
+            "Surveying"
+          ],
+          "enum": ["Surveying", "Export"]
         }
       }
     },
@@ -52,6 +61,14 @@
         "elevation": { "type": "number" }
       },
       "required": [ "east", "north", "elevation" ]
+    },
+    "clockPosition": {
+      "type": "integer",
+      "examples": [
+        20
+      ],
+      "minimum": 0,
+      "exclusiveMaximum": 360
     },
     "guid": {
       "type": "string",
@@ -136,7 +153,6 @@
       "type": "object",
       "required": [
         "guid",
-        "bottomCenter",
         "lids"
       ],
       "additionalProperties": false,
@@ -151,9 +167,6 @@
             "556001"
           ]
         },
-        "bottomCenter": {
-          "$ref": "#/definitions/location"
-        },
         "shape": {
           "type": "string",
           "default": "Circular",
@@ -161,6 +174,20 @@
             "Rectangular"
           ],
           "enum": [ "Circular", "Rectangular", "Polygonal" ]
+        },
+        "elevationBottom":{
+          "type": "number",
+          "description": "The altitude (elevation) for the bottom inside of the manhole",
+          "examples": [
+            63.12
+          ]
+        },
+        "elevationBanquet":{
+          "type": "number",
+          "description": "The altitude (elevation) for any potential banquet",
+          "examples": [
+            63.12
+          ]
         },
         "topSolution": {
           "type": "string",
@@ -196,6 +223,9 @@
             1200,
             400
           ]
+        },
+        "centerManholeRelativeToFirstLid": {
+          "$ref": "#/definitions/clockPosition"
         },
         "lids": {
           "type": "array",
@@ -310,6 +340,13 @@
         "object",
         "null"
       ],
+      "required": [
+        "guid",
+        "pressurized",
+        "elevation",
+        "measurementLocation",
+        "clockPosition"
+      ],
       "additionalProperties": false,
       "properties": {
         "guid": {
@@ -330,7 +367,7 @@
             "Storm water",
             "Drain"
           ],
-          "enum": [ "Water", "Sewer", "Storm water", "Drain" ]
+          "enum": [ "Water", "Sewer", "Combination sewer", "Storm water", "Drain" ]
         },
         "direction": {
           "type": "string",
@@ -362,14 +399,14 @@
             53.11
           ]
         },
+        "measurementLocation": {
+          "type": "string",
+          "description": "The location at where the elevation was registered",
+          "examples": ["topOutsidePipe", "bottomInsidePipe"],
+          "enum": ["topOutsidePipe", "bottomInsidePipe"]
+        },
         "clockPosition": {
-          "type": "number",
-          "title": "The Clockposition Schema",
-          "examples": [
-            20
-          ],
-          "minimum": 0,
-          "exclusiveMaximum": 360
+          "$ref": "#/definitions/clockPosition"
         },
         "diameter": {
           "type": "integer",
@@ -378,14 +415,7 @@
           ],
           "description": "Should reflect the diameter of the pipe in millimeters"
         }
-      },
-      "required": [
-        "guid",
-        "pressurized",
-        "elevation",
-        "clockPosition",
-        "diameter"
-      ]
+      }
     }
   },
   "properties": {
@@ -393,7 +423,8 @@
       "$ref": "#/definitions/head"
     },
     "manholes": {
-      "type": [ "array", "null" ],
+      "type": [ "array" ],
+      "minItems": 1,
       "items": {
         "$ref": "#/definitions/manhole"
       }

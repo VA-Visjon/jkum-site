@@ -54,7 +54,7 @@ const jsonToValidPrettyString = (json) => {
     return json;
 }
 
-const syntaxHighlight = (json) => {
+const syntaxHighlight = (json, validationErrors) => {
 
 //    const options = {};
 //    var json = neatJSON( json, options );

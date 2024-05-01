@@ -232,25 +232,25 @@ export function initJkumEditor(manhole, startControlsOpen) {
     viewHelper = new ViewHelper(camera, container);
     scene.add(viewHelper);
 
-    // Setting up postprocessing
-    const width = container.clientWidth;
-    const height = container.clientHeight;
-
-    const depthTexture = new THREE.DepthTexture();
-    const renderTarget = new THREE.WebGLRenderTarget(
-      width,
-      height,
-      {
-        depthTexture: depthTexture,
-        depthBuffer: true,
-      }
-    );
-
-    // Postprocessing first run
-    composer = new EffectComposer( renderer, renderTarget );
-
-    const renderPass = new RenderPass(scene, camera);
-    composer.addPass(renderPass);
+//    // Setting up postprocessing
+//    const width = container.clientWidth;
+//    const height = container.clientHeight;
+//
+//    const depthTexture = new THREE.DepthTexture();
+//    const renderTarget = new THREE.WebGLRenderTarget(
+//      width,
+//      height,
+//      {
+//        depthTexture: depthTexture,
+//        depthBuffer: true,
+//      }
+//    );
+//
+//    // Postprocessing first run
+//    composer = new EffectComposer( renderer, renderTarget );
+//
+//    const renderPass = new RenderPass(scene, camera);
+//    composer.addPass(renderPass);
 //
 //    // Outline pass
 //    customOutline = new CustomOutlinePassNoIndices(
@@ -1071,18 +1071,7 @@ function addHoverObject( object ) {
 function render() {
     labelRenderer.render( scene, camera );
     renderer.render( scene, camera );
-
-//    const allMeshes = []
-//    scene.traverse( function( object ) {
-//        if(object instanceof THREE.Mesh){
-//            allMeshes.push(object);
-//        }
-//    } );
-//    console.log(allMeshes);
-//    outlinePass.selectedObjects = allMeshes;
-
-    composer.render();
-//    finalComposer.render();
+//    composer.render();
     viewHelper.render(renderer);
 }
 
@@ -1147,7 +1136,6 @@ function onPointerMove( event ) {
 //
 //    }
 //    composer.render();
-//    finalComposer.render();
 
 }
 
